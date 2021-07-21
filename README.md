@@ -33,4 +33,7 @@ Here are some ideas to get you started:
 [![ResearchGate](https://user-images.githubusercontent.com/54937357/126514422-ba0e7de1-cbc2-4186-94d9-39e8a22c1c78.png)](https://www.researchgate.net/profile/Amey-Thakur) &nbsp; &nbsp; &nbsp;
 [![Telegram](https://user-images.githubusercontent.com/54937357/126514795-f23dd016-a0ce-473c-b468-f0742b25d87e.jpg)
 ](https://t.me/ameythakur) &nbsp; &nbsp; &nbsp;
-[![Twitter](https://user-images.githubusercontent.com/54937357/126515025-3403ae85-fdf6-431f-9644-1fd9a73e60bd.png)](https://twitter.com/iameythakur)
+[![Twitter](https://user-images.githubusercontent.com/54937357/126515823-1765c688-391d-439b-b689-fb4c8243d76f.png)](https://twitter.com/iameythakur)
+
+
+
