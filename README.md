@@ -1,4 +1,4 @@
-### NAMASKAR, THIS IS AMEY THAKUR
+## NAMASKAR, THIS IS AMEY THAKUR
 
 <!--
 **Amey-Thakur/Amey-Thakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -17,5 +17,9 @@ Here are some ideas to get you started:
 
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
 
+
+
+### CONNECT WITH ME 
+<a href="https://www.linkedin.com/in/amey-thakur/" target="_blank" rel="noopener noreferrer"><img src="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin" width=40px height=40px/></a> &nbsp;  
 
 
