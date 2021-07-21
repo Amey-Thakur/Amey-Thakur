@@ -18,6 +18,8 @@ Here are some ideas to get you started:
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
 
 
+
 ### CONNECT WITH ME 
-<a href="https://www.linkedin.com/in/amey-thakur/" target="_blank" rel="noopener noreferrer"><img src="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin" width=40px height=40px title="source: icons8.com"/></a> &nbsp;  
+<a href="https://www.linkedin.com/in/amey-thakur/" target="_blank" rel="noopener noreferrer"><img src="https://www.flaticon.com/free-icon/linkedin_174857?term=linkedin&page=1&position=1&page=1&position=1&related_id=174857&origin=search" width=40px height=40px title="source: flaticon.com"/></a> &nbsp;  
+
 
