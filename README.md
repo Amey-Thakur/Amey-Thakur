@@ -17,11 +17,36 @@ Here are some ideas to get you started:
 
 >![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
 
-## MY CERTIFICATIONS & ACHIEVEMENTS
+---
+
+### MY CERTIFICATIONS & ACHIEVEMENTS
 
 >[HAVE A LOOK!](https://github.com/Amey-Thakur/ACHIEVEMENTS#readme)
 
-## WEBSITES & SOCIAL LINKS
+ - [COE Pune](https://github.com/Amey-Thakur/ACHIEVEMENTS#coe-pune)
+ - [Coursera](https://github.com/Amey-Thakur/ACHIEVEMENTS#coursera)
+ - [Eduonix](https://github.com/Amey-Thakur/ACHIEVEMENTS#eduonix)
+ - [Google](https://github.com/Amey-Thakur/ACHIEVEMENTS#google)
+ - [Harvard Medical School](https://github.com/Amey-Thakur/ACHIEVEMENTS#harvard-medical-school)
+ - [IBM](https://github.com/Amey-Thakur/ACHIEVEMENTS#ibm)
+ - [IIT Bombay](https://github.com/Amey-Thakur/ACHIEVEMENTS#iit-bombay)
+ - [Intel](https://github.com/Amey-Thakur/ACHIEVEMENTS#intel)
+ - [Internships](https://github.com/Amey-Thakur/ACHIEVEMENTS#internships)
+ - [LTCE Webinar](https://github.com/Amey-Thakur/ACHIEVEMENTS#ltce-webinar)
+ - [MathWorks](https://github.com/Amey-Thakur/ACHIEVEMENTS#mathworks)
+ - [Microsoft](https://github.com/Amey-Thakur/ACHIEVEMENTS#microsoft)
+ - [Projects](https://github.com/Amey-Thakur/ACHIEVEMENTS#projects)
+ - [Quizzes](https://github.com/Amey-Thakur/ACHIEVEMENTS#quizzes)
+ - [Research Papers](https://github.com/Amey-Thakur/ACHIEVEMENTS#research-papers)
+ - [Stanford University School of Medicine](https://github.com/Amey-Thakur/ACHIEVEMENTS#stanford-university-school-of-medicine)
+ - [Stanford University](https://github.com/Amey-Thakur/ACHIEVEMENTS#stanford-university)
+ - [Terna Engineering College](https://github.com/Amey-Thakur/ACHIEVEMENTS#terna-engineering-college)
+ - [Udemy](https://github.com/Amey-Thakur/ACHIEVEMENTS#udemy)
+ - [VIA Institute on Character](https://github.com/Amey-Thakur/ACHIEVEMENTS#via-institute-on-character)
+
+---
+
+### WEBSITES & SOCIAL LINKS
 
 [![arxiv-logo](https://user-images.githubusercontent.com/54937357/126509573-54065601-9167-4555-9a02-8f274bd68eaf.png)](https://arxiv.org/a/thakur_a_3.html) &nbsp; &nbsp; &nbsp;
 [![Google-Scholar-logo](https://user-images.githubusercontent.com/54937357/126510942-096dfe96-ab3b-4ae3-b711-61539bad1626.png)](https://scholar.google.com/citations?user=0inooPgAAAAJ) &nbsp; &nbsp; &nbsp;
