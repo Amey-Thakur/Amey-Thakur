@@ -31,9 +31,9 @@ Here are some ideas to get you started:
 [![Linked in](https://user-images.githubusercontent.com/54937357/126513520-a9a3a301-101c-4e39-ab00-a2ec114da8e7.png)](https://www.linkedin.com/in/amey-thakur/) &nbsp; &nbsp; &nbsp;
 [![Reddit](https://user-images.githubusercontent.com/54937357/126513868-f71f58df-ea51-42ff-aa92-77e57a6c445e.png)](https://www.reddit.com/user/iameythakur) &nbsp; &nbsp; &nbsp;
 [![ResearchGate](https://user-images.githubusercontent.com/54937357/126514422-ba0e7de1-cbc2-4186-94d9-39e8a22c1c78.png)](https://www.researchgate.net/profile/Amey-Thakur) &nbsp; &nbsp; &nbsp;
-[![Telegram](https://user-images.githubusercontent.com/54937357/126516270-b25c74a3-98e5-48f1-ba9c-833b80ca3f7f.jpg)
+[![Telegram](https://user-images.githubusercontent.com/54937357/126516748-eeb985b4-1341-4e6d-9cf1-d3f0d8ec6a91.jpg)
 ](https://t.me/ameythakur) &nbsp; &nbsp; &nbsp;
-[![Twitter](https://user-images.githubusercontent.com/54937357/126516002-e078c9a7-05c0-4081-911f-c0b3ed6e9096.png)](https://twitter.com/iameythakur)
+[![Twitter](https://user-images.githubusercontent.com/54937357/126516637-c9c166c1-a377-4d5b-a16b-37a29143121a.png)](https://twitter.com/iameythakur)
 
 
 
