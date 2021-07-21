@@ -21,4 +21,4 @@ Here are some ideas to get you started:
 
 ### CONNECT WITH ME 
 
-  <[LinkedIn](https://www.linkedin.com/in/amey-thakur/)
+<[LinkedIn](https://www.linkedin.com/in/amey-thakur/)
