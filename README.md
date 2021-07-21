@@ -19,7 +19,7 @@ Here are some ideas to get you started:
 
 ## MY CERTIFICATIONS & ACHIEVEMENTS
 
->[Have a look!](https://github.com/Amey-Thakur/ACHIEVEMENTS#readme)
+>[HAVE A LOOK!](https://github.com/Amey-Thakur/ACHIEVEMENTS#readme)
 
 ## WEBSITES & SOCIAL LINKS
 
