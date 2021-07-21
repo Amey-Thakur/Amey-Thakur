@@ -1,5 +1,7 @@
 ## NAMASKAR, THIS IS AMEY THAKUR
 
+I'm a computer engineering student and a self-paced learner who loves to do research and learn new things every day. Committed to successful project rollouts with the ability to work with all types of personalities. Proud team player.
+
 <!--
 **Amey-Thakur/Amey-Thakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
