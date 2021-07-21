@@ -17,8 +17,26 @@ Here are some ideas to get you started:
 
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
 
+### MY CERTIFICATIONS & ACHIEVEMENTS
 
+[Have a look!](https://github.com/Amey-Thakur/ACHIEVEMENTS#readme)
 
-### CONNECT WITH ME 
+### WEBSITES & SOCIAL LINKS
 
-<[LinkedIn](https://www.linkedin.com/in/amey-thakur/)
+[arXiv](https://arxiv.org/a/thakur_a_3.html)
+
+[Google Scholar](https://scholar.google.com/citations?user=0inooPgAAAAJ)
+
+[Instagram](https://www.instagram.com/iameythakur)
+
+[Kaggle](https://www.kaggle.com/ameythakur20)
+
+[LinkedIn](https://www.linkedin.com/in/amey-thakur/)
+
+[Reddit](https://www.reddit.com/user/iameythakur)
+
+[ResearchGate](https://www.researchgate.net/profile/Amey-Thakur)
+
+[Telegram](https://t.me/ameythakur)
+
+[Twitter](https://twitter.com/iameythakur)
