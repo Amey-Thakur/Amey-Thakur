@@ -33,7 +33,7 @@ Here are some ideas to get you started:
  - [IBM](https://github.com/Amey-Thakur/ACHIEVEMENTS#ibm)
  - [IIT Bombay](https://github.com/Amey-Thakur/ACHIEVEMENTS#iit-bombay)
  - [Intel](https://github.com/Amey-Thakur/ACHIEVEMENTS#intel)
- - [Internships](https://github.com/Amey-Thakur/ACHIEVEMENTS#internships)
+ - [Internships](https://github.com/Amey-Thakur/ACHIEVEMENTS#internships)          <--- My Experience
  - [LTCE Webinar](https://github.com/Amey-Thakur/ACHIEVEMENTS#ltce-webinar)
  - [MathWorks](https://github.com/Amey-Thakur/ACHIEVEMENTS#mathworks)
  - [Microsoft](https://github.com/Amey-Thakur/ACHIEVEMENTS#microsoft)
