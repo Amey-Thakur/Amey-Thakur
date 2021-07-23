@@ -70,7 +70,7 @@ Here are some ideas to get you started:
 
 ---
 
-<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Amey-Thakur" alt="Amey-Thakur" /></a> </p>
+<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Amey-Thakur&margin-w=15" alt="Amey-Thakur" /></a> </p>
 
 <p align="center">![trophy](https://github-profile-trophy.vercel.app/?username=Amey-Thakur)</p>
 
