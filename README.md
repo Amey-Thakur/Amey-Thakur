@@ -19,6 +19,8 @@ Here are some ideas to get you started:
 
 >![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
 
+<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Amey-Thakur&margin-w=15" alt="Amey-Thakur" /></a> </p>
+
 ---
 
 ### MY CERTIFICATIONS & ACHIEVEMENTS
@@ -70,9 +72,9 @@ Here are some ideas to get you started:
 
 ---
 
-<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Amey-Thakur&margin-w=15" alt="Amey-Thakur" /></a> </p>
 
-<p align="center">![trophy](https://github-profile-trophy.vercel.app/?username=Amey-Thakur)</p>
+
+![trophy](https://github-profile-trophy.vercel.app/?username=Amey-Thakur)
 
 
 
