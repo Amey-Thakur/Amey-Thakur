@@ -17,7 +17,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
->![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
+>![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=skyblue&style=flat-square&label=PROFILE+VIEWS)
 
 <p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Amey-Thakur&margin-w=30" alt="Amey-Thakur" /></a> </p>
 
