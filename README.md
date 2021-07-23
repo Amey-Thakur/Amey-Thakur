@@ -74,7 +74,7 @@ Here are some ideas to get you started:
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&locale=en" alt="Amey-Thakur" /></p>
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&" alt="Amey-Thakur" /></p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Amey-Thakur" alt="Amey-Thakur" /></a> </p>
+<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Amey-Thakur" alt="Amey-Thakur" /></a> </p>
 
 
 
