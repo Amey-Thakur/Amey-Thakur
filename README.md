@@ -18,7 +18,7 @@ Here are some ideas to get you started:
 -->
 
 >![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
-><p> <a href="https://twitter.com/iameythakur" target="blank"><img src="https://img.shields.io/twitter/follow/iameythakur?logo=twitter&style=for-the-badge" alt="iameythakur" /></a> </p>
+<a href="https://twitter.com/iameythakur" target="blank"><img src="https://img.shields.io/twitter/follow/iameythakur?logo=twitter&style=for-the-badge" alt="iameythakur" /></a>
 
 ---
 
