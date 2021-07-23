@@ -69,3 +69,8 @@ Here are some ideas to get you started:
 <p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=Amey-Thakur&show_icons=true&locale=en&layout=compact" alt="Amey-Thakur" /></p>
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&locale=en" alt="Amey-Thakur" /></p>
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&" alt="Amey-Thakur" /></p>
+
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Amey-Thakur" alt="Amey-Thakur" /></a> </p>
+
+<p align="left"> <a href="https://twitter.com/iameythakur" target="blank"><img src="https://img.shields.io/twitter/follow/iameythakur?logo=twitter&style=for-the-badge" alt="iameythakur" /></a> </p>
+
