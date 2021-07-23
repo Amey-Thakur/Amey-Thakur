@@ -65,3 +65,7 @@ Here are some ideas to get you started:
 [![ResearchGate](https://user-images.githubusercontent.com/54937357/126514422-ba0e7de1-cbc2-4186-94d9-39e8a22c1c78.png)](https://www.researchgate.net/profile/Amey-Thakur) &nbsp; &nbsp; &nbsp;
 [![Telegram](https://user-images.githubusercontent.com/54937357/126516748-eeb985b4-1341-4e6d-9cf1-d3f0d8ec6a91.jpg)](https://t.me/ameythakur) &nbsp; &nbsp; &nbsp;
 [![Twitter](https://user-images.githubusercontent.com/54937357/126516637-c9c166c1-a377-4d5b-a16b-37a29143121a.png)](https://twitter.com/iameythakur)
+
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=Amey-Thakur&show_icons=true&locale=en&layout=compact" alt="Amey-Thakur" /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&locale=en" alt="Amey-Thakur" /></p>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&" alt="Amey-Thakur" /></p>
