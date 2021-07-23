@@ -72,9 +72,9 @@ Here are some ideas to get you started:
 
 ---
 
-<p align="center"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=Amey-Thakur&show_icons=true&locale=en&layout=compact" alt="Amey-Thakur" /></p> &nbsp; &nbsp; &nbsp;
+<p align="center"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=Amey-Thakur&show_icons=true&locale=en&layout=compact" alt="Amey-Thakur" /></p> 
 
-<p align="center">&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&locale=en" alt="Amey-Thakur" /></p> &nbsp; &nbsp; &nbsp;
+<p align="center"><img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&locale=en" alt="Amey-Thakur" /></p> 
 
 <p align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&" alt="Amey-Thakur" /></p>
 
