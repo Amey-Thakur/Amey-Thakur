@@ -49,6 +49,7 @@ Here are some ideas to get you started:
  - [Stanford University](https://github.com/Amey-Thakur/ACHIEVEMENTS#stanford-university)
  - [Terna Engineering College](https://github.com/Amey-Thakur/ACHIEVEMENTS#terna-engineering-college)
  - [Udemy](https://github.com/Amey-Thakur/ACHIEVEMENTS#udemy)
+ - [University of Cambridge](https://github.com/Amey-Thakur/ACHIEVEMENTS/#university-of-cambridge)
  - [VIA Institute on Character](https://github.com/Amey-Thakur/ACHIEVEMENTS#via-institute-on-character)
 
 ---
