@@ -87,4 +87,9 @@ Here are some ideas to get you started:
 <p align="center">&nbsp;&nbsp;&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&locale=en" alt="Amey-Thakur" /></p> 
 
 ---
+
 <p align="center">&nbsp;<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&" alt="Amey-Thakur" /></p>
+
+---
+
+<p align="center"> THANK YOU FOR YOUR VISIT </p>
