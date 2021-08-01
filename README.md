@@ -88,18 +88,3 @@ Here are some ideas to get you started:
 
 ---
 <p align="center">&nbsp;<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&" alt="Amey-Thakur" /></p>
-
-
-## Github Stats
-<a href="https://github.com/venugopalkadamba">
-  <img align="center" alt="Venu Gopal Github Stats" src="https://github-readme-stats.vercel.app/api?username=venugopalkadamba&show_icons=true&theme=tokyonight">
-</a>
-</div>
-
-<div align="center">
-
-## Top Languages
-<a href="https://github.com/venugopalkadamba">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=venugopalkadamba&theme=tokyonight&layout=compact">
-</a>
- </div>
