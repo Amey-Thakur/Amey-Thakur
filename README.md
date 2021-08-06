@@ -59,6 +59,7 @@ Here are some ideas to get you started:
 ><a href="https://twitter.com/iameythakur" target="blank"><img src="https://img.shields.io/twitter/follow/iameythakur?logo=twitter&style=for-the-badge&color=blue&style=flat-square" alt="iameythakur" /></a>
 
 [![arxiv-logo](https://user-images.githubusercontent.com/54937357/126509573-54065601-9167-4555-9a02-8f274bd68eaf.png)](https://arxiv.org/a/thakur_a_3.html) &nbsp; &nbsp; &nbsp;
+[![Clubhouse](https://user-images.githubusercontent.com/54937357/128518748-dbbf03b9-cb23-4867-a376-3099bddbbf5e.png)](https://www.clubhouse.com/@ameythakur) &nbsp; &nbsp; &nbsp;
 [![facebook](https://user-images.githubusercontent.com/54937357/127763744-3a5c9e3d-16b0-4633-a462-054c054830f4.png)](https://www.facebook.com/iameythakur) &nbsp; &nbsp; &nbsp;
 [![github](https://user-images.githubusercontent.com/54937357/126553108-d50d51f3-5d73-46a9-bd47-9ce55eae1d4c.png)](https://github.com/Amey-Thakur) &nbsp; &nbsp; &nbsp;
 [![Google-Scholar-logo](https://user-images.githubusercontent.com/54937357/126510942-096dfe96-ab3b-4ae3-b711-61539bad1626.png)](https://scholar.google.com/citations?user=0inooPgAAAAJ) &nbsp; &nbsp; &nbsp;
