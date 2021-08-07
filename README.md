@@ -15,6 +15,18 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
+
+```bash
+.
+├── code
+│   └── Data_preparation_and_Analysis.ipynb
+├── input
+│   ├── sample_submission.xlsx
+│   ├── test.csv
+│   └── train.csv
+├── README.md
+└── submissions
+```
 -->
 
 >![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
