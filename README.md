@@ -27,6 +27,9 @@ Here are some ideas to get you started:
 ├── README.md
 └── submissions
 ```
+
+:white_check_mark:
+:x:
 -->
 
 >![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
