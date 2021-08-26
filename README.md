@@ -109,5 +109,3 @@ Here are some ideas to get you started:
 <p align="center"> THANK YOU FOR YOUR VISIT </p>
 
 <p align="center"> HAVE A GREAT TIME! </p>
-
-
