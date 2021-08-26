@@ -86,7 +86,8 @@ Here are some ideas to get you started:
 [![Reddit](https://user-images.githubusercontent.com/54937357/126513868-f71f58df-ea51-42ff-aa92-77e57a6c445e.png)](https://www.reddit.com/user/iameythakur) &nbsp; &nbsp; &nbsp;
 [![ResearchGate](https://user-images.githubusercontent.com/54937357/126514422-ba0e7de1-cbc2-4186-94d9-39e8a22c1c78.png)](https://www.researchgate.net/profile/Amey-Thakur) &nbsp; &nbsp; &nbsp;
 [![Telegram](https://user-images.githubusercontent.com/54937357/126516748-eeb985b4-1341-4e6d-9cf1-d3f0d8ec6a91.jpg)](https://t.me/ameythakur) &nbsp; &nbsp; &nbsp;
-[![Twitter](https://user-images.githubusercontent.com/54937357/126516637-c9c166c1-a377-4d5b-a16b-37a29143121a.png)](https://twitter.com/iameythakur)
+[![Twitter](https://user-images.githubusercontent.com/54937357/126516637-c9c166c1-a377-4d5b-a16b-37a29143121a.png)](https://twitter.com/iameythakur) &nbsp; &nbsp; &nbsp;
+[![viXra](https://user-images.githubusercontent.com/54937357/130921525-903f04db-8b12-40d1-b995-b9cbeed97137.jpg)](https://vixra.org/author/amey_thakur)
 
 ---
 
