@@ -95,15 +95,17 @@ Here are some ideas to get you started:
 
 ---
 
-<p align="center"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=Amey-Thakur&show_icons=true&locale=en&layout=compact" alt="Amey-Thakur" /></p> 
+  <br/>
+    <a href="https://github.com/Amey-Thakur/github-readme-stats"><img alt="Amey's Github Stats" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117" /></a>
+  <a href="https://github.com/Amey-Thakur/github-readme-stats"><img alt="Amey's Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amey-Thakur&langs_count=8&count_private=true&layout=compact&theme=react&hide_border=true&bg_color=0D1117" /></a>
 
 ---
 
-<p align="center">&nbsp;&nbsp;&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&locale=en" alt="Amey-Thakur" /></p> 
+<p align="center">&nbsp;<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&theme=black-ice&hide_border=true&stroke=0000&background=060A0CD0" alt="Amey-Thakur" /></p>
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&" alt="Amey-Thakur" /></p>
+<a href="https://github.com/Amey-Thakur/github-readme-activity-graph"><img alt="Amey's ACTIVITY GRAPH" src="https://activity-graph.herokuapp.com/graph?username=Amey-Thakur&bg_color=0D1117&color=FFFFFF&line=FFFFFF&point=FFFFFF&hide_border=true" /></a>
 
 ---
 
@@ -111,4 +113,4 @@ Here are some ideas to get you started:
 
 <p align="center"> HAVE A GREAT TIME! </p>
 
-
+##
