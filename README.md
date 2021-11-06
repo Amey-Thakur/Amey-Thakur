@@ -52,6 +52,7 @@ Here are some ideas to get you started:
  - [IBM](https://github.com/Amey-Thakur/ACHIEVEMENTS#ibm)
  - [IIT Bombay](https://github.com/Amey-Thakur/ACHIEVEMENTS#iit-bombay)
  - [Intel](https://github.com/Amey-Thakur/ACHIEVEMENTS#intel)
+ - [Julia Academy](https://github.com/Amey-Thakur/ACHIEVEMENTS#julia-academy)
  - [Kaggle](https://github.com/Amey-Thakur/ACHIEVEMENTS/#kaggle)
  - [LTCE Webinar](https://github.com/Amey-Thakur/ACHIEVEMENTS#ltce-webinar)
  - [MathWorks](https://github.com/Amey-Thakur/ACHIEVEMENTS#mathworks)
