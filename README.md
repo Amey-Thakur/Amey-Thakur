@@ -122,6 +122,10 @@ Here are some ideas to get you started:
 
 <p align="center"> THANK YOU FOR YOUR VISIT </p>
 
+<p align="center">
+  <img width="200" height="100" src="https://math.sun.ac.za/prodinger/thanks.gif">
+</p>
+
 <p align="center"> HAVE A GREAT TIME! </p>
 
 ##
