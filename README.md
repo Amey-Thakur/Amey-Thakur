@@ -39,6 +39,11 @@ Here are some ideas to get you started:
 
 >![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
 
+<a href="https://github.com/Amey-Thakur/github-readme-activity-graph"><img alt="Amey's ACTIVITY GRAPH" src="https://activity-graph.herokuapp.com/graph?username=Amey-Thakur&bg_color=0D1117&color=FFFFFF&line=FFFFFF&point=FFFFFF&hide_border=true" /></a>
+
+---
+
+
 -->
 
 
@@ -116,20 +121,9 @@ Here are some ideas to get you started:
 
 ---
 
-<a href="https://github.com/Amey-Thakur/github-readme-activity-graph"><img alt="Amey's ACTIVITY GRAPH" src="https://activity-graph.herokuapp.com/graph?username=Amey-Thakur&bg_color=0D1117&color=FFFFFF&line=FFFFFF&point=FFFFFF&hide_border=true" /></a>
-
----
-
 <p align="center"> THANK YOU FOR YOUR VISIT </p>
-
-<p align="center">
-  <img width="200" height="100" src="https://math.sun.ac.za/prodinger/thanks.gif">
-</p>
 
 <p align="center"> HAVE A GREAT TIME! </p>
 
 ##
-
-
-
 
