@@ -121,6 +121,10 @@ Here are some ideas to get you started:
 
 ---
 
+<a href="https://github.com/Amey-Thakur/github-readme-activity-graph"><img alt="Amey's ACTIVITY GRAPH" src="https://activity-graph.herokuapp.com/graph?username=Amey-Thakur&bg_color=0D1117&color=FFFFFF&line=FFFFFF&point=FFFFFF&hide_border=true" /></a>
+
+---
+
 <p align="center"> <b> THANK YOU FOR YOUR VISIT <b> </p>
 
 <p align="center"> <b> HAVE A GREAT TIME! <b> </p>
