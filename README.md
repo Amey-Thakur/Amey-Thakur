@@ -4,7 +4,7 @@
 
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS) 
 
-> [![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/0zj8w0) 
+> [![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/0zj8w0)             
 
 <!--
 **Amey-Thakur/Amey-Thakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -31,6 +31,8 @@ Here are some ideas to get you started:
 ├── README.md
 └── submissions
 ```
+
+> <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="amey-thakur" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/amey-thakur?trk=profile-badge">AMEY THAKUR</a></div>
 
 :white_check_mark:
 :x:
