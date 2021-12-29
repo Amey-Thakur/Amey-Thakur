@@ -32,6 +32,8 @@ Here are some ideas to get you started:
 └── submissions
 ```
 
+><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=cxlrMN5wWP41_0DwBeGslb9fN4hgPgEac7FMGQ4wQ_0"></script>
+
 > <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="amey-thakur" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/amey-thakur?trk=profile-badge">AMEY THAKUR</a></div>
 
 :white_check_mark:
