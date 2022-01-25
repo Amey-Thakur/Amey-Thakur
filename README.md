@@ -4,7 +4,7 @@
 
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS) 
 
-> **[![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/0zj8w0)          <--- RESUME**
+> **[![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/0zj8w0)          <--- Résumé**
 
 <!--
 **Amey-Thakur/Amey-Thakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
