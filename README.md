@@ -1,10 +1,10 @@
 ## NAMASKAR, THIS IS AMEY THAKUR
 
->I'm a computer engineering student and a self-paced learner who loves to do research and learn new things every day. Committed to successful project rollouts with the ability to work with all types of personalities. Proud team player. 
+>**_I'm a computer engineering student and a self-paced learner who loves to do research and learn new things every day. Committed to successful project rollouts with the ability to work with all types of personalities. Proud team player._**
 
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS) 
 
-> [![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/0zj8w0)             
+> **[![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/0zj8w0)          <--- RESUME**
 
 <!--
 **Amey-Thakur/Amey-Thakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -57,34 +57,34 @@ Here are some ideas to get you started:
 
 ### MY CERTIFICATIONS & ACHIEVEMENTS
 
->[HAVE A LOOK!](https://github.com/Amey-Thakur/ACHIEVEMENTS#readme)
+>**[HAVE A LOOK!](https://github.com/Amey-Thakur/ACHIEVEMENTS#readme)**
 
- - [COE Pune](https://github.com/Amey-Thakur/ACHIEVEMENTS#coe-pune)
- - [Coursera](https://github.com/Amey-Thakur/ACHIEVEMENTS#coursera)
- - [Eduonix](https://github.com/Amey-Thakur/ACHIEVEMENTS#eduonix)
- - [Engineering](https://github.com/Amey-Thakur/ACHIEVEMENTS#engineering)          <--- Throughout Courses
- - [Experience](https://github.com/Amey-Thakur/ACHIEVEMENTS#experience)          <--- Work Experience
- - [Google](https://github.com/Amey-Thakur/ACHIEVEMENTS#google)
- - [Harvard Medical School](https://github.com/Amey-Thakur/ACHIEVEMENTS#harvard-medical-school)
- - [IBM](https://github.com/Amey-Thakur/ACHIEVEMENTS#ibm)
- - [IIT Bombay](https://github.com/Amey-Thakur/ACHIEVEMENTS#iit-bombay)
- - [Intel](https://github.com/Amey-Thakur/ACHIEVEMENTS#intel)
- - [Julia Academy](https://github.com/Amey-Thakur/ACHIEVEMENTS#julia-academy)
- - [Kaggle](https://github.com/Amey-Thakur/ACHIEVEMENTS/#kaggle)
- - [LTCE Webinar](https://github.com/Amey-Thakur/ACHIEVEMENTS#ltce-webinar)
- - [MathWorks](https://github.com/Amey-Thakur/ACHIEVEMENTS#mathworks)
- - [Microsoft](https://github.com/Amey-Thakur/ACHIEVEMENTS#microsoft)
- - [NVIDIA Deep Learning Institute](https://github.com/Amey-Thakur/ACHIEVEMENTS#nvidia-deep-learning-institute)
- - [Projects](https://github.com/Amey-Thakur/ACHIEVEMENTS#projects)          <--- Project Work
- - [Quizzes](https://github.com/Amey-Thakur/ACHIEVEMENTS#quizzes)
- - [Research Papers](https://github.com/Amey-Thakur/ACHIEVEMENTS#research-papers)          <--- Research Work
- - [Sports](https://github.com/Amey-Thakur/ACHIEVEMENTS/#sports)          <--- Sports Activities
- - [Stanford University School of Medicine](https://github.com/Amey-Thakur/ACHIEVEMENTS#stanford-university-school-of-medicine)
- - [Stanford University](https://github.com/Amey-Thakur/ACHIEVEMENTS#stanford-university)
- - [Terna Engineering College](https://github.com/Amey-Thakur/ACHIEVEMENTS#terna-engineering-college)
- - [Udemy](https://github.com/Amey-Thakur/ACHIEVEMENTS#udemy)
- - [University of Cambridge](https://github.com/Amey-Thakur/ACHIEVEMENTS/#university-of-cambridge)
- - [VIA Institute on Character](https://github.com/Amey-Thakur/ACHIEVEMENTS#via-institute-on-character)
+ - **[COE Pune](https://github.com/Amey-Thakur/ACHIEVEMENTS#coe-pune)**
+ - **[Coursera](https://github.com/Amey-Thakur/ACHIEVEMENTS#coursera)**
+ - **[Eduonix](https://github.com/Amey-Thakur/ACHIEVEMENTS#eduonix)**
+ - **[Engineering](https://github.com/Amey-Thakur/ACHIEVEMENTS#engineering)          <--- Throughout Courses**
+ - **[Experience](https://github.com/Amey-Thakur/ACHIEVEMENTS#experience)          <--- Work Experience**
+ - **[Google](https://github.com/Amey-Thakur/ACHIEVEMENTS#google)**
+ - **[Harvard Medical School](https://github.com/Amey-Thakur/ACHIEVEMENTS#harvard-medical-school)**
+ - **[IBM](https://github.com/Amey-Thakur/ACHIEVEMENTS#ibm)**
+ - **[IIT Bombay](https://github.com/Amey-Thakur/ACHIEVEMENTS#iit-bombay)**
+ - **[Intel](https://github.com/Amey-Thakur/ACHIEVEMENTS#intel)**
+ - **[Julia Academy](https://github.com/Amey-Thakur/ACHIEVEMENTS#julia-academy)**
+ - **[Kaggle](https://github.com/Amey-Thakur/ACHIEVEMENTS/#kaggle)**
+ - **[LTCE Webinar](https://github.com/Amey-Thakur/ACHIEVEMENTS#ltce-webinar)**
+ - **[MathWorks](https://github.com/Amey-Thakur/ACHIEVEMENTS#mathworks)**
+ - **[Microsoft](https://github.com/Amey-Thakur/ACHIEVEMENTS#microsoft)**
+ - **[NVIDIA Deep Learning Institute](https://github.com/Amey-Thakur/ACHIEVEMENTS#nvidia-deep-learning-institute)**
+ - **[Projects](https://github.com/Amey-Thakur/ACHIEVEMENTS#projects)          <--- Project Work**
+ - **[Quizzes](https://github.com/Amey-Thakur/ACHIEVEMENTS#quizzes)**
+ - **[Research Papers](https://github.com/Amey-Thakur/ACHIEVEMENTS#research-papers)          <--- Research Work**
+ - **[Sports](https://github.com/Amey-Thakur/ACHIEVEMENTS/#sports)          <--- Sports Activities**
+ - **[Stanford University School of Medicine](https://github.com/Amey-Thakur/ACHIEVEMENTS#stanford-university-school-of-medicine)**
+ - **[Stanford University](https://github.com/Amey-Thakur/ACHIEVEMENTS#stanford-university)**
+ - **[Terna Engineering College](https://github.com/Amey-Thakur/ACHIEVEMENTS#terna-engineering-college)**
+ - **[Udemy](https://github.com/Amey-Thakur/ACHIEVEMENTS#udemy)**
+ - **[University of Cambridge](https://github.com/Amey-Thakur/ACHIEVEMENTS/#university-of-cambridge)**
+ - **[VIA Institute on Character](https://github.com/Amey-Thakur/ACHIEVEMENTS#via-institute-on-character)**
 
 ---
 
@@ -129,12 +129,11 @@ Here are some ideas to get you started:
 
 ---
 
-<p align="center"> <b> THANK YOU FOR YOUR VISIT <b> </p>
+**<p align="center"> <b> THANK YOU FOR YOUR VISIT <b> </p>**
 
-<p align="center"> <b> HAVE A GREAT TIME! <b> </p>
+**<p align="center"> <b> HAVE A GREAT TIME! <b> </p>**
 
 ##
- 
  
  
  
