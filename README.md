@@ -50,8 +50,6 @@ Here are some ideas to get you started:
 
 [![Reddit](https://user-images.githubusercontent.com/54937357/126513868-f71f58df-ea51-42ff-aa92-77e57a6c445e.png)](https://www.reddit.com/user/iameythakur) &nbsp; &nbsp; &nbsp;
 
-[![Telegram](https://user-images.githubusercontent.com/54937357/126516748-eeb985b4-1341-4e6d-9cf1-d3f0d8ec6a91.jpg)](https://t.me/ameythakur) &nbsp; &nbsp; &nbsp;
-
 ---
 
 
@@ -108,6 +106,7 @@ Here are some ideas to get you started:
 [![Linked in](https://user-images.githubusercontent.com/54937357/126513520-a9a3a301-101c-4e39-ab00-a2ec114da8e7.png)](https://www.linkedin.com/in/amey-thakur/) &nbsp; &nbsp; &nbsp;
 [![ORCID](https://user-images.githubusercontent.com/54937357/126552299-08592769-5f9b-4bd5-98a1-64dd74945a28.png)](https://orcid.org/0000-0001-5644-1575) &nbsp; &nbsp; &nbsp;
 [![ResearchGate](https://user-images.githubusercontent.com/54937357/126514422-ba0e7de1-cbc2-4186-94d9-39e8a22c1c78.png)](https://www.researchgate.net/profile/Amey-Thakur) &nbsp; &nbsp; &nbsp;
+[![Telegram](https://user-images.githubusercontent.com/54937357/126516748-eeb985b4-1341-4e6d-9cf1-d3f0d8ec6a91.jpg)](https://t.me/ameythakur) &nbsp; &nbsp; &nbsp;
 [![Twitter](https://user-images.githubusercontent.com/54937357/126516637-c9c166c1-a377-4d5b-a16b-37a29143121a.png)](https://twitter.com/iameythakur) &nbsp; &nbsp; &nbsp;
 [![viXra](https://user-images.githubusercontent.com/54937357/130921525-903f04db-8b12-40d1-b995-b9cbeed97137.jpg)](https://vixra.org/author/amey_thakur)
 
@@ -138,9 +137,6 @@ Here are some ideas to get you started:
 **<p align="center"> <b> HAVE A GREAT TIME! <b> </p>**
 
 ##
- 
- 
- 
  
  
  
