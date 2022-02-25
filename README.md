@@ -7,6 +7,9 @@
 > **[![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/0zj8w0)          <--- Résumé**
 
 <!--
+
+git config --global user.email ameythakur20@gmail.com
+
 **Amey-Thakur/Amey-Thakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
