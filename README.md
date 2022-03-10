@@ -6,13 +6,11 @@
 
 > **[![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/0zj8w0)          <--- Résumé**
 
-## 
+<!--
 
 ### The Evolution of Trust
 
 People no longer trust each other. Why? And how can we fix it? An interactive guide to the game theory of trust: https://ncase.me/trust
-
-<!--
 
 git config --global user.email ameythakur20@gmail.com
 
@@ -146,4 +144,7 @@ Here are some ideas to get you started:
 **<p align="center"> <b> HAVE A GREAT TIME! <b> </p>**
 
 ##
+ 
+
+ 
  
