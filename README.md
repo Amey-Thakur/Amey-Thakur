@@ -137,7 +137,13 @@ Here are some ideas to get you started:
 
 ---
 
+<!--
+
 <a href="https://github.com/Amey-Thakur/github-readme-activity-graph"><img alt="Amey's ACTIVITY GRAPH" src="https://activity-graph.herokuapp.com/graph?username=Amey-Thakur&bg_color=0D1117&color=FFFFFF&line=FFFFFF&point=FFFFFF&hide_border=true" /></a>
+
+-->
+
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=Amey-Thakur&bg_color=000000&color=ffffff&line=00ccff&point=ffffff&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 ---
 
@@ -146,6 +152,4 @@ Here are some ideas to get you started:
 **<p align="center"> <b> HAVE A GREAT TIME! <b> </p>**
 
 ##
-
-
 
