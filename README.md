@@ -74,9 +74,6 @@ Here are some ideas to get you started:
 
 >**[HAVE A LOOK!](https://github.com/Amey-Thakur/ACHIEVEMENTS#readme)**
 
-
-<!--
-
  - **[COE Pune](https://github.com/Amey-Thakur/ACHIEVEMENTS#coe-pune)**
  - **[Coursera](https://github.com/Amey-Thakur/ACHIEVEMENTS#coursera)**
  - **[Eduonix](https://github.com/Amey-Thakur/ACHIEVEMENTS#eduonix)**
@@ -103,8 +100,6 @@ Here are some ideas to get you started:
  - **[Udemy](https://github.com/Amey-Thakur/ACHIEVEMENTS#udemy)**
  - **[University of Cambridge](https://github.com/Amey-Thakur/ACHIEVEMENTS/#university-of-cambridge)**
  - **[VIA Institute on Character](https://github.com/Amey-Thakur/ACHIEVEMENTS#via-institute-on-character)**
-
--->
 
 ---
 
