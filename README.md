@@ -4,7 +4,7 @@
 
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS) 
 
-> **[![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/ameythakur20/amey-thakur-resume)          <--- Résumé**
+> **[![AMEY THAKUR RESUME]()          <--- Résumé**
 
 <!--
 
