@@ -4,9 +4,11 @@
 
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS) 
 
-> **[![AMEY THAKUR RESUME]()          <--- Résumé**
 
 <!--
+
+
+> **[![AMEY THAKUR RESUME]()          <--- Résumé**
 
 ### The Evolution of Trust
 
