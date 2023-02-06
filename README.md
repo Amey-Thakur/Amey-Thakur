@@ -12,9 +12,6 @@
 
 > **[![AMEY THAKUR RESUME]()          <--- Résumé**
 
-### The Evolution of Trust
-
-People no longer trust each other. Why? And how can we fix it? An interactive guide to the game theory of trust: https://ncase.me/trust
 
 git config --global user.email ameythakur20@gmail.com
 
@@ -146,3 +143,9 @@ Here are some ideas to get you started:
 **<p align="center"> <b> HAVE A GREAT TIME! <b> </p>**
 
 ##
+  
+### The Evolution of Trust
+
+People no longer trust each other. Why? And how can we fix it? An interactive guide to the game theory of trust: https://ncase.me/trust
+  
+  
