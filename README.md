@@ -4,9 +4,6 @@
 
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS) 
 
-[![Magic-Button](https://user-images.githubusercontent.com/54937357/217109116-998561ce-6ded-47cc-8678-6e06b5f884de.png)](http://make-everything-ok.com)
-
-
 <!--
 
 
