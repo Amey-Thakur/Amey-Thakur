@@ -1,6 +1,16 @@
-## NAMASKAR, THIS IS AMEY THAKUR
+## Hello, World! I'm Amey Thakur
 
->**_I'm a computer engineering student and a self-paced learner who loves to do research and learn new things every day. Committed to successful project rollouts with the ability to work with all types of personalities. Proud team player._**
+Welcome to my GitHub profile! 🚀
+
+I am an AI enthusiast and research engineer with a passion for pushing the boundaries of artificial intelligence and exploring its vast potential to transform the world. 💡 As a computer engineer by profession, I find immense joy in crafting innovative solutions that blend cutting-edge technology with practical applications.
+
+Throughout my journey, I have been driven by the pursuit of knowledge and the desire to make a meaningful impact. 💪 My GitHub repositories serve as a reflection of my diverse interests and dedication to the field of artificial intelligence. Here, you will find a mix of projects ranging from machine learning algorithms, natural language processing models, computer vision applications, and much more. 🧠🤖👀
+
+One of my primary goals is to contribute to open-source projects that advance the AI community and benefit society as a whole. By collaborating with like-minded individuals, I believe we can accelerate the progress of AI research and foster a culture of shared learning. 🤝
+
+As a firm believer in the power of collaboration, I am always open to feedback and ideas. If you stumble upon any of my projects that pique your interest, don't hesitate to reach out. Whether you're interested in discussing AI concepts, exploring potential partnerships, or simply looking to brainstorm exciting new projects, I'm here to engage in enriching conversations with fellow enthusiasts. 💬🌟
+
+Feel free to connect with me via email at thakur61@uwindsor.ca or through my LinkedIn profile: [LinkedIn](https://www.linkedin.com/in/amey-thakur/). Let's embark on this thrilling journey together and shape a future where technology and humanity coexist harmoniously. Together, we can drive innovation and create a positive impact on the world. Happy coding! 😊👨‍💻
 
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS) 
 
@@ -8,9 +18,6 @@
 
 
 > **[![AMEY THAKUR RESUME]()          <--- Résumé**
-
-
-git config --global user.email ameythakur20@gmail.com
 
 **Amey-Thakur/Amey-Thakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -24,42 +31,6 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
-
-```bash
-.
-├── code
-│   └── Data_preparation_and_Analysis.ipynb
-├── input
-│   ├── sample_submission.xlsx
-│   ├── test.csv
-│   └── train.csv
-├── README.md
-└── submissions
-```
-
-><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=cxlrMN5wWP41_0DwBeGslb9fN4hgPgEac7FMGQ4wQ_0"></script>
-
-> <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="amey-thakur" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/amey-thakur?trk=profile-badge">AMEY THAKUR</a></div>
-
-<p align="center"> 
-  Visitor count<br>
-  <img src="https://profile-counter.glitch.me/Amey-Thakur/count.svg" />
-</p>
-
-:white_check_mark:
-:x:
-
-> [![AMEY THAKUR RESUME](https://user-images.githubusercontent.com/54937357/141251527-ebc8c288-dce7-48e6-98f4-d6ebce4ec68d.png)](https://rxresu.me/r/3rmr8o)
-
->![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=brightgreen&style=flat-square&label=PROFILE+VIEWS)
-
-<a href="https://github.com/Amey-Thakur/github-readme-activity-graph"><img alt="Amey's ACTIVITY GRAPH" src="https://activity-graph.herokuapp.com/graph?username=Amey-Thakur&bg_color=0D1117&color=FFFFFF&line=FFFFFF&point=FFFFFF&hide_border=true" /></a>
-
-
-[![Clubhouse](https://user-images.githubusercontent.com/54937357/128518748-dbbf03b9-cb23-4867-a376-3099bddbbf5e.png)](https://www.clubhouse.com/@ameythakur) &nbsp; &nbsp; &nbsp;
-
-[![Telegram](https://user-images.githubusercontent.com/54937357/126516748-eeb985b4-1341-4e6d-9cf1-d3f0d8ec6a91.jpg)](https://t.me/ameythakur) &nbsp; &nbsp; &nbsp;
-
 
 ---
 
@@ -130,10 +101,6 @@ Here are some ideas to get you started:
 <a href="https://github.com/Amey-Thakur/github-readme-activity-graph"><img alt="Amey's ACTIVITY GRAPH" src="https://activity-graph.herokuapp.com/graph?username=Amey-Thakur&bg_color=0D1117&color=FFFFFF&line=FFFFFF&point=FFFFFF&hide_border=true" /></a>
 
 -->
-
-[![Ashutosh's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=Amey-Thakur&bg_color=000000&color=ffffff&line=00ccff&point=ffffff&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
----
 
 **<p align="center"> <b> THANK YOU FOR YOUR VISIT <b> </p>**
 
