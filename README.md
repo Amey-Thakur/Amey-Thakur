@@ -10,7 +10,7 @@ One of my primary goals is to contribute to open-source projects that advance th
 
 As a firm believer in the power of collaboration, I am always open to feedback and ideas. If you stumble upon any of my projects that pique your interest, don't hesitate to reach out. Whether you're interested in discussing AI concepts, exploring potential partnerships, or simply looking to brainstorm exciting new projects, I'm here to engage in enriching conversations with fellow enthusiasts. 💬🌟
 
-Feel free to connect with me via email at thakur61@uwindsor.ca or through my LinkedIn profile: [LinkedIn](https://www.linkedin.com/in/amey-thakur/). Let's embark on this thrilling journey together and shape a future where technology and humanity coexist harmoniously. Together, we can drive innovation and create a positive impact on the world. Happy coding! 😊👨‍💻
+Feel free to connect with me via email at **thakur61@uwindsor.ca** or through my **[LinkedIn](https://www.linkedin.com/in/amey-thakur/)** profile. Let's embark on this thrilling journey together and shape a future where technology and humanity coexist harmoniously. Together, we can drive innovation and create a positive impact on the world. Happy coding! 😊👨‍💻
 
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS) 
 
