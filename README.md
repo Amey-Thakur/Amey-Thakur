@@ -63,8 +63,6 @@ Here are some ideas to get you started:
 
 ### WEBSITES & SOCIAL LINKS
 
-><a href="https://twitter.com/iameythakur" target="blank"><img src="https://img.shields.io/twitter/follow/iameythakur?logo=twitter&style=for-the-badge&color=blue&style=flat-square" alt="iameythakur" /></a>
-
 [![arXiv](https://user-images.githubusercontent.com/54937357/128647010-e941096e-1aa8-42b0-9b43-6d350918ad62.jpg)](https://arxiv.org/a/thakur_a_3.html) &nbsp; &nbsp; &nbsp;
 [![facebook](https://user-images.githubusercontent.com/54937357/127763744-3a5c9e3d-16b0-4633-a462-054c054830f4.png)](https://www.facebook.com/iameythakur) &nbsp; &nbsp; &nbsp;
 [![github](https://user-images.githubusercontent.com/54937357/126553108-d50d51f3-5d73-46a9-bd47-9ce55eae1d4c.png)](https://github.com/Amey-Thakur) &nbsp; &nbsp; &nbsp;
