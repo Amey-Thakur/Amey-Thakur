@@ -14,17 +14,10 @@ https://ca.linkedin.com/in/amey-thakur?trk=profile-badge
 
  - **[Engineering](https://github.com/Amey-Thakur/ACHIEVEMENTS#engineering)          <--- Throughout Courses**
  - **[Experience](https://github.com/Amey-Thakur/ACHIEVEMENTS#experience)          <--- Work Experience**
- - **[Google](https://github.com/Amey-Thakur/ACHIEVEMENTS#google)**
- - **[IBM](https://github.com/Amey-Thakur/ACHIEVEMENTS#ibm)**
  - **[IIT Bombay](https://github.com/Amey-Thakur/ACHIEVEMENTS#iit-bombay)**
- - **[Intel](https://github.com/Amey-Thakur/ACHIEVEMENTS#intel)**
- - **[Microsoft](https://github.com/Amey-Thakur/ACHIEVEMENTS#microsoft)**
- - **[NVIDIA Deep Learning Institute](https://github.com/Amey-Thakur/ACHIEVEMENTS#nvidia-deep-learning-institute)**
  - **[Projects](https://github.com/Amey-Thakur/ACHIEVEMENTS#projects)          <--- Project Work**
  - **[Research Papers](https://github.com/Amey-Thakur/ACHIEVEMENTS#research-papers)          <--- Research Work**
  - **[Sports](https://github.com/Amey-Thakur/ACHIEVEMENTS/#sports)          <--- Sports Activities**
- - **[Stanford University](https://github.com/Amey-Thakur/ACHIEVEMENTS#stanford-university)**
-
 ---
 
 ### WEBSITES & SOCIAL LINKS
