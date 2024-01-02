@@ -30,16 +30,12 @@ https://ca.linkedin.com/in/amey-thakur?trk=profile-badge
 ### WEBSITES & SOCIAL LINKS
 
 [![arXiv](https://user-images.githubusercontent.com/54937357/128647010-e941096e-1aa8-42b0-9b43-6d350918ad62.jpg)](https://arxiv.org/a/thakur_a_3.html) &nbsp; &nbsp; &nbsp;
-[![facebook](https://user-images.githubusercontent.com/54937357/127763744-3a5c9e3d-16b0-4633-a462-054c054830f4.png)](https://www.facebook.com/iameythakur) &nbsp; &nbsp; &nbsp;
 [![github](https://user-images.githubusercontent.com/54937357/126553108-d50d51f3-5d73-46a9-bd47-9ce55eae1d4c.png)](https://github.com/Amey-Thakur) &nbsp; &nbsp; &nbsp;
 [![Google Scholar](https://user-images.githubusercontent.com/54937357/128647066-f7ad94a4-9238-475a-8b05-31d623e7bccc.png)](https://scholar.google.com/citations?user=0inooPgAAAAJ) &nbsp; &nbsp; &nbsp;
-[![Instagram](https://user-images.githubusercontent.com/54937357/128647103-fc9fe915-e8b1-4152-b5d8-51b42933953a.jpg)](https://www.instagram.com/iameythakur) &nbsp; &nbsp; &nbsp;
 [![kaggle](https://user-images.githubusercontent.com/54937357/126513065-fc04f954-a3b4-4e9d-878b-92b6c0d61753.jpg)](https://www.kaggle.com/ameythakur20) &nbsp; &nbsp; &nbsp;
 [![Linked in](https://user-images.githubusercontent.com/54937357/126513520-a9a3a301-101c-4e39-ab00-a2ec114da8e7.png)](https://www.linkedin.com/in/amey-thakur/) &nbsp; &nbsp; &nbsp;
 [![ORCID](https://user-images.githubusercontent.com/54937357/126552299-08592769-5f9b-4bd5-98a1-64dd74945a28.png)](https://orcid.org/0000-0001-5644-1575) &nbsp; &nbsp; &nbsp;
-[![Reddit](https://user-images.githubusercontent.com/54937357/126513868-f71f58df-ea51-42ff-aa92-77e57a6c445e.png)](https://www.reddit.com/user/iameythakur) &nbsp; &nbsp; &nbsp;
 [![ResearchGate](https://user-images.githubusercontent.com/54937357/126514422-ba0e7de1-cbc2-4186-94d9-39e8a22c1c78.png)](https://www.researchgate.net/profile/Amey-Thakur) &nbsp; &nbsp; &nbsp;
-[![Twitter](https://user-images.githubusercontent.com/54937357/126516637-c9c166c1-a377-4d5b-a16b-37a29143121a.png)](https://twitter.com/iameythakur) &nbsp; &nbsp; &nbsp;
 [![viXra](https://user-images.githubusercontent.com/54937357/130921525-903f04db-8b12-40d1-b995-b9cbeed97137.jpg)](https://vixra.org/author/amey_thakur)
 
 ---
