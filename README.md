@@ -1,7 +1,5 @@
 ## Hello, World! I'm Amey Thakur
 
-https://ca.linkedin.com/in/amey-thakur?trk=profile-badge
-
 > ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS)
 
 ---
