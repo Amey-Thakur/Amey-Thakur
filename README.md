@@ -65,6 +65,12 @@
 ---
 
 
+![Snake animation](https://github.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake.svg)
+
+
+---
+
+
 **<p align="center"> <b> THANK YOU FOR YOUR VISIT <b> </p>**
 
 **<p align="center"> <b> HAVE A GREAT TIME! <b> </p>**
