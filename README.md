@@ -17,6 +17,7 @@
  
 ### [Engineering Projects](https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn)          <--- Project Playlist
 
+### [GitHub Lists](https://github.com/Amey-Thakur?tab=stars)          <--- Repositories
 
 ---
 
