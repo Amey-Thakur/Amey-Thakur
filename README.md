@@ -1,6 +1,7 @@
 <div align="center">
 <span style="color:blue"><h1>Amey Thakur</h1></span>
-Explorer<br><br>
+
+ **Explorer** 
 
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS)
 
