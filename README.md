@@ -14,7 +14,7 @@
 ---
 
 
-<img align="center" height="250" width="400" src="https://media3.giphy.com/media/p4NLw3I4U0idi/giphy.gif?cid=ecf05e47u651twctsezhzbsw8myzchukcjxu7oeakq3ujf17&rid=giphy.gif" />
+<img align="right" height="250" width="400" src="https://media3.giphy.com/media/p4NLw3I4U0idi/giphy.gif?cid=ecf05e47u651twctsezhzbsw8myzchukcjxu7oeakq3ujf17&rid=giphy.gif" />
 
 ### [Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)          <--- Throughout Courses
  
@@ -30,7 +30,7 @@
 
 ### WEBSITES & SOCIAL LINKS
 
-<div align="center">
+<div align="left">
  
 [![Linked in](https://user-images.githubusercontent.com/54937357/126513520-a9a3a301-101c-4e39-ab00-a2ec114da8e7.png)](https://www.linkedin.com/in/amey-thakur/) &nbsp; &nbsp; &nbsp;
 [![github](https://user-images.githubusercontent.com/54937357/126553108-d50d51f3-5d73-46a9-bd47-9ce55eae1d4c.png)](https://github.com/Amey-Thakur) &nbsp; &nbsp; &nbsp;
