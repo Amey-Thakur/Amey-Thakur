@@ -26,7 +26,7 @@
 ---
 
 
-### WEBSITES & SOCIAL LINKS
+### 🔗 Connect with me
 
 <div align="left">
  
