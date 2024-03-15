@@ -11,11 +11,17 @@
 >**[HAVE A LOOK!](https://github.com/Amey-Thakur/ACHIEVEMENTS#readme)**
 
  - **[Engineering](https://github.com/Amey-Thakur/ACHIEVEMENTS#engineering)          <--- Throughout Courses**
+ 
  - **[Experience](https://github.com/Amey-Thakur/ACHIEVEMENTS#experience)          <--- Work Experience**
+ 
  - **[IIT Bombay](https://github.com/Amey-Thakur/ACHIEVEMENTS#iit-bombay)**
+ 
  - **[Projects](https://github.com/Amey-Thakur/ACHIEVEMENTS#projects)          <--- Project Work**
+ 
  - **[Research Papers](https://github.com/Amey-Thakur/ACHIEVEMENTS#research-papers)          <--- Research Work**
+ 
  - **[Sports](https://github.com/Amey-Thakur/ACHIEVEMENTS/#sports)          <--- Sports Activities**
+
 ---
 
 ### WEBSITES & SOCIAL LINKS
