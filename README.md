@@ -65,7 +65,7 @@
 ---
 
 
-![Snake animation](https://github.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake.svg)
+[![Amey's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Amey-Thakur&theme=react-dark)](https://github.com/Amey-Thakur/github-readme-activity-graph)
 
 
 ---
