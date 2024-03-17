@@ -2,7 +2,7 @@
     <img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=35&center=true&vCenter=true&width=500&height=100&duration=4000&lines=Hi+There!+👋🏻;+I'm+Amey+Thakur!;" />
 </h1>
 
-<img align="right" height="250" width="400" src="https://media3.giphy.com/media/p4NLw3I4U0idi/giphy.gif?cid=ecf05e47u651twctsezhzbsw8myzchukcjxu7oeakq3ujf17&rid=giphy.gif" />
+<img align="right" height="290" width="440" src="https://media3.giphy.com/media/p4NLw3I4U0idi/giphy.gif?cid=ecf05e47u651twctsezhzbsw8myzchukcjxu7oeakq3ujf17&rid=giphy.gif" />
 
 <div align="center">
 
@@ -12,8 +12,7 @@
 
 </div>
 
-
- - **[Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)          <--- Throughout Courses**
+ - **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)          <--- Throughout Courses**
  
  - **[Projects](https://github.com/stars/Amey-Thakur/lists/projects)          <--- Project Work**
  
