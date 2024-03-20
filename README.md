@@ -64,6 +64,3 @@
 **<p align="center"> <b> THANK YOU FOR YOUR VISIT <b> </p>**
 
 **<p align="center"> <b> HAVE A GREAT TIME! <b> </p>**
-
-
-
