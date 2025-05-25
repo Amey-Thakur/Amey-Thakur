@@ -28,7 +28,8 @@
 
 <div align="left">
  
-[![Linked in](https://user-images.githubusercontent.com/54937357/126513520-a9a3a301-101c-4e39-ab00-a2ec114da8e7.png)](https://www.linkedin.com/in/amey-thakur/) &nbsp; &nbsp; &nbsp;
+[![Linked in](https://user-images.githubusercontent.com/54937357/126513520-a9a3a301-101c-4e39-ab00-a2ec114da8e7.png)](https://www.linkedin.com/in/amey-thakur) &nbsp; &nbsp; &nbsp;
+[![Google Developers](https://github.com/user-attachments/assets/79306169-faac-4518-88bc-4c585e1b0474)](https://g.dev/ameythakur) &nbsp; &nbsp; &nbsp;
 [![Google Scholar](https://user-images.githubusercontent.com/54937357/128647066-f7ad94a4-9238-475a-8b05-31d623e7bccc.png)](https://scholar.google.com/citations?user=0inooPgAAAAJ) &nbsp; &nbsp; &nbsp;
 [![ResearchGate](https://user-images.githubusercontent.com/54937357/126514422-ba0e7de1-cbc2-4186-94d9-39e8a22c1c78.png)](https://www.researchgate.net/profile/Amey-Thakur) &nbsp; &nbsp; &nbsp;
 [![kaggle](https://user-images.githubusercontent.com/54937357/126513065-fc04f954-a3b4-4e9d-878b-92b6c0d61753.jpg)](https://www.kaggle.com/ameythakur20) &nbsp; &nbsp; &nbsp;
