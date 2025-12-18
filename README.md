@@ -9,15 +9,15 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS)
 </div>
 
-◆ **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** ⟶ Throughout Courses
+🎓 **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** ⟶ Throughout Courses
 
-◇ **[Projects](https://github.com/stars/Amey-Thakur/lists/projects)** ⟶ Curated Collection
+💡 **[Projects](https://github.com/stars/Amey-Thakur/lists/projects)** ⟶ Curated Collection
 
-▶ **[Engineering Projects](https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn)** ⟶ Video Demonstrations
+🎥 **[Engineering Projects](https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn)** ⟶ Video Demonstrations
 
-◉ **[Research Papers](https://scholar.google.ca/citations?user=0inooPgAAAAJ)** ⟶ Published Work
+📄 **[Research Papers](https://scholar.google.ca/citations?user=0inooPgAAAAJ)** ⟶ Published Work
 
-★ **[GitHub Lists](https://github.com/Amey-Thakur?tab=stars)** ⟶ Starred Repositories
+⭐ **[GitHub Lists](https://github.com/Amey-Thakur?tab=stars)** ⟶ Starred Repositories
 
 ---
 
