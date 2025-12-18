@@ -9,9 +9,13 @@
 </div>
 
 - **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING) <--- Throughout Courses**
+
 - **[Projects](https://github.com/stars/Amey-Thakur/lists/projects) <--- Project Work**
+
 - **[Engineering Projects](https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn) <--- Project Demo**
+
 - **[Research Papers](https://scholar.google.ca/citations?user=0inooPgAAAAJ) <--- Research Work**
+
 - **[GitHub Lists](https://github.com/Amey-Thakur?tab=stars) <--- Repositories**
 ---
 
