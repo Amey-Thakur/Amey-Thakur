@@ -9,19 +9,31 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS)
 </div>
 
-<div align="center">
-
-📚 **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** · Throughout Courses
-
-💼 **[Projects](https://github.com/stars/Amey-Thakur/lists/projects)** · Curated Collection
-
-🎬 **[Engineering Projects](https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn)** · Video Demonstrations
-
-📝 **[Research Papers](https://scholar.google.ca/citations?user=0inooPgAAAAJ)** · Published Work
-
-⭐ **[GitHub Lists](https://github.com/Amey-Thakur?tab=stars)** · Starred Repositories
-
-</div>
+<p align="center">
+<a href="https://github.com/Amey-Thakur/COMPUTER-ENGINEERING">
+<img src="https://img.shields.io/badge/📚_Computer_Engineering-Throughout_Courses-blue?style=for-the-badge" alt="Computer Engineering"/>
+</a>
+</p>
+<p align="center">
+<a href="https://github.com/stars/Amey-Thakur/lists/projects">
+<img src="https://img.shields.io/badge/💼_Projects-Curated_Collection-green?style=for-the-badge" alt="Projects"/>
+</a>
+</p>
+<p align="center">
+<a href="https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn">
+<img src="https://img.shields.io/badge/🎬_Engineering_Projects-Video_Demonstrations-red?style=for-the-badge" alt="Engineering Projects"/>
+</a>
+</p>
+<p align="center">
+<a href="https://scholar.google.ca/citations?user=0inooPgAAAAJ">
+<img src="https://img.shields.io/badge/📝_Research_Papers-Published_Work-orange?style=for-the-badge" alt="Research Papers"/>
+</a>
+</p>
+<p align="center">
+<a href="https://github.com/Amey-Thakur?tab=stars">
+<img src="https://img.shields.io/badge/⭐_GitHub_Lists-Starred_Repositories-purple?style=for-the-badge" alt="GitHub Lists"/>
+</a>
+</p>
 
 ---
 
