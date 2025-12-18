@@ -9,15 +9,35 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS)
 </div>
 
-- **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING) <--- Throughout Courses**
+<table align="center">
+<tr>
+<td align="center" width="50%">
+📚 <b><a href="https://github.com/Amey-Thakur/COMPUTER-ENGINEERING">Computer Engineering</a></b>
+<br><sub>Throughout Courses</sub>
+</td>
+<td align="center" width="50%">
+💼 <b><a href="https://github.com/stars/Amey-Thakur/lists/projects">Projects</a></b>
+<br><sub>Project Work</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+🎬 <b><a href="https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn">Engineering Projects</a></b>
+<br><sub>Project Demo</sub>
+</td>
+<td align="center" width="50%">
+📝 <b><a href="https://scholar.google.ca/citations?user=0inooPgAAAAJ">Research Papers</a></b>
+<br><sub>Research Work</sub>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+⭐ <b><a href="https://github.com/Amey-Thakur?tab=stars">GitHub Lists</a></b>
+<br><sub>Repositories</sub>
+</td>
+</tr>
+</table>
 
-- **[Projects](https://github.com/stars/Amey-Thakur/lists/projects) <--- Project Work**
-
-- **[Engineering Projects](https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn) <--- Project Demo**
-
-- **[Research Papers](https://scholar.google.ca/citations?user=0inooPgAAAAJ) <--- Research Work**
-
-- **[GitHub Lists](https://github.com/Amey-Thakur?tab=stars) <--- Repositories**
 ---
 
 ### 🔗 Connect with me
