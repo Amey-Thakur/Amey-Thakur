@@ -1,33 +1,23 @@
 <h1 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=35&center=true&vCenter=true&width=500&height=100&duration=4000&lines=Hi+there+👋🏻;+I'm+Amey+Thakur!;" />
 </h1>
-
 <img align="right" height="250" width="400" src="https://media3.giphy.com/media/p4NLw3I4U0idi/giphy.gif?cid=ecf05e47u651twctsezhzbsw8myzchukcjxu7oeakq3ujf17&rid=giphy.gif" />
-
 <div align="center">
 
 ### Explorer
-
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS)
-
 </div>
 
- - **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)          <--- Throughout Courses**
- 
- - **[Projects](https://github.com/stars/Amey-Thakur/lists/projects)          <--- Project Work**
- 
- - **[Engineering Projects](https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn)          <--- Project Demo**
-
- - **[Research Papers](https://scholar.google.ca/citations?user=0inooPgAAAAJ)          <--- Research Work**
-
- - **[GitHub Lists](https://github.com/Amey-Thakur?tab=stars)          <--- Repositories**
-
+- **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING) <--- Throughout Courses**
+- **[Projects](https://github.com/stars/Amey-Thakur/lists/projects) <--- Project Work**
+- **[Engineering Projects](https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn) <--- Project Demo**
+- **[Research Papers](https://scholar.google.ca/citations?user=0inooPgAAAAJ) <--- Research Work**
+- **[GitHub Lists](https://github.com/Amey-Thakur?tab=stars) <--- Repositories**
 ---
 
 ### 🔗 Connect with me
-
 <div align="left">
- 
+
 [![LinkedIn](https://github.com/user-attachments/assets/ed9780f3-ab38-4d5b-8a9d-738043af9ca1)](https://www.linkedin.com/in/amey-thakur) &nbsp; &nbsp; &nbsp;
 [![github](https://github.com/user-attachments/assets/a6d74380-5969-428b-a321-292ef58e5128)](https://github.com/Amey-Thakur) &nbsp; &nbsp; &nbsp;
 [![kaggle](https://github.com/user-attachments/assets/eb5cae5f-114b-43a2-a6cd-03ea1ce21f26)](https://www.kaggle.com/ameythakur20) &nbsp; &nbsp; &nbsp;
@@ -39,31 +29,23 @@
 [![viXra](https://user-images.githubusercontent.com/54937357/130921525-903f04db-8b12-40d1-b995-b9cbeed97137.jpg)](https://vixra.org/author/amey_thakur) &nbsp; &nbsp; &nbsp;
 [![X](https://github.com/user-attachments/assets/7bd32fde-2c3b-401d-aa13-f9b968a074d2)](https://www.x.com/iameythakur) &nbsp; &nbsp; &nbsp;
 [![Instagram](https://github.com/user-attachments/assets/ce6de52c-d025-4606-a568-ca7096cf0690)](https://www.instagram.com/iameythakur)
-
 </div>
 
 ---
-
 <p align="center">&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amey-Thakur&langs_count=8&count_private=true&layout=compact&theme=react&hide_border=true&bg_color=0D1117" alt="Amey-Thakur" /></p>
 
 ---
-
 <p align="center">&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117" alt="Amey-Thakur" /></p>
 
 ---
-
 <p align="center">&nbsp;<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&theme=black-ice&hide_border=true&stroke=0000&background=060A0CD0" alt="Amey-Thakur" /></p>
 
 ---
-
 <div align="center">
-    
-![](https://github.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake-dark.svg)
 
+![](https://github.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake-dark.svg)
 </div>
 
 ---
-
-**<p align="center"> <b> THANK YOU FOR YOUR VISIT <b> </p>**
-
-**<p align="center"> <b> HAVE A GREAT TIME! <b> </p>**
+**<p align="center"><b>THANK YOU FOR YOUR VISIT</b></p>**
+**<p align="center"><b>HAVE A GREAT TIME!</b></p>**
