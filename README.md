@@ -30,9 +30,9 @@
  
 [![LinkedIn](https://github.com/user-attachments/assets/ed9780f3-ab38-4d5b-8a9d-738043af9ca1)](https://www.linkedin.com/in/amey-thakur) &nbsp; &nbsp; &nbsp;
 [![github](https://github.com/user-attachments/assets/a6d74380-5969-428b-a321-292ef58e5128)](https://github.com/Amey-Thakur) &nbsp; &nbsp; &nbsp;
-[![kaggle](https://github.com/user-attachments/assets/80baf685-7e0f-4120-b915-b8953020ddf0)](https://www.kaggle.com/ameythakur20) &nbsp; &nbsp; &nbsp;
-[![Google Developers](https://github.com/user-attachments/assets/67815530-d91b-4ad1-812a-ab40c3b50146)](https://g.dev/ameythakur) &nbsp; &nbsp; &nbsp;
-[![Google Scholar](https://github.com/user-attachments/assets/99b4af0c-4f6b-4113-b69c-94fe212419be)](https://scholar.google.com/citations?user=0inooPgAAAAJ) &nbsp; &nbsp; &nbsp;
+[![kaggle](https://github.com/user-attachments/assets/eb5cae5f-114b-43a2-a6cd-03ea1ce21f26)](https://www.kaggle.com/ameythakur20) &nbsp; &nbsp; &nbsp;
+[![Google Developers](https://github.com/user-attachments/assets/bb996147-dd0e-44b8-99cd-f2df5524b3cf)](https://g.dev/ameythakur) &nbsp; &nbsp; &nbsp;
+[![Google Scholar](https://github.com/user-attachments/assets/6481dbeb-7fde-46c7-8e77-ff1cd44d7eb0)](https://scholar.google.com/citations?user=0inooPgAAAAJ) &nbsp; &nbsp; &nbsp;
 [![ResearchGate](https://github.com/user-attachments/assets/3c5dd12e-ef18-4dd1-8b71-58d7779c5c7e)](https://www.researchgate.net/profile/Amey-Thakur) &nbsp; &nbsp; &nbsp;
 [![arXiv](https://user-images.githubusercontent.com/54937357/128647010-e941096e-1aa8-42b0-9b43-6d350918ad62.jpg)](https://arxiv.org/a/thakur_a_3.html) &nbsp; &nbsp; &nbsp;
 [![ORCID](https://user-images.githubusercontent.com/54937357/126552299-08592769-5f9b-4bd5-98a1-64dd74945a28.png)](https://orcid.org/0000-0001-5644-1575) &nbsp; &nbsp; &nbsp;
