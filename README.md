@@ -17,23 +17,23 @@
 </td>
 <td align="center" width="50%">
 💼 <b><a href="https://github.com/stars/Amey-Thakur/lists/projects">Projects</a></b>
-<br><sub>Project Work</sub>
+<br><sub>Curated Collection</sub>
 </td>
 </tr>
 <tr>
 <td align="center" width="50%">
 🎬 <b><a href="https://www.youtube.com/playlist?list=PLGOc13Pt03SZ9INe4gyxoZnA4zAXssiLn">Engineering Projects</a></b>
-<br><sub>Project Demo</sub>
+<br><sub>Video Demonstrations</sub>
 </td>
 <td align="center" width="50%">
 📝 <b><a href="https://scholar.google.ca/citations?user=0inooPgAAAAJ">Research Papers</a></b>
-<br><sub>Research Work</sub>
+<br><sub>Published Work</sub>
 </td>
 </tr>
 <tr>
 <td align="center" colspan="2">
 ⭐ <b><a href="https://github.com/Amey-Thakur?tab=stars">GitHub Lists</a></b>
-<br><sub>Repositories</sub>
+<br><sub>Starred Repositories</sub>
 </td>
 </tr>
 </table>
