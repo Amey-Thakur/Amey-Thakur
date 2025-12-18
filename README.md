@@ -9,7 +9,7 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS)
 </div>
 
-🌐 **[Personal Website](https://amey-thakur.github.io/)** ⟶ Portfolio & Blog
+🧠 **[Personal Website](https://amey-thakur.github.io/)** ⟶ Portfolio & Blog
 
 🎓 **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** ⟶ Throughout Courses
 
