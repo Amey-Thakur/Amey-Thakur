@@ -11,7 +11,7 @@
 
 🌐 **[Personal Website](https://amey-thakur.github.io/)** ⟶ Portfolio & Blog
 
-�🎓 **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** ⟶ Throughout Courses
+🎓 **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** ⟶ Throughout Courses
 
 📁 **[Projects](https://github.com/stars/Amey-Thakur/lists/projects)** ⟶ Curated Collection
 
