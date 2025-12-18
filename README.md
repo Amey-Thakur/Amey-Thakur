@@ -54,5 +54,8 @@
 </div>
 
 ---
-**<p align="center"><b>THANK YOU FOR YOUR VISIT</b></p>**
-**<p align="center"><b>HAVE A GREAT TIME!</b></p>**
+<p align="center">
+<i>Thank you for visiting.</i>
+<br>
+<i>Have a great time!</i>
+</p>
