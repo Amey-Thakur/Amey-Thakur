@@ -55,7 +55,7 @@
 
 ---
 <p align="center">
-<i>Thank you for visiting.</i>
+Thank you for visiting.
 <br>
-<i>Have a great time!</i>
+Have a great time!
 </p>
