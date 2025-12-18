@@ -33,8 +33,8 @@
 <br>
 <p align="center">
 <a href="https://arxiv.org/a/thakur_a_3.html"><img src="https://user-images.githubusercontent.com/54937357/128647010-e941096e-1aa8-42b0-9b43-6d350918ad62.jpg" alt="arXiv" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://orcid.org/0000-0001-5644-1575"><img src="https://user-images.githubusercontent.com/54937357/126552299-08592769-5f9b-4bd5-98a1-64dd74945a28.png" alt="ORCID" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://vixra.org/author/amey_thakur"><img src="https://user-images.githubusercontent.com/54937357/130921525-903f04db-8b12-40d1-b995-b9cbeed97137.jpg" alt="viXra" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://orcid.org/0000-0001-5644-1575"><img src="https://user-images.githubusercontent.com/54937357/126552299-08592769-5f9b-4bd5-98a1-64dd74945a28.png" alt="ORCID" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.x.com/iameythakur"><img src="https://github.com/user-attachments/assets/7bd32fde-2c3b-401d-aa13-f9b968a074d2" alt="X" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.instagram.com/iameythakur"><img src="https://github.com/user-attachments/assets/ce6de52c-d025-4606-a568-ca7096cf0690" alt="Instagram" width="32" height="32"/></a>
 </p>
