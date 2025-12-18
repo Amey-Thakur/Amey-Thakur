@@ -23,20 +23,20 @@
 
 ### 🔗 Connect with me
 <p align="center">
-<a href="https://www.linkedin.com/in/amey-thakur"><img src="https://github.com/user-attachments/assets/ed9780f3-ab38-4d5b-8a9d-738043af9ca1" alt="LinkedIn"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/Amey-Thakur"><img src="https://github.com/user-attachments/assets/a6d74380-5969-428b-a321-292ef58e5128" alt="GitHub"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.kaggle.com/ameythakur20"><img src="https://github.com/user-attachments/assets/eb5cae5f-114b-43a2-a6cd-03ea1ce21f26" alt="Kaggle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://g.dev/ameythakur"><img src="https://github.com/user-attachments/assets/bb996147-dd0e-44b8-99cd-f2df5524b3cf" alt="Google Developers"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://scholar.google.com/citations?user=0inooPgAAAAJ"><img src="https://github.com/user-attachments/assets/6481dbeb-7fde-46c7-8e77-ff1cd44d7eb0" alt="Google Scholar"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.researchgate.net/profile/Amey-Thakur"><img src="https://github.com/user-attachments/assets/3c5dd12e-ef18-4dd1-8b71-58d7779c5c7e" alt="ResearchGate"/></a>
+<a href="https://www.linkedin.com/in/amey-thakur"><img src="https://github.com/user-attachments/assets/ed9780f3-ab38-4d5b-8a9d-738043af9ca1" alt="LinkedIn" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/Amey-Thakur"><img src="https://github.com/user-attachments/assets/a6d74380-5969-428b-a321-292ef58e5128" alt="GitHub" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.kaggle.com/ameythakur20"><img src="https://github.com/user-attachments/assets/eb5cae5f-114b-43a2-a6cd-03ea1ce21f26" alt="Kaggle" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://g.dev/ameythakur"><img src="https://github.com/user-attachments/assets/bb996147-dd0e-44b8-99cd-f2df5524b3cf" alt="Google Developers" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://scholar.google.com/citations?user=0inooPgAAAAJ"><img src="https://github.com/user-attachments/assets/6481dbeb-7fde-46c7-8e77-ff1cd44d7eb0" alt="Google Scholar" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.researchgate.net/profile/Amey-Thakur"><img src="https://github.com/user-attachments/assets/3c5dd12e-ef18-4dd1-8b71-58d7779c5c7e" alt="ResearchGate" width="32" height="32"/></a>
 </p>
 <br>
 <p align="center">
-<a href="https://arxiv.org/a/thakur_a_3.html"><img src="https://user-images.githubusercontent.com/54937357/128647010-e941096e-1aa8-42b0-9b43-6d350918ad62.jpg" alt="arXiv"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://orcid.org/0000-0001-5644-1575"><img src="https://user-images.githubusercontent.com/54937357/126552299-08592769-5f9b-4bd5-98a1-64dd74945a28.png" alt="ORCID"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://vixra.org/author/amey_thakur"><img src="https://user-images.githubusercontent.com/54937357/130921525-903f04db-8b12-40d1-b995-b9cbeed97137.jpg" alt="viXra"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.x.com/iameythakur"><img src="https://github.com/user-attachments/assets/7bd32fde-2c3b-401d-aa13-f9b968a074d2" alt="X"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.instagram.com/iameythakur"><img src="https://github.com/user-attachments/assets/ce6de52c-d025-4606-a568-ca7096cf0690" alt="Instagram"/></a>
+<a href="https://arxiv.org/a/thakur_a_3.html"><img src="https://user-images.githubusercontent.com/54937357/128647010-e941096e-1aa8-42b0-9b43-6d350918ad62.jpg" alt="arXiv" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://orcid.org/0000-0001-5644-1575"><img src="https://user-images.githubusercontent.com/54937357/126552299-08592769-5f9b-4bd5-98a1-64dd74945a28.png" alt="ORCID" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://vixra.org/author/amey_thakur"><img src="https://user-images.githubusercontent.com/54937357/130921525-903f04db-8b12-40d1-b995-b9cbeed97137.jpg" alt="viXra" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.x.com/iameythakur"><img src="https://github.com/user-attachments/assets/7bd32fde-2c3b-401d-aa13-f9b968a074d2" alt="X" width="32" height="32"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.instagram.com/iameythakur"><img src="https://github.com/user-attachments/assets/ce6de52c-d025-4606-a568-ca7096cf0690" alt="Instagram" width="32" height="32"/></a>
 </p>
 
 ---
