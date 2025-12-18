@@ -4,8 +4,7 @@
 <img align="right" height="250" width="400" src="https://media3.giphy.com/media/p4NLw3I4U0idi/giphy.gif?cid=ecf05e47u651twctsezhzbsw8myzchukcjxu7oeakq3ujf17&rid=giphy.gif" />
 <div align="center">
 
-![Computer Engineer](https://img.shields.io/badge/Computer_Engineer-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
-![Researcher](https://img.shields.io/badge/Researcher-00A67E?style=for-the-badge&logo=googlescholar&logoColor=white)
+<img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=20&center=true&vCenter=true&width=400&height=50&duration=3000&lines=Computer+Engineer;Researcher;" />
 
 ![Profile Views](https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat-square&label=PROFILE+VIEWS)
 </div>
