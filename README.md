@@ -42,21 +42,26 @@
 </p>
 
 ---
+
 <p align="center">&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amey-Thakur&langs_count=8&count_private=true&layout=compact&theme=react&hide_border=true&bg_color=0D1117" alt="Amey-Thakur" /></p>
 
 ---
+
 <p align="center">&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Amey-Thakur&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117" alt="Amey-Thakur" /></p>
 
 ---
+
 <p align="center">&nbsp;<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&theme=black-ice&hide_border=true&stroke=0000&background=060A0CD0" alt="Amey-Thakur" /></p>
 
 ---
+
 <div align="center">
 
 ![](https://github.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake-dark.svg)
 </div>
 
 ---
+
 <h3 align="center">Thank you for visiting.</h3>
 
 <h3 align="center">Have a great time!</h3>
