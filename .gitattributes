@@ -1,0 +1,16 @@
+# GitHub Profile Repository .gitattributes
+
+# Set default behavior to automatically detect text files and normalize line endings
+* text=auto
+
+# Explicitly declare text files to always be normalized and use LF
+*.md text
+*.yml text
+*.yaml text
+
+# Denote binary files (images, gifs, etc.)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
