@@ -1,0 +1,19 @@
+# GitHub Profile Repository .gitignore
+
+# User-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# GitHub Actions
+dist/
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.log
