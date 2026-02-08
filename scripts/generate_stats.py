@@ -113,7 +113,7 @@ def create_stats_svg(stats, username):
         <text text-anchor="middle" dy="0.35em" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="34" fill="{white}">{grade}</text>
     </g>
     
-    <text x="247.5" y="180" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="{white}" fill-opacity="0.3" font-style="italic">Now or Never</text>
+    <text x="400" y="175" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="{white}" fill-opacity="0.25" font-style="italic">Now or Never</text>
 </svg>'''
     return svg
 
@@ -199,7 +199,7 @@ def main():
         stats["stars"] = sum(repo['stargazers_count'] for repo in all_repos)
         stats["issues"] = sum(repo['open_issues_count'] for repo in all_repos)
         unique_orgs = set(repo['owner']['login'] for repo in all_repos if repo['owner']['login'] != username)
-        stats["contribs"] = len(unique_orgs)
+        stats["contribs"] = max(1, len(unique_orgs))
         
         # Log organizations for internal verification
         if unique_orgs: print(f"Identified Contributions: {', '.join(unique_orgs)}")
