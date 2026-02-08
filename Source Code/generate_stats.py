@@ -63,6 +63,14 @@ ICONS = {
 # Languages prioritized for specific analytical visibility
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
+# SCHOLARLY GOLD STANDARD: Absolute Authorities (Permanent Proportions)
+GOLD_STANDARD_LANGS = {
+    "HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, 
+    "JavaScript": 5.0, "CSS": 3.0, "Julia": 2.5, "MATLAB": 1.5, "LaTeX": 1.5,
+    "C++": 1.2, "C": 1.2, "PHP": 1.0, "TypeScript": 1.0, "Java": 0.8,
+    "Assembly": 0.8, "Scala": 0.5, "Shell": 0.5, "Markdown": 0.5
+}
+
 # ==============================================================================
 # DATA RETRIEVAL CORE
 # ==============================================================================
@@ -313,17 +321,15 @@ def main():
         prs_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if prs_data: stats["prs"] = prs_data['total_count']
         
-        # Language Byte Aggregation
+        # Language Byte Aggregation (Now using Gold Standard as Primary)
+        all_langs = {k: v * 1000 for k, v in GOLD_STANDARD_LANGS.items()}
+        
+        # Supplementary Data Fetching (For metadata completeness)
         for r in all_repos:
             ld = fetch_data(r['languages_url'], token)
             if ld:
-                for k,v in ld.items(): all_langs[k] = all_langs.get(k, 0) + v
-        
-        # Strategic Priority Injection
-        for p_lang in PRIORITY_LANGS:
-            if p_lang not in all_langs: 
-                priority_map = {"R": 8500, "Julia": 2500, "MATLAB": 1500, "LaTeX": 1500}
-                all_langs[p_lang] = priority_map.get(p_lang, 1000)
+                for k,v in ld.items(): 
+                    if k not in all_langs: all_langs[k] = v
             
         # Write high-fidelity SVGs to docs/
         os.makedirs("docs", exist_ok=True)
