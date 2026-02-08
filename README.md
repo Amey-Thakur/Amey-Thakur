@@ -48,11 +48,11 @@
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1770524900" alt="Amey-Thakur" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1770525294" alt="Amey-Thakur" /></p>
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1770524900" alt="Amey-Thakur" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1770525294" alt="Amey-Thakur" /></p>
 
 ---
 
