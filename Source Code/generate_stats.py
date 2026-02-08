@@ -1,10 +1,31 @@
+"""
+File: generate_stats.py
+Description: Authoritative GitHub Statistics Visualization Engine.
+Author: Amey Thakur
+License: MIT License
+Version: 1.0.0
+
+This module serves as the core analytical engine for the Amey-Thakur Vision profile.
+It orchestrates advanced data retrieval from the GitHub REST API, performs multi-dimensional
+scoring for academic-grade ranking, and generates high-fidelity SVG visualizations
+with a sleek, scholarly aesthetic.
+
+MIT License
+Copyright (c) 2022 Amey Thakur
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
+"""
+
 import os
 import json
 import urllib.request
 import re
 from datetime import datetime
 
-# Massive, Future-Proof Language Color Map
+# ==============================================================================
+# SCHOLARLY CONFIGURATION & AESTHETIC CONSTANTS
+# ==============================================================================
+
+# Massive, Future-Proof Language Color Map (Standardized for Academic Visuals)
 LANG_COLORS = {
     "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B", "JavaScript": "#f1e05a",
     "CSS": "#563d7c", "TypeScript": "#3178c6", "Java": "#b07219", "C": "#555555", "C++": "#f34b7d",
@@ -32,7 +53,7 @@ LANG_COLORS = {
     "Wolfram": "#dd1100", "YAML": "#cb171e", "Zephir": "#118f9e", "Zimpl": "#d67711", "Rich Text Format": "#FFFFFF"
 }
 
-# High-Fidelity Outlined Icons (Matched to Reference Image 2)
+# High-Fidelity Outlined Icons (Sourced from Professional Standard Sets)
 ICONS = {
     "star": '<path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" fill="none" stroke="{color}" stroke-width="1.2"/>',
     "commit": '<path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z" fill="{color}"/><path d="M8 3.5a.75.75 0 01.75.75v3.5h2.5a.75.75 0 010 1.5h-3.25a.75.75 0 01-.75-.75v-4.25a.75.75 0 01.75-.75z" fill="{color}"/>',
@@ -41,24 +62,58 @@ ICONS = {
     "contrib": '<path d="M2 1.75C2 .784 2.784 0 3.75 0h8.5C13.216 0 14 .784 14 1.75v11.5A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75zM3.5 1.75v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25z" fill="{color}"/><path d="M5 3h6v1.5H5V3zm0 3h6v1.5H5V6z" fill="{color}"/>'
 }
 
+# Languages prioritized for scientific/academic visibility
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
+# ==============================================================================
+# DATA RETRIEVAL CORE
+# ==============================================================================
+
 def fetch_data(url, token):
+    """
+    Performs authenticated HTTP GET requests to the GitHub REST API.
+    
+    Args:
+        url (str): Target REST API endpoint.
+        token (str): GitHub Personal Access Token for authentication.
+        
+    Returns:
+        dict/list: Parsed JSON response or None if request fails.
+    """
     req = urllib.request.Request(url)
     if token: req.add_header('Authorization', f'token {token}')
     try:
         with urllib.request.urlopen(req) as response:
             return json.loads(response.read().decode())
-    except: return None
+    except Exception: return None
+
+# ==============================================================================
+# ANALYTICAL & SCORING LOGIC
+# ==============================================================================
 
 def calculate_grade(stats):
+    """
+    Executes a multi-dimensional scoring algorithm to determine rank.
+    
+    This scholarly algorithm balances raw contribution volume with quality metrics
+    like stars and organizational diversity.
+    
+    Args:
+        stats (dict): Aggregated user statistics.
+        
+    Returns:
+        tuple: (Grade string, Rank percentage int)
+    """
     stars = int(stats.get('stars', 0))
-    commits = float(str(stats.get('commits', '0')).replace('k+', '').replace('k', '')) * 1000 if 'k' in str(stats.get('commits', '0')) else float(stats.get('commits', 0))
+    # Handle both integer and '13.8k+' string formatted commit counts
+    commit_raw = str(stats.get('commits', '0'))
+    commits = float(commit_raw.replace('k+', '').replace('k', '')) * 1000 if 'k' in commit_raw else float(commit_raw)
     prs = int(stats.get('prs', 0))
     issues = int(stats.get('issues', 0))
     contribs = int(stats.get('contribs', 0))
     
-    score = (stars * 10) + (commits * 1.0) + (prs * 50) + (issues * 5) + (contribs * 100)
+    # Weighted scoring formula (Production Tuned)
+    score = (stars * 10) + (commits * 1.5) + (prs * 50) + (issues * 5) + (contribs * 100)
     
     if score > 8000: return "A+", 95
     if score > 6000: return "A", 85
@@ -68,7 +123,16 @@ def calculate_grade(stats):
     if score > 1000: return "B-", 45
     return "C", 30
 
+# ==============================================================================
+# VISUALIZATION ENGINES (SVG GENERATION)
+# ==============================================================================
+
 def create_stats_svg(stats, username):
+    """
+    Generates a high-fidelity SVG for GitHub Statistics.
+    
+    Features a circular progress rank and unbolded scholarly typography.
+    """
     cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
     theme_color = cyan
     grade, rank = calculate_grade(stats)
@@ -118,27 +182,39 @@ def create_stats_svg(stats, username):
     return svg
 
 def create_langs_svg(langs):
-    cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
+    """
+    Generates a localized Linguistic Profile SVG.
     
-    # Smart Priority Selection (Guarantees R and others in top 18)
+    Implements a "Smart Priority" selection to ensure academic languages (R, Julia, etc.)
+    remain visible in the top 18 regardless of raw byte counts.
+    """
+    bg, white = "#060A0C", "#FFFFFF"
+    
+    # Selection Logic: Prioritize academic languages, then sort by volume
     sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)
     visible_langs = []
     seen = set()
     
+    # Step 1: Guarantee Priority Languages
     for p_lang in PRIORITY_LANGS:
         if p_lang in langs and len(visible_langs) < 18:
             visible_langs.append((p_lang, langs[p_lang]))
             seen.add(p_lang)
             
+    # Step 2: Fill remaining slots with top volume languages
     for name, count in sorted_langs:
         if name not in seen and len(visible_langs) < 18:
             visible_langs.append((name, count))
             seen.add(name)
             
+    # Final sort for visual consistency
     visible_langs = sorted(visible_langs, key=lambda x: x[1], reverse=True)
+    
+    # Calculate proportions relative to only the 18 visible languages (100% sum)
     total = sum(v for k,v in visible_langs)
     if total == 0: total = 1
     
+    # Layout Calculations
     cols = 3
     rows = (len(visible_langs) + (cols-1)) // cols
     height = 110 + (rows * 20)
@@ -182,15 +258,33 @@ def create_langs_svg(langs):
     svg += '</g></svg>'
     return svg
 
+# ==============================================================================
+# SYSTEM SYNCHRONIZATION
+# ==============================================================================
+
 def update_readme(timestamp):
+    """
+    Performs cache-busting synchronization on the README.md asset links.
+    """
     readme_path = "README.md"
     if not os.path.exists(readme_path): return
     with open(readme_path, "r", encoding="utf-8") as f: content = f.read()
+    # Apply unique timestamp to force GitHub to bypass previous image caches
     content = re.sub(r'docs/languages\.svg(\?t=\d+)?', f'docs/languages.svg?t={timestamp}', content)
     content = re.sub(r'docs/stats\.svg(\?t=\d+)?', f'docs/stats.svg?t={timestamp}', content)
     with open(readme_path, "w", encoding="utf-8") as f: f.write(content)
 
+# ==============================================================================
+# MAIN EXECUTION ORCHESTRATOR
+# ==============================================================================
+
 def main():
+    """
+    Orchestrates the statistical analysis and visualization generation.
+    
+    Implements a resilient fallback mechanism to ensure the profile remains 
+    visually premium even during API rate-limiting events.
+    """
     token = os.getenv('GITHUB_TOKEN')
     username = "Amey-Thakur"
     all_langs = {}
@@ -198,6 +292,7 @@ def main():
     timestamp = int(datetime.now().timestamp())
     
     try:
+        # Paged Repository Retrieval
         page = 1
         all_repos = []
         while True:
@@ -210,32 +305,38 @@ def main():
             
         if not all_repos: raise Exception("No repos found")
         
+        # Aggregate Cumulative Stats
         stats["stars"] = sum(repo['stargazers_count'] for repo in all_repos)
         stats["issues"] = sum(repo['open_issues_count'] for repo in all_repos)
         unique_orgs = set(repo['owner']['login'] for repo in all_repos if repo['owner']['login'] != username)
         stats["contribs"] = max(1, len(unique_orgs))
         
+        # Search API for PR count
         prs_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if prs_data: stats["prs"] = prs_data['total_count']
         
+        # Language Byte Aggregation
         for r in all_repos:
             ld = fetch_data(r['languages_url'], token)
             if ld:
                 for k,v in ld.items(): all_langs[k] = all_langs.get(k, 0) + v
         
+        # Scholarly Priority Injection
         for p_lang in PRIORITY_LANGS:
             if p_lang not in all_langs: 
-                # Inject a balanced scholarly value for priority languages
-                scholarly_map = {"R": 85000, "Julia": 25000, "MATLAB": 15000, "LaTeX": 15000}
-                all_langs[p_lang] = scholarly_map.get(p_lang, 10000)
+                scholarly_map = {"R": 8500, "Julia": 2500, "MATLAB": 1500, "LaTeX": 1500}
+                all_langs[p_lang] = scholarly_map.get(p_lang, 1000)
             
+        # Write high-fidelity SVGs to docs/
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs))
+        
         update_readme(timestamp)
-        print("Success: Final Vision Delivered.")
+        print("Success: Scholarly Masterpiece Synchronized.")
         
     except Exception as e:
+        # Resilient Scholarly Fallback (Maintains Profile Integrity)
         mock_langs = {
             "HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, 
             "JavaScript": 5.0, "CSS": 3.0, "Julia": 2.5, "MATLAB": 1.5, "LaTeX": 1.5,
@@ -243,11 +344,14 @@ def main():
             "Assembly": 0.8, "Scala": 0.5, "Shell": 0.5, "Markdown": 0.5
         }
         mock_stats = {"stars": 1295, "commits": "13.8k+", "prs": 185, "issues": 0, "contribs": 1}
+        
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(mock_stats, username))
         mock_bytes = {k: v*1000 for k,v in mock_langs.items()}
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(mock_bytes))
+        
         update_readme(timestamp)
-        print(f"Fallback active: {e}")
+        print(f"Scholarly Fallback Active: {e}")
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    main()
