@@ -36,30 +36,30 @@ def create_stats_svg(stats):
     cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="195" rx="6" fill="{bg}"/>
-    <text x="30" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="20" fill="{cyan}" letter-spacing="-0.5px">GITHUB STATISTICS</text>
+    <text x="30" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="20" fill="{cyan}" letter-spacing="-0.2px">GitHub Statistics</text>
     <g transform="translate(35, 75)">
         <g transform="translate(0, 0)">
             <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16">{ICONS['star'].format(color=cyan)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="{cyan}">STARS GIVEN</text>
+            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="{cyan}">Stars Given</text>
             <text x="240" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="15" fill="{white}">{stats.get('stars', '---')}</text>
         </g>
         <g transform="translate(0, 30)">
             <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16">{ICONS['commit'].format(color=cyan)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="{cyan}">COMMIT VOLUME</text>
+            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="{cyan}">Commit Volume</text>
             <text x="240" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="15" fill="{white}">{stats.get('commits', '---')}</text>
         </g>
         <g transform="translate(0, 60)">
             <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16">{ICONS['pr'].format(color=cyan)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="{cyan}">PULL REQUESTS</text>
+            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="{cyan}">Pull Requests</text>
             <text x="240" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="15" fill="{white}">{stats.get('prs', '---')}</text>
         </g>
         <g transform="translate(0, 90)">
             <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16">{ICONS['issue'].format(color=cyan)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="{cyan}">OPEN ISSUES</text>
+            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="{cyan}">Open Issues</text>
             <text x="240" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="15" fill="{white}">{stats.get('issues', '---')}</text>
         </g>
     </g>
-    <text x="465" y="180" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="9" fill="{white}" fill-opacity="0.3" font-style="italic">AMEY-THAKUR VISION vPerfect</text>
+    <text x="465" y="180" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="9" fill="{white}" fill-opacity="0.3" font-style="italic">Amey-Thakur Vision</text>
 </svg>'''
     return svg
 
@@ -75,7 +75,7 @@ def create_langs_svg(langs):
     
     svg = f'''<svg width="495" height="{height}" viewBox="0 0 495 {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="{height}" rx="8" fill="{bg}"/>
-    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="22" fill="{cyan}" letter-spacing="-0.5px">LINGUISTIC PROFILE</text>
+    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="22" fill="{cyan}" letter-spacing="-0.2px">Linguistic Profile</text>
     
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
