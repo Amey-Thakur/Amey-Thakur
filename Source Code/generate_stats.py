@@ -1,14 +1,14 @@
 """
 File: generate_stats.py
-Description: Authoritative GitHub Statistics Visualization Engine.
+Description: Comprehensive GitHub Statistics Visualization Engine.
 Author: Amey Thakur
 License: MIT License
 Version: 1.0.0
 
-This module serves as the core analytical engine for the Amey-Thakur Vision profile.
+This module serves as the core analytical engine for the Amey-Thakur profile.
 It orchestrates advanced data retrieval from the GitHub REST API, performs multi-dimensional
-scoring for academic-grade ranking, and generates high-fidelity SVG visualizations
-with a sleek, scholarly aesthetic.
+scoring for professional-grade ranking, and generates high-fidelity SVG visualizations
+with a sleek, refined appearance.
 
 MIT License
 Copyright (c) 2022 Amey Thakur
@@ -22,10 +22,10 @@ import re
 from datetime import datetime
 
 # ==============================================================================
-# SCHOLARLY CONFIGURATION & AESTHETIC CONSTANTS
+# ANALYTICAL CONFIGURATION & AESTHETIC CONSTANTS
 # ==============================================================================
 
-# Massive, Future-Proof Language Color Map (Standardized for Academic Visuals)
+# Massive, Future-Proof Language Color Map (Standardized for Formal Visuals)
 LANG_COLORS = {
     "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B", "JavaScript": "#f1e05a",
     "CSS": "#563d7c", "TypeScript": "#3178c6", "Java": "#b07219", "C": "#555555", "C++": "#f34b7d",
@@ -62,7 +62,7 @@ ICONS = {
     "contrib": '<path d="M2 1.75C2 .784 2.784 0 3.75 0h8.5C13.216 0 14 .784 14 1.75v11.5A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75zM3.5 1.75v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25z" fill="{color}"/><path d="M5 3h6v1.5H5V3zm0 3h6v1.5H5V6z" fill="{color}"/>'
 }
 
-# Languages prioritized for scientific/academic visibility
+# Languages prioritized for specific analytical visibility
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
 # ==============================================================================
@@ -95,7 +95,7 @@ def calculate_grade(stats):
     """
     Executes a multi-dimensional scoring algorithm to determine rank.
     
-    This scholarly algorithm balances raw contribution volume with quality metrics
+    This algorithm balances raw contribution volume with quality metrics
     like stars and organizational diversity.
     
     Args:
@@ -131,7 +131,7 @@ def create_stats_svg(stats, username):
     """
     Generates a high-fidelity SVG for GitHub Statistics.
     
-    Features a circular progress rank and unbolded scholarly typography.
+    Features a circular progress rank and unbolded refined typography.
     """
     cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
     theme_color = cyan
@@ -185,7 +185,7 @@ def create_langs_svg(langs):
     """
     Generates a localized Linguistic Profile SVG.
     
-    Implements a "Smart Priority" selection to ensure academic languages (R, Julia, etc.)
+    Implements a "Strategic Priority" selection to ensure specific languages (R, Julia, etc.)
     remain visible in the top 18 regardless of raw byte counts.
     """
     bg, white = "#060A0C", "#FFFFFF"
@@ -321,11 +321,11 @@ def main():
             if ld:
                 for k,v in ld.items(): all_langs[k] = all_langs.get(k, 0) + v
         
-        # Scholarly Priority Injection
+        # Strategic Priority Injection
         for p_lang in PRIORITY_LANGS:
             if p_lang not in all_langs: 
-                scholarly_map = {"R": 8500, "Julia": 2500, "MATLAB": 1500, "LaTeX": 1500}
-                all_langs[p_lang] = scholarly_map.get(p_lang, 1000)
+                priority_map = {"R": 8500, "Julia": 2500, "MATLAB": 1500, "LaTeX": 1500}
+                all_langs[p_lang] = priority_map.get(p_lang, 1000)
             
         # Write high-fidelity SVGs to docs/
         os.makedirs("docs", exist_ok=True)
@@ -333,10 +333,10 @@ def main():
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs))
         
         update_readme(timestamp)
-        print("Success: Scholarly Masterpiece Synchronized.")
+        print("Success: Visualization Master Synchronized.")
         
     except Exception as e:
-        # Resilient Scholarly Fallback (Maintains Profile Integrity)
+        # Resilient Core Fallback (Maintains Profile Integrity)
         mock_langs = {
             "HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, 
             "JavaScript": 5.0, "CSS": 3.0, "Julia": 2.5, "MATLAB": 1.5, "LaTeX": 1.5,
@@ -351,7 +351,7 @@ def main():
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(mock_bytes))
         
         update_readme(timestamp)
-        print(f"Scholarly Fallback Active: {e}")
+        print(f"Resilient Fallback Active: {e}")
 
 if __name__ == "__main__":
     main()
