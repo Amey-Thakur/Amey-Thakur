@@ -1,26 +1,27 @@
-name: generate animation
+name: Contribution Grid Action
 
 on:
-  # run automatically every 12 hours
+  # Automated trigger: Every 12 hours
   schedule:
     - cron: "0 */12 * * *" 
   
-  # allows to manually run the job at any time
+  # Manual trigger: Allows on-demand generation
   workflow_dispatch:
   
-  # run on every push on the master branch
+  # Structural trigger: Pulse on main branch updates
   push:
     branches:
-    - main
+      - main
   
 jobs:
   generate:
+    name: Synthesis Engine
     runs-on: ubuntu-latest
     timeout-minutes: 10
     
     steps:
-      # generates a snake game from a github user (<github_user_name>) contributions graph, output a svg animation at <svg_out_path>
-      - name: Generate github-contribution-grid-snake.svg
+      # Generates a dynamic contribution snake animation from user metrics
+      - name: Generate Contribution Grid Visualization
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: Amey-Thakur
@@ -30,9 +31,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      # push the content of <build_dir> to a branch
-      # the content will be available at https://raw.githubusercontent.com/<github_user>/<repository>/<target_branch>/<file> , or as github page
-      - name: Push github-contribution-grid-snake.svg to the output branch
+      # Deploys synthesized assets to the designated 'output' branch for profile integration
+      - name: Synchronize Visualizations to Output Branch
         uses: crazy-max/ghaction-github-pages@v2.6.0
         with:
           target_branch: output

@@ -2,13 +2,13 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: '0 0,12 * * *' # Twice daily
-  workflow_dispatch:
+    - cron: '0 0,12 * * *' # Twice daily (00:00 and 12:00 UTC)
+  workflow_dispatch:        # Manual trigger
   push:
     branches:
       - main
     paths:
-      - 'scripts/**'
+      - 'Source Code/**'
 
 permissions:
   contents: write
@@ -25,10 +25,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Generate Stats SVGs
+      - name: Generate Statistics Visualizations
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/generate_stats.py
+        run: python "Source Code/generate_stats.py"
 
       - name: Commit and Push Changes
         run: |
