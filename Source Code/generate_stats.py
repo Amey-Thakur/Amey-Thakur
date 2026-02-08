@@ -3,16 +3,13 @@ File: generate_stats.py
 Description: Comprehensive GitHub Statistics Visualization Engine.
 Author: Amey Thakur
 License: MIT License
+Release Date: July 5, 2021
 Version: 1.0.0
 
 This module serves as the core analytical engine for the Amey-Thakur profile.
 It orchestrates advanced data retrieval from the GitHub REST API, performs multi-dimensional
 scoring for professional-grade ranking, and generates high-fidelity SVG visualizations
 with a sleek, refined appearance.
-
-MIT License
-Copyright (c) 2021 Amey Thakur
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
 """
 
 import os
