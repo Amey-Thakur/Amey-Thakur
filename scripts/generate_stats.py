@@ -119,6 +119,22 @@ def create_stats_svg(stats, username):
 
 def create_langs_svg(langs):
     cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
+    
+    # Smart Priority Selection (Guarantees R and others in top 18)
+    sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)
+    visible_langs = []
+    seen = set()
+    
+    for p_lang in PRIORITY_LANGS:
+        if p_lang in langs and len(visible_langs) < 18:
+            visible_langs.append((p_lang, langs[p_lang]))
+            seen.add(p_lang)
+            
+    for name, count in sorted_langs:
+        if name not in seen and len(visible_langs) < 18:
+            visible_langs.append((name, count))
+            seen.add(name)
+            
     visible_langs = sorted(visible_langs, key=lambda x: x[1], reverse=True)
     total = sum(v for k,v in visible_langs)
     if total == 0: total = 1
