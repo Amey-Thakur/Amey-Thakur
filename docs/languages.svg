@@ -5,7 +5,7 @@
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
         <rect width="435" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.1"/>
-        <g mask="url(#bar-mask)"><rect x="0" width="154.42499999999998" height="14" fill="#e34c26"/><rect x="154.42499999999998" width="108.75" height="14" fill="#3572A5"/><rect x="263.17499999999995" width="43.5" height="14" fill="#DA5B0B"/><rect x="306.67499999999995" width="36.975" height="14" fill="#276DC3"/><rect x="343.65" width="21.75" height="14" fill="#f1e05a"/><rect x="365.4" width="13.049999999999999" height="14" fill="#563d7c"/><rect x="378.45" width="10.875" height="14" fill="#a270ba"/><rect x="389.325" width="6.5249999999999995" height="14" fill="#555555"/><rect x="395.84999999999997" width="6.5249999999999995" height="14" fill="#6E4C13"/><rect x="402.37499999999994" width="5.22" height="14" fill="#4F5D95"/><rect x="407.59499999999997" width="5.22" height="14" fill="#888888"/><rect x="412.815" width="4.3500000000000005" height="14" fill="#701516"/><rect x="417.165" width="4.3500000000000005" height="14" fill="#f34b7d"/><rect x="421.51500000000004" width="4.3500000000000005" height="14" fill="#3178c6"/><rect x="425.86500000000007" width="3.48" height="14" fill="#b07219"/><rect x="429.3450000000001" width="2.1750000000000003" height="14" fill="#c22d40"/><rect x="431.5200000000001" width="1.74" height="14" fill="#89e051"/><rect x="433.2600000000001" width="1.74" height="14" fill="#083fa1"/></g></g><g transform="translate(30, 100)">
+        <g mask="url(#bar-mask)"><rect x="0" width="154.42499999999998" height="14" fill="#e34c26"/><rect x="154.42499999999998" width="108.75" height="14" fill="#3572A5"/><rect x="263.17499999999995" width="43.5" height="14" fill="#DA5B0B"/><rect x="306.67499999999995" width="36.975" height="14" fill="#276DC3"/><rect x="343.65" width="21.75" height="14" fill="#f1e05a"/><rect x="365.4" width="13.049999999999999" height="14" fill="#563d7c"/><rect x="378.45" width="10.875" height="14" fill="#a270ba"/><rect x="389.325" width="6.5249999999999995" height="14" fill="#555555"/><rect x="395.84999999999997" width="6.5249999999999995" height="14" fill="#6E4C13"/><rect x="402.37499999999994" width="5.22" height="14" fill="#4F5D95"/><rect x="407.59499999999997" width="5.22" height="14" fill="#888888"/><rect x="412.815" width="4.3500000000000005" height="14" fill="#f34b7d"/><rect x="417.165" width="4.3500000000000005" height="14" fill="#701516"/><rect x="421.51500000000004" width="4.3500000000000005" height="14" fill="#3178c6"/><rect x="425.86500000000007" width="3.48" height="14" fill="#b07219"/><rect x="429.3450000000001" width="2.1750000000000003" height="14" fill="#c22d40"/><rect x="431.5200000000001" width="1.74" height="14" fill="#89e051"/><rect x="433.2600000000001" width="1.74" height="14" fill="#083fa1"/></g></g><g transform="translate(30, 100)">
         <g transform="translate(0, 0)">
             <circle cx="5" cy="-7" r="5" fill="#e34c26"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">HTML</text>
@@ -62,13 +62,13 @@
             <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">1.2%</text>
         </g>
         <g transform="translate(300, 60)">
-            <circle cx="5" cy="-7" r="5" fill="#701516"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Ruby</text>
+            <circle cx="5" cy="-7" r="5" fill="#f34b7d"/>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">C++</text>
             <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">1.0%</text>
         </g>
         <g transform="translate(0, 80)">
-            <circle cx="5" cy="-7" r="5" fill="#f34b7d"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">C++</text>
+            <circle cx="5" cy="-7" r="5" fill="#701516"/>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Ruby</text>
             <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">1.0%</text>
         </g>
         <g transform="translate(150, 80)">

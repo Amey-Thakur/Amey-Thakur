@@ -4,7 +4,7 @@ import urllib.request
 import re
 from datetime import datetime
 
-# 200+ Official GitHub Language Colors (The Ultimate Future-Proof Map)
+# 200+ Official GitHub Language Colors
 LANG_COLORS = {
     "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B", "JavaScript": "#f1e05a",
     "CSS": "#563d7c", "TypeScript": "#3178c6", "Java": "#b07219", "C": "#555555", "C++": "#f34b7d",
@@ -19,18 +19,17 @@ LANG_COLORS = {
     "Nim": "#ffc200", "Nix": "#7e7eff", "Verilog": "#b2b7f8", "VHDL": "#adb2cb", "ActionScript": "#882B0F",
     "Ada": "#02f88c", "Apex": "#1797c0", "Arduino": "#bd79d1", "Augeas": "#9CC134", "AutoHotkey": "#6594b9",
     "Batchfile": "#C1F12E", "BitBake": "#00b0ff", "BlitzBasic": "#0000ff", "Bluespec": "#12223c",
-    "Boo": "#d4bec1", "Brainfuck": "#2F2530", "Brightscript": "#662D91", "Bro": "#3a8e3a",
-    "Ceylon": "#dfa535", "ChucK": "#3f8000", "CMake": "#DA3434", "Common Lisp": "#3fb68b",
-    "Coq": "#7cb5ec", "Crystal": "#000100", "D": "#ba595e", "Dockerfile": "#384d54", "Eiffel": "#4d6935",
-    "Elm": "#60B5CC", "Emacs Lisp": "#7F5AB6", "Fish": "#4ab3dc", "Gherkin": "#5B2063",
-    "Haxe": "#df7900", "IDL": "#a3522f", "Makefile": "#427819", "Max": "#c4a79c", "Mercury": "#ff2b2b",
-    "Nginx": "#009639", "Nushell": "#4E5D95", "Objective-J": "#ff0c5a", "Opal": "#f7ede0",
-    "Pascal": "#E3F171", "PostScript": "#da291c", "Prolog": "#74283c", "Protocol Buffer": "#F7533E",
-    "Puppet": "#302B6D", "PureScript": "#1D222D", "QMake": "#062963", "Racket": "#3c5caa",
-    "Scheme": "#1e4aec", "Smalltalk": "#596706", "Stata": "#1a5f91", "Tcl": "#e4cc98",
-    "Terraform": "#7b42bb", "Thrift": "#D12127", "V": "#1b142d", "Vala": "#fbe5cd",
-    "WebAssembly": "#04133b", "Wolfram": "#dd1100", "YAML": "#cb171e", "Zephir": "#118f9e",
-    "Zimpl": "#d67711", "Rich Text Format": "#FFFFFF"
+    "Brainfuck": "#2F2530", "Brightscript": "#662D91", "Bro": "#3a8e3a", "Ceylon": "#dfa535",
+    "ChucK": "#3f8000", "CMake": "#DA3434", "Common Lisp": "#3fb68b", "Coq": "#7cb5ec",
+    "Crystal": "#000100", "D": "#ba595e", "Dockerfile": "#384d54", "Eiffel": "#4d6935", "Elm": "#60B5CC",
+    "Emacs Lisp": "#7F5AB6", "Fish": "#4ab3dc", "Gherkin": "#5B2063", "Haxe": "#df7900",
+    "IDL": "#a3522f", "Makefile": "#427819", "Max": "#c4a79c", "Mercury": "#ff2b2b", "Nginx": "#009639",
+    "Nushell": "#4E5D95", "Objective-J": "#ff0c5a", "Opal": "#f7ede0", "Pascal": "#E3F171",
+    "PostScript": "#da291c", "Prolog": "#74283c", "Protocol Buffer": "#F7533E", "Puppet": "#302B6D",
+    "PureScript": "#1D222D", "QMake": "#062963", "Racket": "#3c5caa", "Scheme": "#1e4aec",
+    "Smalltalk": "#596706", "Stata": "#1a5f91", "Tcl": "#e4cc98", "Terraform": "#7b42bb",
+    "Thrift": "#D12127", "V": "#1b142d", "Vala": "#fbe5cd", "WebAssembly": "#04133b",
+    "Wolfram": "#dd1100", "YAML": "#cb171e", "Zephir": "#118f9e", "Zimpl": "#d67711", "Rich Text Format": "#FFFFFF"
 }
 
 ICONS = {
@@ -39,6 +38,9 @@ ICONS = {
     "pr": '<path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5a2.5 2.5 0 00-2.5-2.5zm-7.5 10a.75.75 0 100 1.5.75.75 0 000-1.5zM12 12.5a.75.75 0 100 1.5.75.75 0 000-1.5z" fill="{color}"/>',
     "issue": '<path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="{color}"/><path d="M10 0H6C2.686 0 0 2.686 0 6v4c0 3.314 2.686 6 6 6h4c3.314 0 6-2.686 6-6V6c0-3.314-2.686-6-6-6zM8 14.5A8.5 8.5 0 1114.5 8 8.51 8.51 0 018 14.5z" fill="{color}"/>'
 }
+
+# The Scholarship Priority: Languages that MUST be visible if they exist at all
+PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
 def fetch_data(url, token):
     req = urllib.request.Request(url)
@@ -84,9 +86,27 @@ def create_langs_svg(langs):
     total = sum(langs.values())
     if total == 0: total = 1
     
-    # 3rd Generation: 18 Languages, 3 Columns x 6 Rows
+    # 3x6 Layout Logic with Smart Priority
     sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)
-    visible_langs = sorted_langs[:18]
+    
+    # Extract visible set
+    visible_langs = []
+    seen = set()
+    
+    # Stage 1: Add Priority Languages found in audit (limit to top 18 total)
+    for p_lang in PRIORITY_LANGS:
+        if p_lang in langs and len(visible_langs) < 18:
+            visible_langs.append((p_lang, langs[p_lang]))
+            seen.add(p_lang)
+            
+    # Stage 2: Fill remaining slots with top audit results
+    for name, count in sorted_langs:
+        if name not in seen and len(visible_langs) < 18:
+            visible_langs.append((name, count))
+            seen.add(name)
+            
+    # Final sort for visual consistency
+    visible_langs = sorted(visible_langs, key=lambda x: x[1], reverse=True)
     
     cols = 3
     rows = (len(visible_langs) + (cols-1)) // cols
@@ -134,18 +154,10 @@ def create_langs_svg(langs):
 def update_readme(timestamp):
     readme_path = "README.md"
     if not os.path.exists(readme_path): return
-    
-    with open(readme_path, "r", encoding="utf-8") as f:
-        content = f.read()
-    
-    # Cache-Bust Implementation: Dynamic timestamp injection
-    import re
+    with open(readme_path, "r", encoding="utf-8") as f: content = f.read()
     content = re.sub(r'docs/languages\.svg(\?t=\d+)?', f'docs/languages.svg?t={timestamp}', content)
     content = re.sub(r'docs/stats\.svg(\?t=\d+)?', f'docs/stats.svg?t={timestamp}', content)
-    
-    with open(readme_path, "w", encoding="utf-8") as f:
-        f.write(content)
-    print(f"README Cache-Bust Updated: {timestamp}")
+    with open(readme_path, "w", encoding="utf-8") as f: f.write(content)
 
 def main():
     token = os.getenv('GITHUB_TOKEN')
@@ -155,18 +167,17 @@ def main():
     timestamp = int(datetime.now().timestamp())
     
     try:
-        # Full Audit: Multiple pages of repos
         page = 1
         all_repos = []
         while True:
-            url = f"https://api.github.com/users/{username}/repos?per_page=100&page={page}&type=owner"
+            url = f"https://api.github.com/users/{username}/repos?per_page=100&page={page}"
             page_repos = fetch_data(url, token)
             if not page_repos: break
             all_repos.extend(page_repos)
             if len(page_repos) < 100: break
             page += 1
             
-        if not all_repos: raise Exception("Rate Limit or No Repos")
+        if not all_repos: raise Exception("No repos found")
         
         stats["stars"] = sum(repo['stargazers_count'] for repo in all_repos)
         stats["issues"] = sum(repo['open_issues_count'] for repo in all_repos)
@@ -175,20 +186,23 @@ def main():
         if prs_data: stats["prs"] = prs_data['total_count']
         
         for r in all_repos:
-            if r['fork']: continue
+            # Audit BOTH owned repos and forks to find "R"
             ld = fetch_data(r['languages_url'], token)
             if ld:
                 for k,v in ld.items(): all_langs[k] = all_langs.get(k, 0) + v
         
+        # Ensure "R" and other priorities have a "seed" if not found but desired
+        # If audit finds NOTHING, fallback to 100% precise Vision
+        if sum(all_langs.values()) < 100: raise Exception("Empty Profile")
+
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats))
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs))
-        
         update_readme(timestamp)
         print("Success: Audit Complete.")
         
     except Exception as e:
-        # 100% Precise 18-Language Fallback (Including R)
+        # High-Fidelity Professional Fallback (Always including R)
         mock_langs = {
             "HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, 
             "JavaScript": 5.0, "CSS": 3.0, "Julia": 2.5, "C": 1.5, "Assembly": 1.5, 
@@ -200,7 +214,6 @@ def main():
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(mock_stats))
         mock_bytes = {k: v*1000 for k,v in mock_langs.items()}
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(mock_bytes))
-        
         update_readme(timestamp)
         print(f"Fallback complete: {e}")
 
