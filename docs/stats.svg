@@ -1,27 +1,27 @@
 <svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="195" rx="6" fill="#060A0C"/>
-    <text x="30" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="18" fill="#00fbff" letter-spacing="-0.5px">GITHUB STATISTICS</text>
-    <g transform="translate(35, 65)">
+    <text x="30" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="20" fill="#00fbff" letter-spacing="-0.5px">GITHUB STATISTICS</text>
+    <g transform="translate(35, 75)">
         <g transform="translate(0, 0)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" fill="#00fbff"/></svg>
-            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="#00fbff">STARS GIVEN</text>
-            <text x="210" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="14" fill="#FFFFFF">1295</text>
+            <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" fill="#00fbff"/></svg>
+            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="#00fbff">STARS GIVEN</text>
+            <text x="240" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="15" fill="#FFFFFF">1295</text>
         </g>
-        <g transform="translate(0, 28)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16"><path d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.002 4.002 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z" fill="#00fbff"/></svg>
-            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="#00fbff">COMMITS</text>
-            <text x="210" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="14" fill="#FFFFFF">11511</text>
+        <g transform="translate(0, 30)">
+            <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16"><path d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.002 4.002 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z" fill="#00fbff"/></svg>
+            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="#00fbff">COMMIT VOLUME</text>
+            <text x="240" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="15" fill="#FFFFFF">12.5k+</text>
         </g>
-        <g transform="translate(0, 56)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16"><path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5a2.5 2.5 0 00-2.5-2.5zm-7.5 10a.75.75 0 100 1.5.75.75 0 000-1.5zM12 12.5a.75.75 0 100 1.5.75.75 0 000-1.5z" fill="#00fbff"/></svg>
-            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="#00fbff">PULL REQUESTS</text>
-            <text x="210" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="14" fill="#FFFFFF">170</text>
+        <g transform="translate(0, 60)">
+            <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16"><path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5a2.5 2.5 0 00-2.5-2.5zm-7.5 10a.75.75 0 100 1.5.75.75 0 000-1.5zM12 12.5a.75.75 0 100 1.5.75.75 0 000-1.5z" fill="#00fbff"/></svg>
+            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="#00fbff">PULL REQUESTS</text>
+            <text x="240" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="15" fill="#FFFFFF">170</text>
         </g>
-        <g transform="translate(0, 84)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="#00fbff"/><path d="M10 0H6C2.686 0 0 2.686 0 6v4c0 3.314 2.686 6 6 6h4c3.314 0 6-2.686 6-6V6c0-3.314-2.686-6-6-6zM8 14.5A8.5 8.5 0 1114.5 8 8.51 8.51 0 018 14.5z" fill="#00fbff"/></svg>
-            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="#00fbff">ISSUES</text>
-            <text x="210" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="14" fill="#FFFFFF">0</text>
+        <g transform="translate(0, 90)">
+            <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="#00fbff"/><path d="M10 0H6C2.686 0 0 2.686 0 6v4c0 3.314 2.686 6 6 6h4c3.314 0 6-2.686 6-6V6c0-3.314-2.686-6-6-6zM8 14.5A8.5 8.5 0 1114.5 8 8.51 8.51 0 018 14.5z" fill="#00fbff"/></svg>
+            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="15" fill="#00fbff">OPEN ISSUES</text>
+            <text x="240" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="15" fill="#FFFFFF">0</text>
         </g>
     </g>
-    <text x="465" y="180" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="9" fill="#FFFFFF" fill-opacity="0.3">Amey-Thakur Vision</text>
+    <text x="465" y="180" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="9" fill="#FFFFFF" fill-opacity="0.3" font-style="italic">AMEY-THAKUR VISION vPerfect</text>
 </svg>
