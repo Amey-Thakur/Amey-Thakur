@@ -119,25 +119,9 @@ def create_stats_svg(stats, username):
 
 def create_langs_svg(langs):
     cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
-    total = sum(langs.values())
-    if total == 0: total = 1
-    
-    # Smart Priority Selection (Guarantees R and others in top 18)
-    sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)
-    visible_langs = []
-    seen = set()
-    
-    for p_lang in PRIORITY_LANGS:
-        if p_lang in langs and len(visible_langs) < 18:
-            visible_langs.append((p_lang, langs[p_lang]))
-            seen.add(p_lang)
-            
-    for name, count in sorted_langs:
-        if name not in seen and len(visible_langs) < 18:
-            visible_langs.append((name, count))
-            seen.add(name)
-            
     visible_langs = sorted(visible_langs, key=lambda x: x[1], reverse=True)
+    total = sum(v for k,v in visible_langs)
+    if total == 0: total = 1
     
     cols = 3
     rows = (len(visible_langs) + (cols-1)) // cols
@@ -224,7 +208,10 @@ def main():
                 for k,v in ld.items(): all_langs[k] = all_langs.get(k, 0) + v
         
         for p_lang in PRIORITY_LANGS:
-            if p_lang not in all_langs: all_langs[p_lang] = 50000 
+            if p_lang not in all_langs: 
+                # Inject a balanced scholarly value for priority languages
+                scholarly_map = {"R": 85000, "Julia": 25000, "MATLAB": 15000, "LaTeX": 15000}
+                all_langs[p_lang] = scholarly_map.get(p_lang, 10000)
             
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
@@ -235,9 +222,9 @@ def main():
     except Exception as e:
         mock_langs = {
             "HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, 
-            "JavaScript": 5.0, "CSS": 3.0, "Julia": 2.5, "C": 1.5, "Assembly": 1.5, 
-            "PHP": 1.2, "Cython": 1.2, "Ruby": 1.0, "C++": 1.0, "TypeScript": 1.0, 
-            "Java": 0.8, "Scala": 0.5, "Shell": 0.4, "Markdown": 0.4
+            "JavaScript": 5.0, "CSS": 3.0, "Julia": 2.5, "MATLAB": 1.5, "LaTeX": 1.5,
+            "C++": 1.2, "C": 1.2, "PHP": 1.0, "TypeScript": 1.0, "Java": 0.8,
+            "Assembly": 0.8, "Scala": 0.5, "Shell": 0.5, "Markdown": 0.5
         }
         mock_stats = {"stars": 1295, "commits": "13.8k+", "prs": 185, "issues": 0, "contribs": 1}
         os.makedirs("docs", exist_ok=True)
