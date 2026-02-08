@@ -1,0 +1,38 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "name": "Amey-Thakur",
+    "description": "A comprehensive visualization engine for generating high-fidelity GitHub profile statistics. Features dynamic SVG synthesis, analytical grade scoring, and strategic language prioritization for a refined professional profile.",
+    "identifier": "Amey-Thakur",
+    "license": "https://spdx.org/licenses/MIT.html",
+    "programmingLanguage": [
+        "Python",
+        "SVG",
+        "Markdown"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Amey",
+            "familyName": "Thakur",
+            "id": "https://orcid.org/0000-0001-5644-1575"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Mega",
+            "familyName": "Satish",
+            "id": "https://orcid.org/0000-0002-1844-9557"
+        }
+    ],
+    "dateReleased": "2021-07-05",
+    "codeRepository": "https://github.com/Amey-Thakur/Amey-Thakur",
+    "developmentStatus": "active",
+    "applicationCategory": "Analytics / Visualization",
+    "keywords": [
+        "GitHub Stats",
+        "Profile Visualization",
+        "SVG Synthesis",
+        "Data Analytics",
+        "Personal Branding"
+    ]
+}
