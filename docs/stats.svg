@@ -38,5 +38,5 @@
         <text text-anchor="middle" dy="0.35em" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="34" fill="#FFFFFF">A+</text>
     </g>
     
-    <text x="247.5" y="180" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="#FFFFFF" fill-opacity="0.3" font-style="italic">Now or Never</text>
+    <text x="400" y="175" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="#FFFFFF" fill-opacity="0.25" font-style="italic">Now or Never</text>
 </svg>
