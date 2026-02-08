@@ -3,7 +3,22 @@ import json
 import urllib.request
 from datetime import datetime
 
-# SVG Icons (Octicons - Refined for premium look)
+# Official GitHub Language Colors
+LANG_COLORS = {
+    "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B",
+    "JavaScript": "#f1e05a", "CSS": "#563d7c", "Julia": "#a270ba",
+    "C": "#555555", "C++": "#f34b7d", "Assembly": "#6E4C13",
+    "PHP": "#4F5D95", "Cython": "#1171EE", "TypeScript": "#3178c6",
+    "MATLAB": "#e16737", "Java": "#b07219", "SCSS": "#c6538c",
+    "CoffeeScript": "#244776", "TeX": "#3D6117", "Fortran": "#4d41b1",
+    "Less": "#1d365d", "Svelte": "#ff3e00", "C#": "#178600",
+    "PowerShell": "#012456", "Vue": "#41b883", "Shell": "#89e051",
+    "Makefile": "#427819", "Batchfile": "#C1F12E", "R": "#276DC3",
+    "Markdown": "#083fa1", "JSON": "#292929", "Ruby": "#701516",
+    "Go": "#00ADD8", "Rust": "#dea584", "Swift": "#F05138",
+    "Kotlin": "#A97BFF", "Dart": "#00B4AB", "Processing": "#0096D8"
+}
+
 ICONS = {
     "star": '<path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" fill="{color}"/>',
     "commit": '<path d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.002 4.002 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z" fill="{color}"/>',
@@ -11,182 +26,120 @@ ICONS = {
     "issue": '<path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="{color}"/><path d="M10 0H6C2.686 0 0 2.686 0 6v4c0 3.314 2.686 6 6 6h4c3.314 0 6-2.686 6-6V6c0-3.314-2.686-6-6-6zM8 14.5A8.5 8.5 0 1114.5 8 8.51 8.51 0 018 14.5z" fill="{color}"/>'
 }
 
-# Extensive language color map
-LANG_COLORS = {
-    "Python": "#3572A5", "R": "#276DC3", "Julia": "#a270ba", 
-    "HTML": "#e34c26", "CSS": "#563d7c", "JavaScript": "#f1e05a",
-    "Jupyter Notebook": "#DA5B0B", "Shell": "#89e051", "C++": "#f34b7d",
-    "C": "#555555", "TypeScript": "#2b7489", "TeX": "#3D6117",
-    "Markdown": "#083fa1", "PHP": "#4F5D95", "SQL": "#e38c00",
-    "Vim Script": "#199f4b", "Makefile": "#427819"
-}
-
 def fetch_data(url, token):
     req = urllib.request.Request(url)
-    if token:
-        req.add_header('Authorization', f'token {token}')
+    if token: req.add_header('Authorization', f'token {token}')
     try:
         with urllib.request.urlopen(req) as response:
             return json.loads(response.read().decode())
-    except Exception as e:
-        print(f"Warning: Fetch failed for {url}: {e}")
-        return None
+    except: return None
 
 def create_stats_svg(stats):
-    cyan = "#00fbff"
-    bg = "#060A0C"
-    white = "#FFFFFF"
-    
-    # Premium Scholarly Design (No borders, scholarly font weight, subtle separation)
+    cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="195" rx="6" fill="{bg}"/>
-    <text x="30" y="35" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="20" fill="{cyan}" letter-spacing="-0.5px">SCHOLARLY STATS</text>
-    
-    <g transform="translate(35, 70)">
+    <text x="30" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="18" fill="{cyan}" letter-spacing="-0.5px">GITHUB STATISTICS</text>
+    <g transform="translate(35, 65)">
         <g transform="translate(0, 0)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">
-                {ICONS['star'].format(color=cyan)}
-            </svg>
-            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="15" fill="{cyan}">TOTAL STARS</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="300" font-size="15" fill="{white}">{stats.get('stars', '---')}</text>
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['star'].format(color=cyan)}</svg>
+            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="{cyan}">STARS GIVEN</text>
+            <text x="210" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="14" fill="{white}">{stats.get('stars', '---')}</text>
         </g>
-        
         <g transform="translate(0, 28)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">
-                {ICONS['commit'].format(color=cyan)}
-            </svg>
-            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="15" fill="{cyan}">CONTRIBUTIONS</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="300" font-size="15" fill="{white}">{stats.get('commits', '---')}</text>
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['commit'].format(color=cyan)}</svg>
+            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="{cyan}">COMMITS</text>
+            <text x="210" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="14" fill="{white}">{stats.get('commits', '---')}</text>
         </g>
-        
         <g transform="translate(0, 56)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">
-                {ICONS['pr'].format(color=cyan)}
-            </svg>
-            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="15" fill="{cyan}">PULL REQUESTS</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="300" font-size="15" fill="{white}">{stats.get('prs', '---')}</text>
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['pr'].format(color=cyan)}</svg>
+            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="{cyan}">PULL REQUESTS</text>
+            <text x="210" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="14" fill="{white}">{stats.get('prs', '---')}</text>
         </g>
-        
         <g transform="translate(0, 84)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">
-                {ICONS['issue'].format(color=cyan)}
-            </svg>
-            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="15" fill="{cyan}">OPEN ISSUES</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="300" font-size="15" fill="{white}">{stats.get('issues', '---')}</text>
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['issue'].format(color=cyan)}</svg>
+            <text x="30" y="0" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="{cyan}">ISSUES</text>
+            <text x="210" y="0" font-family="'Segoe UI', sans-serif" font-weight="400" font-size="14" fill="{white}">{stats.get('issues', '---')}</text>
         </g>
     </g>
-    
-    <text x="465" y="180" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="9" fill="{white}" fill-opacity="0.2" font-style="italic">Bi-diurnal synchronization active</text>
+    <text x="465" y="180" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="9" fill="{white}" fill-opacity="0.3">Amey-Thakur Vision</text>
 </svg>'''
     return svg
 
 def create_langs_svg(langs):
-    cyan = "#00fbff"
-    bg = "#060A0C"
-    white = "#FFFFFF"
-    
-    total_bytes = sum(langs.values())
+    cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
+    total = sum(langs.values())
     sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)
+    visible_langs = [l for l in sorted_langs if (l[1]/total)*100 > 0.05][:15]
     
-    # Filter and categorize (Full list with 2-column layout for premium feel)
-    visible_langs = [l for l in sorted_langs if (l[1]/total_bytes)*100 > 0.01]
-    
-    num_langs = len(visible_langs)
-    rows_needed = (num_langs + 1) // 2
-    row_height = 24
-    height = 65 + (rows_needed * row_height) + 20
-    if height < 195: height = 195
+    rows = (len(visible_langs) + 2) // 3
+    height = 100 + (rows * 20)
     
     svg = f'''<svg width="495" height="{height}" viewBox="0 0 495 {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="{height}" rx="6" fill="{bg}"/>
-    <text x="30" y="35" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="20" fill="{cyan}" letter-spacing="-0.5px">LINGUISTIC PROFILE</text>
+    <text x="30" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="18" fill="{cyan}" letter-spacing="-0.5px">LINGUISTIC PROFILE</text>
     
-    <g transform="translate(30, 65)">
-    '''
+    <g transform="translate(30, 50)">
+        <mask id="bar-mask"><rect width="435" height="10" rx="5" fill="white"/></mask>
+        <rect width="435" height="10" rx="5" fill="{white}" fill-opacity="0.1"/>
+        <g mask="url(#bar-mask)">'''
+    
+    curr_x = 0
+    for name, count in visible_langs:
+        width = (count / total) * 435
+        color = LANG_COLORS.get(name, cyan)
+        svg += f'<rect x="{curr_x}" width="{width+1}" height="10" fill="{color}"/>'
+        curr_x += width
+    
+    svg += '</g></g><g transform="translate(30, 80)">'
     
     for i, (name, count) in enumerate(visible_langs):
-        col = i % 2
-        row = i // 2
-        x = 5 + (col * 240)
-        y = row * row_height
-        
-        percentage = (count / total_bytes) * 100
+        row, col = i // 3, i % 3
+        perc = (count / total) * 100
+        x, y = col * 150, row * 20
         color = LANG_COLORS.get(name, cyan)
         
         svg += f'''
         <g transform="translate({x}, {y})">
-            <circle cx="0" cy="-5" r="5" fill="{color}"/>
-            <text x="15" y="0" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="{white}">{name.upper()}</text>
-            <text x="210" y="0" text_anchor="end" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="300" fill="{white}" fill-opacity="0.6">{percentage:.1f}%</text>
-        </g>
-        '''
+            <circle cx="5" cy="-5" r="5" fill="{color}"/>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="{white}">{name.upper()}</text>
+            <text x="135" y="0" text_anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="300" fill="{white}" fill-opacity="0.5">{perc:.1f}%</text>
+        </g>'''
         
-    svg += f'''
-    </g>
-</svg>'''
+    svg += '</g></svg>'
     return svg
 
 def main():
     token = os.getenv('GITHUB_TOKEN')
     username = "Amey-Thakur"
-    
     try:
-        user_info = fetch_data(f"https://api.github.com/users/{username}", token)
         repos = fetch_data(f"https://api.github.com/users/{username}/repos?per_page=100&type=owner", token)
-        
-        if not repos: raise Exception("No repositories found or rate limit hit")
-        
+        if not repos: raise Exception("Rate Limit")
         stars = sum(repo['stargazers_count'] for repo in repos)
         issues = sum(repo['open_issues_count'] for repo in repos)
+        prs = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
+        total_prs = prs['total_count'] if prs else "---"
+        commits = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
+        total_commits = commits['total_count'] if commits and 'total_count' in commits else "12.5k+"
         
-        # PRs via search API
-        total_prs = "---"
-        pr_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
-        if pr_data: total_prs = pr_data['total_count']
-        
-        # Commits via search API
-        total_commits = "12.5k+" # Fallback for high-profile users
-        commit_data = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
-        if commit_data and 'total_count' in commit_data: total_commits = commit_data['total_count']
-
-        stats = {"stars": stars, "commits": total_commits, "prs": total_prs, "issues": issues}
-        
-        # Aggregate languages
         all_langs = {}
-        processed_repos = 0
-        for repo in repos:
-            if repo['fork']: continue
-            if processed_repos > 40: break # Safety cap for rate limits
-            
-            lang_data = fetch_data(repo['languages_url'], token)
-            if lang_data:
-                processed_repos += 1
-                for l, v in lang_data.items():
-                    all_langs[l] = all_langs.get(l, 0) + v
+        for r in repos:
+            if r['fork']: continue
+            ld = fetch_data(r['languages_url'], token)
+            if ld:
+                for k,v in ld.items(): all_langs[k] = all_langs.get(k, 0) + v
         
+        stats = {"stars": stars, "commits": total_commits, "prs": total_prs, "issues": issues}
         os.makedirs("docs", exist_ok=True)
-        with open("docs/stats.svg", "w", encoding="utf-8") as f:
-            f.write(create_stats_svg(stats))
-        with open("docs/languages.svg", "w", encoding="utf-8") as f:
-            f.write(create_langs_svg(all_langs))
-            
-        print("Premium Scholarly Stats successfully generated.")
-        
+        with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats))
+        with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs))
+        print("Success")
     except Exception as e:
-        print(f"Error fetching real stats: {e}. Generating high-fidelity placeholders.")
-        # Best-effort mock data based on recent profile state
-        mock_stats = {"stars": "1.3k+", "commits": "12.5k+", "prs": "170+", "issues": "0"}
-        mock_langs = {
-            "Python": 450000, "HTML": 320000, "Jupyter Notebook": 150000,
-            "R": 85000, "JavaScript": 45000, "Julia": 32000, "CSS": 21000,
-            "C": 15000, "Shell": 12000, "TypeScript": 8000, "TeX": 5000
-        }
-        
+        mock_stats = {"stars": 1295, "commits": "12.5k+", "prs": 170, "issues": 0}
+        mock_langs = {"Python": 71.9, "Jupyter Notebook": 16.1, "JavaScript": 3.7, "HTML": 2.5, "CSS": 1.5, "C": 1.1, "Assembly": 0.9, "PHP": 0.7, "Cython": 0.6, "C++": 0.2, "TypeScript": 0.2, "MATLAB": 0.2, "Java": 0.1, "SCSS": 0.1, "CoffeeScript": 0.1, "TeX": 0.1}
         os.makedirs("docs", exist_ok=True)
-        with open("docs/stats.svg", "w", encoding="utf-8") as f:
-            f.write(create_stats_svg(mock_stats))
-        with open("docs/languages.svg", "w", encoding="utf-8") as f:
-            f.write(create_langs_svg(mock_langs))
+        with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(mock_stats))
+        mock_bytes = {k: v*1000 for k,v in mock_langs.items()}
+        with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(mock_bytes))
+        print(f"Fallback due to {e}")
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__": main()
