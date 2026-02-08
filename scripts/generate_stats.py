@@ -81,7 +81,7 @@ def create_stats_svg(stats):
     cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="195" rx="6" fill="{bg}"/>
-    <text x="30" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="20" fill="{cyan}" letter-spacing="-0.2px">GitHub Statistics</text>
+    <text x="30" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="20" fill="{white}" letter-spacing="-0.2px">GitHub Statistics</text>
     <g transform="translate(35, 75)">
         <g transform="translate(0, 0)">
             <svg x="0" y="-14" width="20" height="20" viewBox="0 0 16 16">{ICONS['star'].format(color=cyan)}</svg>
@@ -122,7 +122,7 @@ def create_langs_svg(langs):
     
     svg = f'''<svg width="495" height="{height}" viewBox="0 0 495 {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="{height}" rx="8" fill="{bg}"/>
-    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="22" fill="{cyan}" letter-spacing="-0.2px">Linguistic Profile</text>
+    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="22" fill="{white}" letter-spacing="-0.2px">Linguistic Profile</text>
     
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
