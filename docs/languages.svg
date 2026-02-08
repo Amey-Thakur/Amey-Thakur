@@ -6,23 +6,23 @@
     
         <text x="0" y="0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">HTML</text>
         <rect x="100" y="-8" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
-        <rect x="100" y="-8" width="86" height="8" rx="4" fill="#00fbff"/>
-        <text x="410" y="0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">28.7%</text>
+        <rect x="100" y="-8" width="85" height="8" rx="4" fill="#00fbff"/>
+        <text x="410" y="0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">28.4%</text>
         
         <text x="0" y="25" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">Python</text>
         <rect x="100" y="17" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
-        <rect x="100" y="17" width="48" height="8" rx="4" fill="#00fbff"/>
-        <text x="410" y="25" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">16.2%</text>
+        <rect x="100" y="17" width="51" height="8" rx="4" fill="#00fbff"/>
+        <text x="410" y="25" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">17.3%</text>
         
         <text x="0" y="50" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">JavaScript</text>
         <rect x="100" y="42" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
         <rect x="100" y="42" width="37" height="8" rx="4" fill="#00fbff"/>
-        <text x="410" y="50" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">12.5%</text>
+        <text x="410" y="50" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">12.3%</text>
         
         <text x="0" y="75" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">Jupyter Notebook</text>
         <rect x="100" y="67" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
         <rect x="100" y="67" width="37" height="8" rx="4" fill="#00fbff"/>
-        <text x="410" y="75" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">12.5%</text>
+        <text x="410" y="75" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">12.3%</text>
         
         <text x="0" y="100" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">CSS</text>
         <rect x="100" y="92" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
