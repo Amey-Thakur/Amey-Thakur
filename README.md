@@ -30,6 +30,7 @@
 <p align="center">
 <a href="https://www.linkedin.com/in/amey-thakur"><img src="https://github.com/user-attachments/assets/ed9780f3-ab38-4d5b-8a9d-738043af9ca1" alt="LinkedIn" width="40" height="40"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/Amey-Thakur"><img src="https://github.com/user-attachments/assets/a6d74380-5969-428b-a321-292ef58e5128" alt="GitHub" width="40" height="40"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://huggingface.co/ameythakur"><img src="HuggingFace.png" alt="HuggingFace" width="40" height="40"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.kaggle.com/ameythakur20"><img src="https://github.com/user-attachments/assets/eb5cae5f-114b-43a2-a6cd-03ea1ce21f26" alt="Kaggle" width="40" height="40"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://g.dev/ameythakur"><img src="https://github.com/user-attachments/assets/bb996147-dd0e-44b8-99cd-f2df5524b3cf" alt="Google Developers" width="40" height="40"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://scholar.google.com/citations?user=0inooPgAAAAJ"><img src="https://github.com/user-attachments/assets/6481dbeb-7fde-46c7-8e77-ff1cd44d7eb0" alt="Google Scholar" width="40" height="40"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
