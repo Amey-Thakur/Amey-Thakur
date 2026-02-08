@@ -37,5 +37,7 @@ jobs:
         with:
           target_branch: output
           build_dir: dist
+          committer: Amey Thakur <ameythakur20@gmail.com>
+          author: Amey Thakur <ameythakur20@gmail.com>
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
