@@ -1,6 +1,6 @@
 <svg width="495" height="334" viewBox="0 0 495 334" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="334" rx="8" fill="#060A0C"/>
-    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="22" fill="#00fbff" letter-spacing="-0.5px">LINGUISTIC PROFILE</text>
+    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="22" fill="#00fbff" letter-spacing="-0.2px">Linguistic Profile</text>
     
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
