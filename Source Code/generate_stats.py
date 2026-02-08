@@ -11,7 +11,7 @@ scoring for professional-grade ranking, and generates high-fidelity SVG visualiz
 with a sleek, refined appearance.
 
 MIT License
-Copyright (c) 2022 Amey Thakur
+Copyright (c) 2021 Amey Thakur
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
 """
 
