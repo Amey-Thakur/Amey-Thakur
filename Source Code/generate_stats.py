@@ -1,7 +1,8 @@
 """
 File: generate_stats.py
 Description: Comprehensive GitHub Statistics Visualization Engine.
-Author: Amey Thakur
+Authors: Amey Thakur (https://github.com/Amey-Thakur)
+         Mega Satish (https://github.com/msatmod)
 License: MIT License
 Release Date: July 5, 2021
 Version: 1.0.0
