@@ -226,6 +226,9 @@ def create_langs_svg(langs):
     for item in visible_langs:
         item[1] = (item[1] / total_adj) * 100
         
+    # Final Precision Sort: Ensure strictly descending order AFTER all adjustments
+    visible_langs = sorted(visible_langs, key=lambda x: x[1], reverse=True)
+    
     # Layout Calculations
     cols = 3
     rows = (len(visible_langs) + (cols-1)) // cols
