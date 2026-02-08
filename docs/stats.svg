@@ -1,0 +1,19 @@
+<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0.5" y="0.5" width="494" height="194" rx="10" fill="#060A0C" stroke="#00fbff" stroke-opacity="0.2"/>
+    <text x="25" y="35" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="bold" font-size="18" fill="#00fbff">GitHub Stats</text>
+    
+    <g transform="translate(25, 65)">
+        <text x="0" y="0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14" fill="#FFFFFF">Total Stars:</text>
+        <text x="150" y="0" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="bold" font-size="14" fill="#00fbff">1295</text>
+        
+        <text x="0" y="30" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14" fill="#FFFFFF">Total Commits:</text>
+        <text x="150" y="30" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="bold" font-size="14" fill="#00fbff">11501</text>
+        
+        <text x="0" y="60" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14" fill="#FFFFFF">Total PRs:</text>
+        <text x="150" y="60" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="bold" font-size="14" fill="#00fbff">170</text>
+        
+        <text x="0" y="90" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14" fill="#FFFFFF">Total Issues:</text>
+        <text x="150" y="90" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="bold" font-size="14" fill="#00fbff">0</text>
+    </g>
+    <text x="470" y="180" text-anchor="end" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" fill="#FFFFFF" fill-opacity="0.5">Updated: 2026-02-07 21:17</text>
+</svg>

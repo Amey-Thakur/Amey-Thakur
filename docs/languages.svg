@@ -1,0 +1,33 @@
+<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0.5" y="0.5" width="494" height="194" rx="10" fill="#060A0C" stroke="#00fbff" stroke-opacity="0.2"/>
+    <text x="25" y="35" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="bold" font-size="18" fill="#00fbff">Top Languages</text>
+    
+    <g transform="translate(25, 60)">
+    
+        <text x="0" y="0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">HTML</text>
+        <rect x="100" y="-8" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
+        <rect x="100" y="-8" width="86" height="8" rx="4" fill="#00fbff"/>
+        <text x="410" y="0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">28.7%</text>
+        
+        <text x="0" y="25" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">Python</text>
+        <rect x="100" y="17" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
+        <rect x="100" y="17" width="48" height="8" rx="4" fill="#00fbff"/>
+        <text x="410" y="25" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">16.2%</text>
+        
+        <text x="0" y="50" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">JavaScript</text>
+        <rect x="100" y="42" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
+        <rect x="100" y="42" width="37" height="8" rx="4" fill="#00fbff"/>
+        <text x="410" y="50" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">12.5%</text>
+        
+        <text x="0" y="75" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">Jupyter Notebook</text>
+        <rect x="100" y="67" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
+        <rect x="100" y="67" width="37" height="8" rx="4" fill="#00fbff"/>
+        <text x="410" y="75" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">12.5%</text>
+        
+        <text x="0" y="100" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">CSS</text>
+        <rect x="100" y="92" width="300" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.1"/>
+        <rect x="100" y="92" width="18" height="8" rx="4" fill="#00fbff"/>
+        <text x="410" y="100" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" fill="#FFFFFF">6.2%</text>
+        
+    </g>
+</svg>
