@@ -181,37 +181,51 @@ def create_stats_svg(stats, username):
 
 def create_langs_svg(langs):
     """
-    Generates a localized Linguistic Profile SVG.
+    Generates a localized Linguistic Profile SVG using Analytical Synthesis.
     
-    Implements a "Strategic Priority" selection to ensure specific languages (R, Julia, etc.)
-    remain visible in the top 18 regardless of raw byte counts.
+    Implements Diversity-Weighted Averaging and a Visibility Floor for Priority
+    Languages to ensure professional representation and 100% mathematical sum.
     """
     bg, white = "#060A0C", "#FFFFFF"
     
-    # Selection Logic: Prioritize academic languages, then sort by volume
-    sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)
+    # Sort and filter for the top 18 visible languages
     visible_langs = []
     seen = set()
     
-    # Step 1: Guarantee Priority Languages
+    # Step 1: Guarantee Priority Languages (if they have ANY data)
     for p_lang in PRIORITY_LANGS:
         if p_lang in langs and len(visible_langs) < 18:
-            visible_langs.append((p_lang, langs[p_lang]))
+            visible_langs.append([p_lang, langs[p_lang]])
             seen.add(p_lang)
             
-    # Step 2: Fill remaining slots with top volume languages
-    for name, count in sorted_langs:
-        if name not in seen and len(visible_langs) < 18:
-            visible_langs.append((name, count))
+    # Step 2: Fill remaining slots with highest density languages
+    sorted_remaining = sorted([(k,v) for k,v in langs.items() if k not in seen], key=lambda x: x[1], reverse=True)
+    for name, density in sorted_remaining:
+        if len(visible_langs) < 18:
+            visible_langs.append([name, density])
             seen.add(name)
             
     # Final sort for visual consistency
     visible_langs = sorted(visible_langs, key=lambda x: x[1], reverse=True)
     
-    # Calculate proportions relative to only the 18 visible languages (100% sum)
-    total = sum(v for k,v in visible_langs)
-    if total == 0: total = 1
+    # Mathematical Normalization to 100% (Largest Remainder Method simplified)
+    total_raw = sum(v for k,v in visible_langs)
+    if total_raw == 0: total_raw = 1
     
+    # Initial proportional distribution
+    for item in visible_langs:
+        item[1] = (item[1] / total_raw) * 100
+        
+    # Visibility Floor: Ensure Priority Languages are visible (min 1.0% if they exist)
+    for item in visible_langs:
+        if item[0] in PRIORITY_LANGS and item[1] < 1.0:
+            item[1] = 1.0
+            
+    # Re-normalize to exactly 100.0% after floor adjustments
+    total_adj = sum(item[1] for item in visible_langs)
+    for item in visible_langs:
+        item[1] = (item[1] / total_adj) * 100
+        
     # Layout Calculations
     cols = 3
     rows = (len(visible_langs) + (cols-1)) // cols
@@ -228,8 +242,8 @@ def create_langs_svg(langs):
         <g mask="url(#bar-mask)">'''
     
     curr_x = 0
-    for name, count in visible_langs:
-        width = (count / total) * 435
+    for name, perc in visible_langs:
+        width = (perc / 100) * 435
         if width < 0.1: width = 0.5
         color = LANG_COLORS.get(name, "#888888")
         svg += f'<rect x="{curr_x}" width="{width}" height="14" fill="{color}"/>'
@@ -238,12 +252,10 @@ def create_langs_svg(langs):
     svg += '</g></g><g transform="translate(30, 100)">'
     
     col_width = 150
-    for i, (name, count) in enumerate(visible_langs):
+    for i, (name, perc) in enumerate(visible_langs):
         col, row = i % cols, i // cols
-        perc = (count / total) * 100
         x, y = col * col_width, row * 20 
         color = LANG_COLORS.get(name, "#888888")
-        
         display_name = name[:13] + '..' if len(name) > 15 else name
         
         svg += f'''
@@ -272,27 +284,19 @@ def update_readme(timestamp):
     content = re.sub(r'docs/stats\.svg(\?t=\d+)?', f'docs/stats.svg?t={timestamp}', content)
     with open(readme_path, "w", encoding="utf-8") as f: f.write(content)
 
-# ==============================================================================
-# MAIN EXECUTION ORCHESTRATOR
-# ==============================================================================
-
 def main():
     """
-    Orchestrates the statistical analysis and visualization generation.
-    
-    Implements a resilient fallback mechanism to ensure the profile remains 
-    visually premium even during API rate-limiting events.
+    Orchestrates Analytical Synthesis of user metrics and visualizations.
     """
     token = os.getenv('GITHUB_TOKEN')
     username = "Amey-Thakur"
-    all_langs = {}
-    stats = {"stars": 1295, "commits": "13.8k+", "prs": 185, "issues": 0, "contribs": 1}
+    all_langs_density = {}
+    stats = {"stars": 0, "commits": "13.8k+", "prs": 0, "issues": 0, "contribs": 1}
     timestamp = int(datetime.now().timestamp())
     
     try:
-        # Paged Repository Retrieval
-        page = 1
         all_repos = []
+        page = 1
         while True:
             url = f"https://api.github.com/users/{username}/repos?per_page=100&page={page}"
             page_repos = fetch_data(url, token)
@@ -303,51 +307,47 @@ def main():
             
         if not all_repos: raise Exception("No repos found")
         
-        # Aggregate Cumulative Stats
-        stats["stars"] = sum(repo['stargazers_count'] for repo in all_repos)
-        stats["issues"] = sum(repo['open_issues_count'] for repo in all_repos)
-        unique_orgs = set(repo['owner']['login'] for repo in all_repos if repo['owner']['login'] != username)
+        stats["stars"] = sum(repo.get('stargazers_count', 0) for repo in all_repos)
+        stats["issues"] = sum(repo.get('open_issues_count', 0) for repo in all_repos)
+        
+        unique_orgs = set()
+        for r in all_repos:
+            if r.get('owner', {}).get('login') != username:
+                unique_orgs.add(r['owner']['login'])
         stats["contribs"] = max(1, len(unique_orgs))
         
-        # Search API for PR count
         prs_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
-        if prs_data: stats["prs"] = prs_data['total_count']
+        if prs_data: stats["prs"] = prs_data.get('total_count', 0)
         
-        # Language Byte Aggregation (Authentic Data-Driven Engine)
+        # Analytical Synthesis: Diversity-Weighted Language Averaging
+        repo_count = len(all_repos)
         for r in all_repos:
             ld = fetch_data(r['languages_url'], token)
             if ld:
-                for k,v in ld.items(): all_langs[k] = all_langs.get(k, 0) + v
-        
-        # Analytic Boost: Ensure priority languages are visible if they exist in your data
-        for p_lang in PRIORITY_LANGS:
-            if p_lang not in all_langs: 
-                # Check if we can find traces in repo names or metadata (for zero-byte files like .Rmd)
-                all_langs[p_lang] = all_langs.get(p_lang, 0)
-            
+                # Calculate local distribution for this repo
+                r_total = sum(ld.values())
+                if r_total > 0:
+                    for k, v in ld.items():
+                        density = (v / r_total)
+                        all_langs_density[k] = all_langs_density.get(k, 0) + (density / repo_count)
+            else:
+                # Fallback: Boost priority languages if they are in repo name but data missing (Rmd/Boilerplate)
+                for p_lang in PRIORITY_LANGS:
+                    if p_lang.lower() in r['name'].lower():
+                        all_langs_density[p_lang] = all_langs_density.get(p_lang, 0) + (0.1 / repo_count)
+
         # Write high-fidelity SVGs to docs/
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
-        with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs))
-        
+        with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs_density))
         update_readme(timestamp)
-        print("Success: Visualization Master Synchronized.")
+        print("Success: Analytical Synthesis Master Synchronized.")
         
     except Exception as e:
-        # Resilient Core Fallback (Maintains Profile Integrity)
-        mock_langs = {
-            "HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, 
-            "JavaScript": 5.0, "CSS": 3.0, "Julia": 2.5, "MATLAB": 1.5, "LaTeX": 1.5,
-            "C++": 1.2, "C": 1.2, "PHP": 1.0, "TypeScript": 1.0, "Java": 0.8,
-            "Assembly": 0.8, "Scala": 0.5, "Shell": 0.5, "Markdown": 0.5
-        }
-        mock_stats = {"stars": 1295, "commits": "13.8k+", "prs": 185, "issues": 0, "contribs": 1}
-        
+        fallback_langs = {"HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, "JavaScript": 5.0} # Fallback only
         os.makedirs("docs", exist_ok=True)
-        with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(mock_stats, username))
-        mock_bytes = {k: v*1000 for k,v in mock_langs.items()}
-        with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(mock_bytes))
-        
+        with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
+        with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(fallback_langs))
         update_readme(timestamp)
         print(f"Resilient Fallback Active: {e}")
 
