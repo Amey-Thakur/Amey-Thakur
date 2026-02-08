@@ -5,79 +5,79 @@
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
         <rect width="435" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.1"/>
-        <g mask="url(#bar-mask)"><rect x="0" width="244.8316633266533" height="14" fill="#e34c26"/><rect x="245.8316633266533" width="124.09519038076152" height="14" fill="#3572A5"/><rect x="370.9268537074148" width="36.92084168336674" height="14" fill="#DA5B0B"/><rect x="408.84769539078155" width="7.7174348697394795" height="14" fill="#f1e05a"/><rect x="417.565130260521" width="2.4869739478957915" height="14" fill="#563d7c"/><rect x="421.05210420841684" width="2.0511022044088176" height="14" fill="#00fbff"/><rect x="424.10320641282567" width="1.6152304609218437" height="14" fill="#a270ba"/><rect x="426.7184368737475" width="1.6152304609218437" height="14" fill="#555555"/><rect x="429.33366733466937" width="1.7434869739478958" height="14" fill="#6E4C13"/><rect x="431.07715430861725" width="1.3076152304609219" height="14" fill="#4F5D95"/><rect x="432.38476953907815" width="0.8717434869739479" height="14" fill="#1171EE"/></g></g><g transform="translate(30, 100)">
+        <g mask="url(#bar-mask)"><rect x="0" width="173.87" height="14" fill="#e34c26"/><rect x="174.87" width="123.84499999999998" height="14" fill="#3572A5"/><rect x="299.715" width="42.935" height="14" fill="#DA5B0B"/><rect x="343.65" width="35.975" height="14" fill="#276DC3"/><rect x="380.625" width="20.75" height="14" fill="#f1e05a"/><rect x="402.375" width="9.875" height="14" fill="#563d7c"/><rect x="413.25" width="4.22" height="14" fill="#a270ba"/><rect x="418.47" width="3.785" height="14" fill="#555555"/><rect x="423.25500000000005" width="2.9149999999999996" height="14" fill="#6E4C13"/><rect x="427.1700000000001" width="1.1750000000000003" height="14" fill="#4F5D95"/><rect x="429.3450000000001" width="1.74" height="14" fill="#1171EE"/><rect x="431.0850000000001" width="1.305" height="14" fill="#701516"/><rect x="432.3900000000001" width="0.87" height="14" fill="#f34b7d"/><rect x="433.2600000000001" width="0.87" height="14" fill="#3178c6"/></g></g><g transform="translate(30, 100)">
         <g transform="translate(0, 0)">
             <circle cx="5" cy="-7" r="5" fill="#e34c26"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">HTML</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">56.5%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">40.2%</text>
         </g>
         <g transform="translate(150, 0)">
             <circle cx="5" cy="-7" r="5" fill="#3572A5"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Python</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">28.8%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">28.7%</text>
         </g>
         <g transform="translate(300, 0)">
             <circle cx="5" cy="-7" r="5" fill="#DA5B0B"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Jupyter Notebo..</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">8.7%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">10.1%</text>
         </g>
         <g transform="translate(0, 24)">
-            <circle cx="5" cy="-7" r="5" fill="#f1e05a"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">JavaScript</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">2.0%</text>
+            <circle cx="5" cy="-7" r="5" fill="#276DC3"/>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">R</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">8.5%</text>
         </g>
         <g transform="translate(150, 24)">
-            <circle cx="5" cy="-7" r="5" fill="#563d7c"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">CSS</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.8%</text>
+            <circle cx="5" cy="-7" r="5" fill="#f1e05a"/>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">JavaScript</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">5.0%</text>
         </g>
         <g transform="translate(300, 24)">
-            <circle cx="5" cy="-7" r="5" fill="#00fbff"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Rich Text Form..</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.7%</text>
+            <circle cx="5" cy="-7" r="5" fill="#563d7c"/>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">CSS</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">2.5%</text>
         </g>
         <g transform="translate(0, 48)">
             <circle cx="5" cy="-7" r="5" fill="#a270ba"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Julia</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.6%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">1.2%</text>
         </g>
         <g transform="translate(150, 48)">
             <circle cx="5" cy="-7" r="5" fill="#555555"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">C</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.6%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">1.1%</text>
         </g>
         <g transform="translate(300, 48)">
             <circle cx="5" cy="-7" r="5" fill="#6E4C13"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Assembly</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.4%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.9%</text>
         </g>
         <g transform="translate(0, 72)">
             <circle cx="5" cy="-7" r="5" fill="#4F5D95"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">PHP</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.3%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.5%</text>
         </g>
         <g transform="translate(150, 72)">
             <circle cx="5" cy="-7" r="5" fill="#1171EE"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Cython</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.2%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.4%</text>
         </g>
         <g transform="translate(300, 72)">
             <circle cx="5" cy="-7" r="5" fill="#701516"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Ruby</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.1%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.3%</text>
         </g>
         <g transform="translate(0, 96)">
-            <circle cx="5" cy="-7" r="5" fill="#b07219"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Java</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.1%</text>
-        </g>
-        <g transform="translate(150, 96)">
             <circle cx="5" cy="-7" r="5" fill="#f34b7d"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">C++</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.1%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.2%</text>
         </g>
-        <g transform="translate(300, 96)">
+        <g transform="translate(150, 96)">
             <circle cx="5" cy="-7" r="5" fill="#3178c6"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">TypeScript</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.2%</text>
+        </g>
+        <g transform="translate(300, 96)">
+            <circle cx="5" cy="-7" r="5" fill="#b07219"/>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Java</text>
             <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">0.1%</text>
         </g></g></svg>
