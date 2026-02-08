@@ -75,7 +75,7 @@ def create_stats_svg(stats, username):
     
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="195" rx="10" fill="{bg}"/>
-    <text x="25" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="900" font-size="22" fill="{theme_color}" letter-spacing="-0.5px">{username}'s GitHub Stats</text>
+    <text x="25" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="600" font-size="22" fill="{theme_color}" letter-spacing="-0.2px">{username}'s GitHub Stats</text>
     
     <g transform="translate(30, 65)">
         <g transform="translate(0, 0)">
@@ -113,7 +113,7 @@ def create_stats_svg(stats, username):
         <text text-anchor="middle" dy="0.35em" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="34" fill="{white}">{grade}</text>
     </g>
     
-    <text x="470" y="180" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="9" fill="{white}" fill-opacity="0.2" font-style="italic">Now or Never</text>
+    <text x="247.5" y="180" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="{white}" fill-opacity="0.3" font-style="italic">Now or Never</text>
 </svg>'''
     return svg
 
@@ -199,7 +199,10 @@ def main():
         stats["stars"] = sum(repo['stargazers_count'] for repo in all_repos)
         stats["issues"] = sum(repo['open_issues_count'] for repo in all_repos)
         unique_orgs = set(repo['owner']['login'] for repo in all_repos if repo['owner']['login'] != username)
-        stats["contribs"] = max(1, len(unique_orgs))
+        stats["contribs"] = len(unique_orgs)
+        
+        # Log organizations for internal verification
+        if unique_orgs: print(f"Identified Contributions: {', '.join(unique_orgs)}")
         
         prs_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if prs_data: stats["prs"] = prs_data['total_count']
