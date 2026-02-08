@@ -58,14 +58,14 @@ def calculate_grade(stats):
     issues = int(stats.get('issues', 0))
     contribs = int(stats.get('contribs', 0))
     
-    score = (stars * 10) + (commits * 0.05) + (prs * 50) + (issues * 5) + (contribs * 100)
+    score = (stars * 10) + (commits * 1.0) + (prs * 50) + (issues * 5) + (contribs * 100)
     
-    if score > 800: return "A+", 95
-    if score > 600: return "A", 85
-    if score > 400: return "A-", 75
-    if score > 300: return "B+", 65
-    if score > 200: return "B", 55
-    if score > 100: return "B-", 45
+    if score > 8000: return "A+", 95
+    if score > 6000: return "A", 85
+    if score > 4000: return "A-", 75
+    if score > 3000: return "B+", 65
+    if score > 2000: return "B", 55
+    if score > 1000: return "B-", 45
     return "C", 30
 
 def create_stats_svg(stats, username):
@@ -113,7 +113,7 @@ def create_stats_svg(stats, username):
         <text text-anchor="middle" dy="0.35em" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="34" fill="{white}">{grade}</text>
     </g>
     
-    <text x="400" y="175" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="{white}" fill-opacity="0.25" font-style="italic">Now or Never</text>
+    <text x="400" y="180" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="{white}" fill-opacity="0.3" font-style="italic">Now or Never</text>
 </svg>'''
     return svg
 
@@ -122,8 +122,22 @@ def create_langs_svg(langs):
     total = sum(langs.values())
     if total == 0: total = 1
     
+    # Smart Priority Selection (Guarantees R and others in top 18)
     sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)
-    visible_langs = sorted_langs[:18]
+    visible_langs = []
+    seen = set()
+    
+    for p_lang in PRIORITY_LANGS:
+        if p_lang in langs and len(visible_langs) < 18:
+            visible_langs.append((p_lang, langs[p_lang]))
+            seen.add(p_lang)
+            
+    for name, count in sorted_langs:
+        if name not in seen and len(visible_langs) < 18:
+            visible_langs.append((name, count))
+            seen.add(name)
+            
+    visible_langs = sorted(visible_langs, key=lambda x: x[1], reverse=True)
     
     cols = 3
     rows = (len(visible_langs) + (cols-1)) // cols
@@ -132,7 +146,7 @@ def create_langs_svg(langs):
     
     svg = f'''<svg width="495" height="{height}" viewBox="0 0 495 {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="495" height="{height}" rx="10" fill="{bg}"/>
-    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="800" font-size="22" fill="{white}" letter-spacing="-0.2px">Linguistic Profile</text>
+    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="600" font-size="22" fill="{white}" letter-spacing="-0.2px">Amey-Thakur's Most Used Languages</text>
     
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
@@ -161,7 +175,7 @@ def create_langs_svg(langs):
         svg += f'''
         <g transform="translate({x}, {y})">
             <circle cx="5" cy="-7" r="5" fill="{color}"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="{white}">{display_name}</text>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="{white}">{display_name}</text>
             <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="{white}" fill-opacity="0.6">{perc:.1f}%</text>
         </g>'''
         
@@ -180,7 +194,7 @@ def main():
     token = os.getenv('GITHUB_TOKEN')
     username = "Amey-Thakur"
     all_langs = {}
-    stats = {"stars": 0, "commits": "13.2k+", "prs": 0, "issues": 0, "contribs": 1}
+    stats = {"stars": 1295, "commits": "13.8k+", "prs": 185, "issues": 0, "contribs": 1}
     timestamp = int(datetime.now().timestamp())
     
     try:
@@ -201,9 +215,6 @@ def main():
         unique_orgs = set(repo['owner']['login'] for repo in all_repos if repo['owner']['login'] != username)
         stats["contribs"] = max(1, len(unique_orgs))
         
-        # Log organizations for internal verification
-        if unique_orgs: print(f"Identified Contributions: {', '.join(unique_orgs)}")
-        
         prs_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if prs_data: stats["prs"] = prs_data['total_count']
         
@@ -219,7 +230,7 @@ def main():
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs))
         update_readme(timestamp)
-        print("Success: High-Fidelity Icons Delivery.")
+        print("Success: Final Vision Delivered.")
         
     except Exception as e:
         mock_langs = {
@@ -228,7 +239,7 @@ def main():
             "PHP": 1.2, "Cython": 1.2, "Ruby": 1.0, "C++": 1.0, "TypeScript": 1.0, 
             "Java": 0.8, "Scala": 0.5, "Shell": 0.4, "Markdown": 0.4
         }
-        mock_stats = {"stars": 1295, "commits": "13.2k+", "prs": 185, "issues": 0, "contribs": 1}
+        mock_stats = {"stars": 1295, "commits": "13.8k+", "prs": 185, "issues": 0, "contribs": 1}
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(mock_stats, username))
         mock_bytes = {k: v*1000 for k,v in mock_langs.items()}
