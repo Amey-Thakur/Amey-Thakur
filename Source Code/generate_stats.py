@@ -330,7 +330,12 @@ def main():
         
         # Select the higher of the floor or the real-time API count
         final_commits = max(15000, api_commits)
-        stats["commits"] = f"{final_commits // 1000}k+" 
+        
+        # High-Precision Formatting: Using decimals (e.g., 15.1k+)
+        if final_commits >= 1000:
+            stats["commits"] = f"{final_commits / 1000:.1f}k+" 
+        else:
+            stats["commits"] = str(final_commits)
 
         # Analytical Synthesis: Diversity-Weighted Language Averaging
         repo_count = len(all_repos)
