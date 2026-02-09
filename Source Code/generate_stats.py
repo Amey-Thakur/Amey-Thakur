@@ -331,9 +331,12 @@ def main():
         # Select the higher of the floor or the real-time API count
         final_commits = max(15000, api_commits)
         
-        # High-Precision Formatting: Using decimals (e.g., 15.1k+)
+        # High-Precision Formatting: Suppressing .0 for whole thousands
         if final_commits >= 1000:
-            stats["commits"] = f"{final_commits / 1000:.1f}k+" 
+            if final_commits % 1000 == 0:
+                stats["commits"] = f"{final_commits // 1000}k+"
+            else:
+                stats["commits"] = f"{final_commits / 1000:.1f}k+" 
         else:
             stats["commits"] = str(final_commits)
 
