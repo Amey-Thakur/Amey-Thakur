@@ -294,7 +294,7 @@ def main():
     token = os.getenv('GITHUB_TOKEN')
     username = "Amey-Thakur"
     all_langs_density = {}
-    stats = {"stars": 0, "commits": "13.8k+", "prs": 0, "issues": 0, "contribs": 1}
+    stats = {"stars": 0, "commits": "15k+", "prs": 0, "issues": 0, "contribs": 1}
     timestamp = int(datetime.now().timestamp())
     
     try:
@@ -322,6 +322,18 @@ def main():
         prs_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if prs_data: stats["prs"] = prs_data.get('total_count', 0)
         
+        # Dynamic Commit Detection: Fetching total contribution volume
+        # We use a fallback if search rate limits occur
+        commits_data = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
+        if commits_data:
+            total_c = commits_data.get('total_count', 0)
+            if total_c > 14000:
+                stats["commits"] = f"{total_c//1000}k+"
+            else:
+                stats["commits"] = str(total_c)
+        else:
+            stats["commits"] = "15k+" # Intelligent Fallback based on user confirmation
+
         # Analytical Synthesis: Diversity-Weighted Language Averaging
         repo_count = len(all_repos)
         for r in all_repos:
