@@ -373,4 +373,5 @@ def main():
         print(f"Resilient Fallback Active: {e}")
 
 if __name__ == "__main__":
-    main()
+    main() 
+ 
