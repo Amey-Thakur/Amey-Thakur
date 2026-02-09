@@ -324,7 +324,7 @@ def main():
         
         # "Growing Dynamic" Metric: Ensuring Accuracy & Professionalism
         # GitHub's Search API can under-count (~11k) due to indexing delays.
-        # We use a floor of 15,000 to match verified contribution volume.
+        # We use a floor of 15,000 (15.0k) to match verified contribution volume.
         search_commits = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
         api_commits = search_commits.get('total_count', 0) if search_commits else 0
         
@@ -373,5 +373,4 @@ def main():
         print(f"Resilient Fallback Active: {e}")
 
 if __name__ == "__main__":
-    main() 
- 
+    main()
