@@ -5,26 +5,26 @@
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
         <rect width="435" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.1"/>
-        <g mask="url(#bar-mask)"><rect x="0" width="107.6479905953569" height="14" fill="#3572A5"/><rect x="107.6479905953569" width="70.82439858976647" height="14" fill="#e34c26"/><rect x="178.47238918512338" width="51.48679137314558" height="14" fill="#DA5B0B"/><rect x="229.95918055826894" width="42.74339562486463" height="14" fill="#f1e05a"/><rect x="272.7025761831336" width="26.701167078874892" height="14" fill="#563d7c"/><rect x="299.4037432620085" width="25.812468103847298" height="14" fill="#701516"/><rect x="325.2162113658558" width="18.781089212365956" height="14" fill="#b07219"/><rect x="343.99730057822177" width="17.904690310489627" height="14" fill="#e16737"/><rect x="361.9019908887114" width="12.62409379173486" height="14" fill="#555555"/><rect x="374.5260846804463" width="11.916273350179559" height="14" fill="#4F5D95"/><rect x="386.4423580306258" width="9.911890903959927" height="14" fill="#276DC3"/><rect x="396.35424893458577" width="9.800022904511112" height="14" fill="#6E4C13"/><rect x="406.1542718390969" width="5.380585801799638" height="14" fill="#89e051"/><rect x="411.5348576408965" width="5.216784686294699" height="14" fill="#a270ba"/><rect x="416.75164232719123" width="5.216784686294699" height="14" fill="#178600"/><rect x="421.96842701348595" width="5.216784686294699" height="14" fill="#FFFFFF"/><rect x="427.18521169978067" width="4.310193132444478" height="14" fill="#f34b7d"/><rect x="431.4954048322251" width="3.504595167774973" height="14" fill="#3178c6"/></g></g><g transform="translate(30, 100)">
+        <g mask="url(#bar-mask)"><rect x="0" width="106.35970499294659" height="14" fill="#3572A5"/><rect x="106.35970499294659" width="69.97680215533288" height="14" fill="#e34c26"/><rect x="176.33650714827945" width="50.87061923956942" height="14" fill="#DA5B0B"/><rect x="227.20712638784886" width="42.231860752015685" height="14" fill="#f1e05a"/><rect x="269.43898713986454" width="26.381618809325026" height="14" fill="#563d7c"/><rect x="295.82060594918954" width="25.503555407595854" height="14" fill="#701516"/><rect x="321.3241613567854" width="22.844766967399778" height="14" fill="#e16737"/><rect x="344.1689283241852" width="18.556325083504284" height="14" fill="#b07219"/><rect x="362.7252534076895" width="12.47301397886122" height="14" fill="#555555"/><rect x="375.1982673865507" width="11.773664432850783" height="14" fill="#4F5D95"/><rect x="386.9719318194015" width="9.79326958763427" height="14" fill="#276DC3"/><rect x="396.76520140703576" width="9.682740377068214" height="14" fill="#6E4C13"/><rect x="406.447941784104" width="5.316193227608003" height="14" fill="#89e051"/><rect x="411.76413501171197" width="5.154352414544353" height="14" fill="#a270ba"/><rect x="416.9184874262563" width="5.154352414544353" height="14" fill="#178600"/><rect x="422.07283984080067" width="5.154352414544353" height="14" fill="#FFFFFF"/><rect x="427.227192255345" width="4.310154088950471" height="14" fill="#f34b7d"/><rect x="431.5373463442955" width="3.4626536557044636" height="14" fill="#3178c6"/></g></g><g transform="translate(30, 100)">
         <g transform="translate(0, 0)">
             <circle cx="5" cy="-7" r="5" fill="#3572A5"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#FFFFFF">Python</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">24.7%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">24.5%</text>
         </g>
         <g transform="translate(150, 0)">
             <circle cx="5" cy="-7" r="5" fill="#e34c26"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#FFFFFF">HTML</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">16.3%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">16.1%</text>
         </g>
         <g transform="translate(300, 0)">
             <circle cx="5" cy="-7" r="5" fill="#DA5B0B"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#FFFFFF">Jupyter Noteb..</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">11.8%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">11.7%</text>
         </g>
         <g transform="translate(0, 20)">
             <circle cx="5" cy="-7" r="5" fill="#f1e05a"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#FFFFFF">JavaScript</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">9.8%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">9.7%</text>
         </g>
         <g transform="translate(150, 20)">
             <circle cx="5" cy="-7" r="5" fill="#563d7c"/>
@@ -37,14 +37,14 @@
             <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">5.9%</text>
         </g>
         <g transform="translate(0, 40)">
+            <circle cx="5" cy="-7" r="5" fill="#e16737"/>
+            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#FFFFFF">MATLAB</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">5.3%</text>
+        </g>
+        <g transform="translate(150, 40)">
             <circle cx="5" cy="-7" r="5" fill="#b07219"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#FFFFFF">Java</text>
             <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">4.3%</text>
-        </g>
-        <g transform="translate(150, 40)">
-            <circle cx="5" cy="-7" r="5" fill="#e16737"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#FFFFFF">MATLAB</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">4.1%</text>
         </g>
         <g transform="translate(300, 40)">
             <circle cx="5" cy="-7" r="5" fill="#555555"/>
@@ -64,7 +64,7 @@
         <g transform="translate(300, 60)">
             <circle cx="5" cy="-7" r="5" fill="#6E4C13"/>
             <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#FFFFFF">Assembly</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">2.3%</text>
+            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">2.2%</text>
         </g>
         <g transform="translate(0, 80)">
             <circle cx="5" cy="-7" r="5" fill="#89e051"/>
