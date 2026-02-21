@@ -1,13 +1,16 @@
-"""
-File: generate_stats.py
-Description: A computational framework for the automated synthesis and visualization of GitHub repository metrics.
-Authors: Amey Thakur (https://github.com/Amey-Thakur)
-         Mega Satish (https://github.com/msatmod)
-License: MIT License
-Release Date: July 5, 2021
-
 This module facilitates the empirical retrieval of GitHub user interactions and 
 the subsequent generation of Scalable Vector Graphics (SVG) for documentation integration.
+
+METHODOLOGICAL FRAMEWORK:
+The system employs an asynchronous-ready polling architecture to ingest multidimensional 
+repository metadata. It utilizes the GitHub REST v3 API for quantitative data acquisition, 
+integrating heuristic fallback mechanisms for linguistic density estimation in the absence 
+of explicit metadata.
+
+ALGORITHMIC TAXONOMY:
+1. Temporal Inference: Dynamic Git-log-based offset deduction.
+2. Metric Synthesis: Weighted performance indexing (Stars, Commits, PRs, Issues, Contributions).
+3. Graphical Rendering: Vector-based visualization with high-fidelity normalization.
 """
 
 import os
@@ -125,39 +128,46 @@ def create_stats_svg(stats, username):
     """
     Synthesizes the GitHub performance statistics into an SVG vector format.
     """
-    cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
-    theme_color = cyan
+    accent, bg, white = "#00D4FF", "#0D1117", "#F0F6FC"
+    theme_color = accent
     grade, rank = calculate_grade(stats)
     
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="495" height="195" rx="10" fill="{bg}"/>
-    <text x="25" y="32" font-family="'Segoe UI', Inter, sans-serif" font-weight="600" font-size="22" fill="{theme_color}" letter-spacing="-0.2px">{username}'s GitHub Stats</text>
+    <style>
+        .title {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {theme_color}; }}
+        .header {{ font: 700 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .stat {{ font: 900 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .grade {{ font: 900 34px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .rank {{ font: italic 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.45; }}
+    </style>
+    <rect width="494" height="194" x="0.5" y="0.5" rx="10" fill="{bg}" stroke="#30363d"/>
+    <text x="25" y="32" class="title">{username}'s GitHub Stats</text>
     
     <g transform="translate(30, 65)">
         <g transform="translate(0, 0)">
             <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['star'].format(color=theme_color)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="{white}">Total Stars Earned:</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="14" fill="{white}">{stats.get('stars', '---')}</text>
+            <text x="35" y="0" class="header">Total Stars Earned:</text>
+            <text x="220" y="0" class="stat">{stats.get('stars', '---')}</text>
         </g>
         <g transform="translate(0, 26)">
             <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['commit'].format(color=theme_color)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="{white}">Total Commits:</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="14" fill="{white}">{stats.get('commits', '---')}</text>
+            <text x="35" y="0" class="header">Total Commits:</text>
+            <text x="220" y="0" class="stat">{stats.get('commits', '---')}</text>
         </g>
         <g transform="translate(0, 52)">
             <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['pr'].format(color=theme_color)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="{white}">Total PRs:</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="14" fill="{white}">{stats.get('prs', '---')}</text>
+            <text x="35" y="0" class="header">Total PRs:</text>
+            <text x="220" y="0" class="stat">{stats.get('prs', '---')}</text>
         </g>
         <g transform="translate(0, 78)">
             <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['issue'].format(color=theme_color)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="{white}">Total Issues:</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="14" fill="{white}">{stats.get('issues', '---')}</text>
+            <text x="35" y="0" class="header">Total Issues:</text>
+            <text x="220" y="0" class="stat">{stats.get('issues', '---')}</text>
         </g>
         <g transform="translate(0, 104)">
             <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['contrib'].format(color=theme_color)}</svg>
-            <text x="35" y="0" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="{white}">Contributed to (last year):</text>
-            <text x="220" y="0" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="14" fill="{white}">{stats.get('contribs', '---')}</text>
+            <text x="35" y="0" class="header">Contributed to (last year):</text>
+            <text x="220" y="0" class="stat">{stats.get('contribs', '---')}</text>
         </g>
     </g>
     
@@ -166,10 +176,10 @@ def create_stats_svg(stats, username):
         <circle r="44" stroke="{theme_color}" stroke-width="4.5" fill="none" 
                 stroke-dasharray="276.46" stroke-dashoffset="{276.46 * (1 - rank/100)}" 
                 stroke-linecap="round" transform="rotate(-90)"/>
-        <text text-anchor="middle" dy="0.35em" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="34" fill="{white}">{grade}</text>
+        <text text-anchor="middle" dy="0.35em" class="grade">{grade}</text>
     </g>
     
-    <text x="400" y="180" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="{white}" fill-opacity="0.3" font-style="italic">Now or Never</text>
+    <text x="400" y="180" text-anchor="middle" class="rank">Excellence Through Synthesis</text>
 </svg>'''
     return svg
 
@@ -177,7 +187,7 @@ def create_langs_svg(langs):
     """
     Synthesizes language distribution data into an SVG visualization with normalization.
     """
-    bg, white = "#060A0C", "#FFFFFF"
+    bg, white = "#0D1117", "#F0F6FC"
     
     # Sort and filter for the top 18 visible languages
     visible_langs = []
@@ -227,8 +237,13 @@ def create_langs_svg(langs):
     if height < 170: height = 170
     
     svg = f'''<svg width="495" height="{height}" viewBox="0 0 495 {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="495" height="{height}" rx="10" fill="{bg}"/>
-    <text x="30" y="38" font-family="'Segoe UI', Inter, sans-serif" font-weight="600" font-size="22" fill="{white}" letter-spacing="-0.2px">Amey-Thakur's Most Used Languages</text>
+    <style>
+        .title {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .label {{ font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .perc {{ font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.6; }}
+    </style>
+    <rect width="494" height="{height-1}" x="0.5" y="0.5" rx="10" fill="{bg}" stroke="#30363d"/>
+    <text x="30" y="38" class="title">{username}'s Most Used Languages</text>
     
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
@@ -255,8 +270,8 @@ def create_langs_svg(langs):
         svg += f'''
         <g transform="translate({x}, {y})">
             <circle cx="5" cy="-7" r="5" fill="{color}"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="{white}">{display_name}</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="{white}" fill-opacity="0.6">{perc:.1f}%</text>
+            <text x="18" y="0" class="label">{display_name}</text>
+            <text x="140" y="0" text-anchor="end" class="perc">{perc:.1f}%</text>
         </g>'''
         
     svg += '</g></svg>'
@@ -276,6 +291,9 @@ def update_readme(timestamp):
     # Apply unique timestamp to force GitHub to bypass previous image caches
     content = re.sub(r'docs/languages\.svg(\?t=\d+)?', f'docs/languages.svg?t={timestamp}', content)
     content = re.sub(r'docs/stats\.svg(\?t=\d+)?', f'docs/stats.svg?t={timestamp}', content)
+    content = re.sub(r'docs/github-contribution-grid-snake-dark\.svg(\?t=\d+)?', f'docs/github-contribution-grid-snake-dark.svg?t={timestamp}', content)
+    # Update legacy remote URL for snake grid to local docs path
+    content = re.sub(r'https://github\.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake-dark\.svg', f'docs/github-contribution-grid-snake-dark.svg?t={timestamp}', content)
     with open(readme_path, "w", encoding="utf-8") as f: f.write(content)
 
 def get_local_hour():
@@ -322,8 +340,14 @@ def main():
     # the target operational window (12:00 AM or 12:00 PM local time).
     local_hour = get_local_hour()
     is_scheduled = os.getenv('GITHUB_EVENT_NAME') == 'schedule'
+    should_run = not is_scheduled or local_hour in [0, 12]
     
-    if is_scheduled and local_hour not in [0, 12]:
+    # Synchronization of the execution state with the GitHub Actions orchestration layer.
+    if 'GITHUB_OUTPUT' in os.environ:
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+            fh.write(f"run_status={'true' if should_run else 'false'}\n")
+    
+    if not should_run:
         print(f"Skipping update: Current local hour ({local_hour}:00) is outside the target synchronization window.")
         return
     
