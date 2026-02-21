@@ -87,7 +87,7 @@ def create_langs_svg(langs, username):
     Constructs a Scalable Vector Graphic (SVG) from the processed language data. 
     The layout is designed to be spacious and legible at various screen resolutions.
     """
-    bg, white = "#0D1117", "#F0F6FC"
+    bg, white = "#000000", "#F0F6FC"
     
     # STEP 1: RANKING
     # Sort the dictionary items by byte count in descending order 
