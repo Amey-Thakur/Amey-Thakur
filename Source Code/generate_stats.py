@@ -58,7 +58,7 @@ ICONS = {
     "contrib": '<path d="M2 1.75C2 .784 2.784 0 3.75 0h8.5C13.216 0 14 .784 14 1.75v11.5A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75zM3.5 1.75v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25z" fill="{color}"/><path d="M5 3h6v1.5H5V3zm0 3h6v1.5H5V6z" fill="{color}"/>'
 }
 
-# Languages prioritized for specific analytical visibility
+# Languages prioritized for specific visibility
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
 # ==============================================================================
@@ -345,12 +345,12 @@ def main():
                     if p_lang.lower() in r['name'].lower():
                         all_langs_density[p_lang] = all_langs_density.get(p_lang, 0) + (0.1 / repo_count)
 
-        # Write high-fidelity SVGs to docs/
+        # Save SVGs to docs/
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs_density))
         update_readme(timestamp)
-        print("Success: Analytical Synthesis Master Synchronized.")
+        print("Success: Profile statistics updated.")
         
     except Exception as e:
         fallback_langs = {"HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, "JavaScript": 5.0} # Fallback only
@@ -363,4 +363,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Dynamic Sync: Triggering linguistic update for TSF Repositories (v1.0.2)
+# Script end
