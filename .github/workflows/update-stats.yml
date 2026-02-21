@@ -36,4 +36,5 @@ jobs:
           git config --local user.name "Amey Thakur"
           git add docs/*.svg
           git commit -m "Amey-Thakur" -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>" --author="Amey Thakur <ameythakur20@gmail.com>" || echo "No changes to commit"
+          git pull --rebase
           git push
