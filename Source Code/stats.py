@@ -24,7 +24,9 @@ HOW IT WORKS   :
                     Impact" by identifying unique repository contexts.
 4. CALCULATIONS   : Applies a weighted grading system to assign a performance 
                     rank (A+, A, etc.) based on contribution volume.
-5. VISUALIZATION  : Synthesizes this data into a responsive SVG with dynamic 
+5. RESILIENCE     : Utilizes a caching layer (docs/stats_cache.json) to serve 
+                    historical data if the GitHub API is unavailable.
+6. VISUALIZATION  : Synthesizes this data into a responsive SVG with dynamic 
                     progress rings and iconography.
 ================================================================================
 """
@@ -39,6 +41,8 @@ from datetime import datetime, timezone, timedelta
 # ==============================================================================
 # CONFIGURATION & ASSETS
 # ==============================================================================
+
+CACHE_FILE = "docs/stats_cache.json"
 
 # These vector paths represent the physical geometry of each icon used in the 
 # stats card. They are formatted with a {color} placeholder for theme consistency.
@@ -70,8 +74,8 @@ def fetch_data(url, token):
     try:
         with urllib.request.urlopen(req) as response:
             return json.loads(response.read().decode())
-    except Exception as e:
-        # Silently fail and return None to allow the main logic to handle fallbacks.
+    except Exception:
+        # Silently fail and return None to allow the resilience layer to trigger.
         return None
 
 
@@ -251,9 +255,12 @@ def main():
             if len(repos) < 100: break
             page += 1
             
-        if all_repos:
-            stats["stars"]  = sum(r.get('stargazers_count', 0) for r in all_repos)
-            stats["issues"] = sum(r.get('open_issues_count', 0) for r in all_repos)
+        if not all_repos:
+            # If discovery fails, we attempt to load from the resilience cache.
+            raise Exception("API Connection Failed or No Repositories Found.")
+
+        stats["stars"]  = sum(r.get('stargazers_count', 0) for r in all_repos)
+        stats["issues"] = sum(r.get('open_issues_count', 0) for r in all_repos)
         
         # 3. CONTRIBUTION ANALYSIS: Search for Pull Requests to find unique project involvement.
         # We manually aggregate unique repo owners to determine the "Contributor" count.
@@ -282,19 +289,33 @@ def main():
         formatted_c = final_count / 1000
         stats["commits"] = f"{formatted_c:g}k+" if final_count >= 1000 else str(final_count)
 
-        # 5. RENDERING & PERSISTENCE:
-        # We ensure the docs/ directory exists before writing the binary/text SVG data.
+        # 5. PERSISTENCE & CACHING:
+        # We ensure the docs/ directory exists before writing the updated data.
         os.makedirs("docs", exist_ok=True)
+        
+        # Save to the resilience cache for future fallback.
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(stats, f)
+
         with open("docs/stats.svg", "w", encoding="utf-8") as f: 
             f.write(create_stats_svg(stats, username))
             
-        # Update README to reflect the new timestamp.
         update_readme(int(datetime.now().timestamp()))
         print(f"Stats Synthesis Successful. Metric Baseline: {stats['commits']}")
         
     except Exception as e:
-        # Comprehensive error logging for GitHub Actions runner logs.
-        print(f"CRITICAL ERROR IN STATS SYNTHESIS: {e}")
+        print(f"API DISCOVERY FAILED: {e}. Attempting to Load Resilience Cache...")
+        if os.path.exists(CACHE_FILE):
+            with open(CACHE_FILE, "r", encoding="utf-8") as f:
+                stats = json.load(f)
+            
+            # Re-generate the SVG using cached data to prevent a profile blackout.
+            os.makedirs("docs", exist_ok=True)
+            with open("docs/stats.svg", "w", encoding="utf-8") as f:
+                f.write(create_stats_svg(stats, username))
+            print("Successfully recovered metrics from Resilience Cache.")
+        else:
+            print("CRITICAL FAILURE: No live data and no cache available.")
 
 if __name__ == "__main__": 
     main()

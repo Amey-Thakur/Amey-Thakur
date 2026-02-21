@@ -24,7 +24,9 @@ HOW IT WORKS   :
 3. SUMMATION      : Performs a global weighted summation of bytes across all projects.
 4. NORMALIZATION  : Converts raw byte volumes into percentages, ensuring the total 
                     distribution equals exactly 100%.
-5. RENDERING      : Synthesizes the results into a spacious, well-aligned SVG bar 
+5. RESILIENCE     : Utilizes a caching layer (docs/languages_cache.json) to serve 
+                    historical data if the GitHub API is unavailable.
+6. RENDERING      : Synthesizes the results into a spacious, well-aligned SVG bar 
                     chart with localized color tokens.
 ================================================================================
 """
@@ -39,6 +41,8 @@ from datetime import datetime, timezone, timedelta
 # ==============================================================================
 # DESIGN SYSTEM & COLOR TOKENS
 # ==============================================================================
+
+CACHE_FILE = "docs/languages_cache.json"
 
 # These color tokens map programming languages to their standard brand colors. 
 # This ensures that the generated visualization is immediately intuitive to 
@@ -216,6 +220,9 @@ def main():
             if len(r_page) < 100: break
             page += 1
             
+        if not repos:
+            raise Exception("API Discovery Failed or Portolio Inaccessible.")
+
         # 4. LINGUISTIC QUANTIFICATION
         # We aggregate raw byte counts from all non-forked repositories. 
         # Forked repos are skipped to ensure the stats represent original creation.
@@ -228,9 +235,16 @@ def main():
                 for k, v in ld.items(): 
                     lang_bytes[k] = lang_bytes.get(k, 0) + v
         
-        # 5. PERSISTENCE
-        # Ensure the output directory is ready before finalizing the SVG.
+        if not lang_bytes:
+             raise Exception("Linguistic data could not be parsed.")
+
+        # 5. PERSISTENCE & RESILIENCE:
+        # Ensure the output directory is ready before finalizing the cache and SVG.
         os.makedirs("docs", exist_ok=True)
+        
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(lang_bytes, f)
+
         with open("docs/languages.svg", "w", encoding="utf-8") as f: 
             f.write(create_langs_svg(lang_bytes, username))
             
@@ -239,7 +253,17 @@ def main():
         print("Linguistic distribution successfully updated.")
         
     except Exception as e:
-        print(f"LANGUAGE SYNTHESIS FAILURE: {e}")
+        print(f"LANGUAGE SYNTHESIS FAILURE: {e}. Attempting to Load Resilience Cache...")
+        if os.path.exists(CACHE_FILE):
+             with open(CACHE_FILE, "r", encoding="utf-8") as f:
+                 lang_bytes = json.load(f)
+             
+             os.makedirs("docs", exist_ok=True)
+             with open("docs/languages.svg", "w", encoding="utf-8") as f:
+                 f.write(create_langs_svg(lang_bytes, username))
+             print("Successfully recovered linguistic distribution from Resilience Cache.")
+        else:
+             print("CRITICAL FAILURE: No live data and no cache available for languages.")
 
 if __name__ == "__main__": 
     main()
