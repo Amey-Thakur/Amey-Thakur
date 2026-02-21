@@ -124,7 +124,7 @@ def create_stats_svg(stats, username):
     # SVG definition with embedded styles and dynamic progress ring.
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {accent}; }}
+        .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
         .header {{ font: 700 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
         .stat   {{ font: 900 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
         .grade  {{ font: 900 34px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
