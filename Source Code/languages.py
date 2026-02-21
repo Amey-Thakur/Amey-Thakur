@@ -1,17 +1,10 @@
 """
 File: languages.py
-Description: A specialized analytical module for the empirical synthesis of linguistic distribution.
+Description: Generates a visualization of programming language distribution.
 Authors: Amey Thakur (https://github.com/Amey-Thakur)
          Mega Satish (https://github.com/msatmod)
 License: MIT License
 Release Date: July 5, 2021
-
-PART OF THE AMEY-THAKUR COMPUTATIONAL FRAMEWORK.
-
-ALGORITHMIC TAXONOMY:
-1. Temporal Inference: Dynamic Git-log-based offset deduction.
-2. Weighted Linguistic Summation: Byte-based quantification of total work output.
-3. Graphical Rendering: Vector-based visualization with high-fidelity normalization.
 """
 
 import os
@@ -22,7 +15,7 @@ import subprocess
 from datetime import datetime, timezone, timedelta
 
 # ==============================================================================
-# CONFIGURATION AND PARAMETERS
+# CONFIGURATION
 # ==============================================================================
 
 LANG_COLORS = {
@@ -32,16 +25,12 @@ LANG_COLORS = {
     "MATLAB": "#e16737", "LaTeX": "#3D6117", "C#": "#178600", "PHP": "#4F5D95"
 }
 
-PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
-
 # ==============================================================================
-# DATA ACQUISITION LAYER
+# HELPERS
 # ==============================================================================
 
 def fetch_data(url, token):
-    """
-    Executes an authenticated HTTP GET request to the GitHub REST API.
-    """
+    """Authenticated GitHub API request."""
     req = urllib.request.Request(url)
     req.add_header('Accept', 'application/vnd.github.v3+json')
     if token: req.add_header('Authorization', f'token {token}')
@@ -50,24 +39,19 @@ def fetch_data(url, token):
             return json.loads(response.read().decode())
     except Exception: return None
 
-# ==============================================================================
-# GRAPHICAL SYNTHESIS (SVG)
-# ==============================================================================
-
 def create_langs_svg(langs, username):
-    """
-    Synthesizes language distribution data into an SVG visualization with normalization.
-    """
+    """Generates the languages distribution SVG."""
     bg, white = "#0D1117", "#F0F6FC"
     
-    # Sort and filter for the top 18 visible languages
+    # Sort and take top languages
     visible_langs = sorted([[k, v] for k, v in langs.items()], key=lambda x: x[1], reverse=True)[:18]
     total_raw = sum(v for k, v in visible_langs) or 1
     
-    # Normalization to 100%
+    # Normalize to 100%
     for item in visible_langs: item[1] = (item[1] / total_raw) * 100
     
-    cols, rows = 3, (len(visible_langs) + 2) // 3
+    cols = 3
+    rows = (len(visible_langs) + 2) // 3
     height = max(170, 110 + (rows * 20))
     
     svg = f'''<svg width="495" height="{height}" viewBox="0 0 495 {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +61,7 @@ def create_langs_svg(langs, username):
         .perc {{ font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.6; }}
     </style>
     <rect width="494" height="{height-1}" x="0.5" y="0.5" rx="10" fill="{bg}" stroke="#30363d"/>
-    <text x="30" y="38" class="title">{username}'s Linguistic Distribution</text>
+    <text x="30" y="38" class="title">{username}'s Language Usage</text>
     
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
@@ -102,14 +86,8 @@ def create_langs_svg(langs, username):
     svg += '</g></svg>'
     return svg
 
-# ==============================================================================
-# SYSTEM UTILITIES
-# ==============================================================================
-
 def update_readme(timestamp):
-    """
-    Updates the README markdown document with current visual parameters.
-    """
+    """Updates SVG links in README with a timestamp to avoid caching."""
     readme_path = "README.md"
     if not os.path.exists(readme_path): return
     with open(readme_path, "r", encoding="utf-8") as f: content = f.read()
@@ -117,9 +95,7 @@ def update_readme(timestamp):
     with open(readme_path, "w", encoding="utf-8") as f: f.write(content)
 
 def get_local_hour():
-    """
-    Infers the user's current hour from Git commit metadata.
-    """
+    """Gets current hour based on local Git timezone."""
     try:
         result = subprocess.run(['git', 'log', '-1', '--format=%ai'], capture_output=True, text=True, check=True)
         match = re.search(r'([+-])(\d{2})(\d{2})$', result.stdout.strip())
@@ -134,12 +110,14 @@ def main():
     username = "Amey-Thakur"
     lang_bytes = {}
     
+    # Check if we should run scheduled update based on hour
     local_hour = get_local_hour()
     if os.getenv('GITHUB_EVENT_NAME') == 'schedule' and local_hour not in [0, 12]:
-        print(f"Langs schedule bypass: Hour {local_hour}")
+        print(f"Bypassing scheduled run for hour {local_hour}")
         return
 
     try:
+        # Fetch all repositories
         repos = []
         page = 1
         while True:
@@ -149,17 +127,19 @@ def main():
             if len(r_page) < 100: break
             page += 1
             
+        # Sum language bytes across repos (skipping forks)
         for r in repos:
             if r.get('fork'): continue
             ld = fetch_data(r['languages_url'], token)
             if ld:
                 for k, v in ld.items(): lang_bytes[k] = lang_bytes.get(k, 0) + v
         
+        # Save output
         os.makedirs("docs", exist_ok=True)
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(lang_bytes, username))
         update_readme(int(datetime.now().timestamp()))
-        print("Success: Langs visualized.")
+        print("Language usage updated.")
     except Exception as e:
-        print(f"Langs Error: {e}")
+        print(f"Execution Error: {e}")
 
 if __name__ == "__main__": main()
