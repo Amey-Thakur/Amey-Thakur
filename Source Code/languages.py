@@ -222,13 +222,19 @@ def main():
                 for k, v in ld.items(): 
                     lang_bytes[k] = lang_bytes.get(k, 0) + v
         
-        if not lang_bytes:
-             raise Exception("No linguistic data found.")
-
-        # Saves current state to the resilience cache before serialization.
-        os.makedirs("docs", exist_ok=True)
-        with open(CACHE_FILE, "w", encoding="utf-8") as f:
-            json.dump(lang_bytes, f)
+        # STEP 5: PERSISTENCE & INTEGRITY GUARD
+        # Prevents cache corruption by verifying that linguistic data is non-zero.
+        if sum(lang_bytes.values()) > 0:
+            # Injecting temporal metadata for cache auditability.
+            cache_payload = {
+                "last_updated": datetime.now(timezone.utc).isoformat(),
+                "data": lang_bytes
+            }
+            os.makedirs("docs", exist_ok=True)
+            with open(CACHE_FILE, "w", encoding="utf-8") as f:
+                json.dump(cache_payload, f)
+        else:
+            print("Sanity Check Failed: No language bytes detected. Aborting cache overwrite.")
 
         # Final SVG synthesis.
         with open("docs/languages.svg", "w", encoding="utf-8") as f: 
@@ -242,7 +248,8 @@ def main():
         print(f"Update Failure: {e}. Transitioning to Resilience Cache...")
         if os.path.exists(CACHE_FILE):
              with open(CACHE_FILE, "r", encoding="utf-8") as f:
-                 lang_bytes = json.load(f)
+                 cache_content = json.load(f)
+                 lang_bytes = cache_content.get('data', cache_content) if isinstance(cache_content, dict) else cache_content
              
              os.makedirs("docs", exist_ok=True)
              with open("docs/languages.svg", "w", encoding="utf-8") as f:
