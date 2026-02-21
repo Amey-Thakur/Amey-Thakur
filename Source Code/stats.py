@@ -171,7 +171,7 @@ def create_stats_svg(stats, username):
         <text text-anchor="middle" dy="0.35em" class="grade">{grade}</text>
     </g>
     
-    <text x="400" y="180" text-anchor="middle" class="rank">Excellence Through Synthesis</text>
+    <text x="400" y="180" text-anchor="middle" class="rank">Now or Never</text>
 </svg>'''
     return svg
 
