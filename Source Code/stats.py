@@ -115,7 +115,7 @@ def create_stats_svg(stats, username):
     Synthesizes the final dashboard using an XML/SVG template. 
     We use standard Segoe UI/Ubuntu fonts for a native, clean interface aesthetic.
     """
-    accent, bg, white = "#00D4FF", "#0D1117", "#F0F6FC"
+    accent, bg, white = "#00D4FF", "#000000", "#F0F6FC"
     grade, rank = calculate_grade(stats)
     
     # The SVG contains CSS styles for typography and a circular progress ring 
