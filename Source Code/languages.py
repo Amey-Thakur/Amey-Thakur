@@ -47,12 +47,16 @@ CACHE_FILE = "docs/languages_cache.json"
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
 # Standard brand hex codes for professional technology representation.
+# This map ensures unique visual identification for every programming environment.
 LANG_COLORS = {
     "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B", 
     "JavaScript": "#f1e05a", "CSS": "#563d7c", "TypeScript": "#3178c6", 
     "Java": "#b07219", "C": "#555555", "C++": "#f34b7d", "Go": "#00ADD8", 
     "Rust": "#dea584", "Shell": "#89e051", "R": "#276DC3", "Julia": "#a270ba", 
-    "MATLAB": "#e16737", "LaTeX": "#3D6117", "C#": "#178600", "PHP": "#4F5D95"
+    "MATLAB": "#e16737", "LaTeX": "#3D6117", "C#": "#178600", "PHP": "#4F5D95",
+    "Ruby": "#701516", "Assembly": "#6E4C13", "AIDL": "#4AF626", "Lex": "#DBCA00",
+    "Rich Text Format": "#FFFFFF", "Kotlin": "#A97BFF", "Dart": "#00B4AB",
+    "SQL": "#e38c00", "Swift": "#F05138", "Objective-C": "#438eff", "Lua": "#000080"
 }
 
 
