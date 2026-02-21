@@ -1,4 +1,4 @@
-name: Amey-Thakur
+name: Amey-Thakur Languages
 
 on:
   schedule:
@@ -8,33 +8,35 @@ on:
     branches:
       - main
     paths:
-      - 'Source Code/**'
+      - 'Source Code/languages.py'
 
 permissions:
   contents: write
 
 jobs:
-  update-stats:
+  update-languages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Ensure Git history is available for timezone inference.
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Generate Statistics Visualizations
+      - name: Generate Language Distribution Visualization
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python "Source Code/generate_stats.py"
+        run: python "Source Code/languages.py"
 
       - name: Commit and Push Changes
         run: |
           git config --local user.email "ameythakur20@gmail.com"
           git config --local user.name "Amey Thakur"
-          git add docs/*.svg README.md
-          git commit -m "Amey-Thakur" -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>" --author="Amey Thakur <ameythakur20@gmail.com>" || echo "No changes to commit"
+          git add docs/languages.svg README.md
+          git commit -m "Amey-Thakur: Language Analysis" -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>" --author="Amey Thakur <ameythakur20@gmail.com>" || echo "No changes to commit"
           git pull --rebase
           git push
