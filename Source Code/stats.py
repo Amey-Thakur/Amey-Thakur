@@ -131,7 +131,7 @@ def create_stats_svg(stats, username):
     
     <!-- Outer Container -->
     <rect width="495" height="195" rx="10" fill="{bg}"/>
-    <text x="25" y="32" class="title">{username}'s GitHub Stats</text>
+    <text x="30" y="38" class="title">{username}'s GitHub Stats</text>
     
     <!-- Quantitative Metrics Column -->
     <g transform="translate(30, 65)">
