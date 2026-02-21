@@ -38,5 +38,5 @@ jobs:
           git config --local user.name "Amey Thakur"
           git add docs/languages.svg docs/languages_cache.json README.md
           git commit -m "Amey-Thakur" -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>" --author="Amey Thakur <ameythakur20@gmail.com>" || echo "No changes to commit"
-          git pull --rebase
+          git pull --rebase --autostash
           git push
