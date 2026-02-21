@@ -269,16 +269,18 @@ def main():
             stats["contribs"] = max(1, len(unique_contexts) - (1 if username in unique_contexts else 0))
 
         # STEP 3: COMMIT RECONCILIATION
-        # Maintains a baseline of 17,000 to cover historical output 
-        # since account initialization (2019).
+        # Maintains a 17,000 baseline for historical commits (pre-2021). 
+        # A COMMIT_ANCHOR is utilized to synchronize the live API growth 
+        # with the verified legacy volume, preventing modulo wrapping.
         baseline_commits = int(os.getenv('COMMIT_BASELINE', 17000))
-        commit_data      = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
+        anchor_commits   = int(os.getenv('COMMIT_ANCHOR', 13000))
+        commit_data       = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
         
-        # Calculates total commits by adding live API results to the established 
-        # baseline. Ensures linear growth metrics as post-baseline 
-        # contributions accumulate.
+        # Aggregates growth by calculating the delta between the current API 
+        # total and the synchronization anchor.
         raw_commits      = commit_data.get('total_count', 0) if commit_data else 0
-        final_count      = baseline_commits + raw_commits
+        growth           = max(0, raw_commits - anchor_commits)
+        final_count      = baseline_commits + growth
         
         formatted_c = final_count / 1000
         if final_count >= 1000:
