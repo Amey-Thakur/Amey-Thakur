@@ -1,6 +1,6 @@
 <svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        .title  { font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: #F0F6FC; }
+        .title  { font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: #00D4FF; }
         .header { font: 700 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #F0F6FC; }
         .stat   { font: 900 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #F0F6FC; }
         .grade  { font: 900 34px 'Segoe UI', Ubuntu, Sans-Serif; fill: #F0F6FC; }
@@ -9,7 +9,7 @@
     
     <!-- Background Frame -->
     <rect width="495" height="195" rx="10" fill="#000000"/>
-    <text x="30" y="38" class="title">Amey-Thakur's GitHub Stats</text>
+    <text x="30" y="38" class="title" fill="#00D4FF">Amey-Thakur's GitHub Stats</text>
     
     <!-- Quantitative Metrics Analysis -->
     <g transform="translate(30, 65)">
