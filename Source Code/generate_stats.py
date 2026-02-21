@@ -1,16 +1,13 @@
 """
 File: generate_stats.py
-Description: Comprehensive GitHub Statistics Visualization Engine.
+Description: GitHub Statistics Visualization Script.
 Authors: Amey Thakur (https://github.com/Amey-Thakur)
          Mega Satish (https://github.com/msatmod)
 License: MIT License
-Release Date: July 5, 2021
 Version: 1.0.0
 
-This module serves as the core analytical engine for the Amey-Thakur profile.
-It orchestrates advanced data retrieval from the GitHub REST API, performs multi-dimensional
-scoring for professional-grade ranking, and generates high-fidelity SVG visualizations
-with a sleek, refined appearance.
+Core script for retrieving GitHub user data and generating SVG stats
+for the Amey-Thakur profile README.
 """
 
 import os
@@ -20,10 +17,10 @@ import re
 from datetime import datetime
 
 # ==============================================================================
-# ANALYTICAL CONFIGURATION & AESTHETIC CONSTANTS
+# CONFIGURATION & CONSTANTS
 # ==============================================================================
 
-# Massive, Future-Proof Language Color Map (Standardized for Formal Visuals)
+# Language colors for SVG themes
 LANG_COLORS = {
     "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B", "JavaScript": "#f1e05a",
     "CSS": "#563d7c", "TypeScript": "#3178c6", "Java": "#b07219", "C": "#555555", "C++": "#f34b7d",
@@ -51,7 +48,7 @@ LANG_COLORS = {
     "Wolfram": "#dd1100", "YAML": "#cb171e", "Zephir": "#118f9e", "Zimpl": "#d67711", "Rich Text Format": "#FFFFFF"
 }
 
-# High-Fidelity Outlined Icons (Sourced from Professional Standard Sets)
+# SVG Icons for stats display
 ICONS = {
     "star": '<path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" fill="none" stroke="{color}" stroke-width="1.2"/>',
     "commit": '<path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z" fill="{color}"/><path d="M8 3.5a.75.75 0 01.75.75v3.5h2.5a.75.75 0 010 1.5h-3.25a.75.75 0 01-.75-.75v-4.25a.75.75 0 01.75-.75z" fill="{color}"/>',
@@ -64,7 +61,7 @@ ICONS = {
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
 # ==============================================================================
-# DATA RETRIEVAL CORE
+# API DATA RETRIEVAL
 # ==============================================================================
 
 def fetch_data(url, token):
@@ -87,15 +84,13 @@ def fetch_data(url, token):
     except Exception: return None
 
 # ==============================================================================
-# ANALYTICAL & SCORING LOGIC
+# STATS CALCULATION LOGIC
 # ==============================================================================
 
 def calculate_grade(stats):
     """
-    Executes a multi-dimensional scoring algorithm to determine rank.
-    
-    This algorithm balances raw contribution volume with quality metrics
-    like stars and organizational diversity.
+    Scores the profile to determine a ranking grade based on stars, 
+    commits, PRs, issues, and contributions.
     
     Args:
         stats (dict): Aggregated user statistics.
@@ -111,7 +106,7 @@ def calculate_grade(stats):
     issues = int(stats.get('issues', 0))
     contribs = int(stats.get('contribs', 0))
     
-    # Weighted scoring formula (Production Tuned)
+    # Weighted scoring formula
     score = (stars * 10) + (commits * 1.5) + (prs * 50) + (issues * 5) + (contribs * 100)
     
     if score > 8000: return "A+", 95
@@ -123,14 +118,12 @@ def calculate_grade(stats):
     return "C", 30
 
 # ==============================================================================
-# VISUALIZATION ENGINES (SVG GENERATION)
+# SVG GENERATION
 # ==============================================================================
 
 def create_stats_svg(stats, username):
     """
-    Generates a high-fidelity SVG for GitHub Statistics.
-    
-    Features a circular progress rank and unbolded refined typography.
+    Generates the GitHub stats SVG.
     """
     cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
     theme_color = cyan
@@ -182,10 +175,7 @@ def create_stats_svg(stats, username):
 
 def create_langs_svg(langs):
     """
-    Generates a localized Linguistic Profile SVG using Analytical Synthesis.
-    
-    Implements Diversity-Weighted Averaging and a Visibility Floor for Priority
-    Languages to ensure professional representation and 100% mathematical sum.
+    Generates language usage SVG with normalization and visibility logic.
     """
     bg, white = "#060A0C", "#FFFFFF"
     
@@ -227,7 +217,7 @@ def create_langs_svg(langs):
     for item in visible_langs:
         item[1] = (item[1] / total_adj) * 100
         
-    # Final Precision Sort: Ensure strictly descending order AFTER all adjustments
+    # Sort descending after adjustment
     visible_langs = sorted(visible_langs, key=lambda x: x[1], reverse=True)
     
     # Layout Calculations
@@ -273,12 +263,12 @@ def create_langs_svg(langs):
     return svg
 
 # ==============================================================================
-# SYSTEM SYNCHRONIZATION
+# UTILITIES
 # ==============================================================================
 
 def update_readme(timestamp):
     """
-    Performs cache-busting synchronization on the README.md asset links.
+    Updates the README with new timestamps to bypass cache.
     """
     readme_path = "README.md"
     if not os.path.exists(readme_path): return
@@ -323,25 +313,21 @@ def main():
         prs_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if prs_data: stats["prs"] = prs_data.get('total_count', 0)
         
-        # Data Acquisition and Formatting Logic
-        # GitHub's Commit Search API can under-count due to indexing delays.
-        # We apply a "Verified Historical Floor" to ensure the stats reflect reality
-        # while keeping the data dynamic as the API count grows.
+        # Get commit count from Search API
         search_commits = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
         api_commits = search_commits.get('total_count', 0) if (search_commits and 'total_count' in search_commits) else 0
         
-        # Adjusting baseline to match verified contribution volume (16,700+)
-        verified_floor = 16700
-        final_commits = max(verified_floor, api_commits)
+        # Use a baseline to match historical contributions if API under-counts
+        verified_baseline = 16700
+        final_commits = max(verified_baseline, api_commits)
         
-        # High-Precision Formatting: Always include one decimal place (e.g., 16.7k+) 
-        # as requested for professional-grade telemetry.
+        # Format with one decimal place for precision (e.g., 16.7k+)
         if final_commits >= 1000:
             stats["commits"] = f"{final_commits / 1000:.1f}k+"
         else:
             stats["commits"] = str(final_commits)
 
-        # Analytical Synthesis: Diversity-Weighted Language Averaging
+        # Calculate language distribution across repos
         repo_count = len(all_repos)
         for r in all_repos:
             ld = fetch_data(r['languages_url'], token)
@@ -371,7 +357,7 @@ def main():
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(fallback_langs))
         update_readme(timestamp)
-        print(f"Resilient Fallback Active: {e}")
+        print(f"Fallback active: {e}")
 
 if __name__ == "__main__":
     main()
