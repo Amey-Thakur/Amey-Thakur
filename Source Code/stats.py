@@ -279,7 +279,8 @@ def main():
         
         # We merge live API polling with the verified baseline to ensure data integrity.
         final_count = max(raw_commits, baseline_commits + (raw_commits % 1000 if raw_commits > 0 else 0))
-        stats["commits"] = f"{final_count/1000:.1f}k+" if final_count >= 1000 else str(final_count)
+        formatted_c = final_count / 1000
+        stats["commits"] = f"{formatted_c:g}k+" if final_count >= 1000 else str(final_count)
 
         # 5. RENDERING & PERSISTENCE:
         # We ensure the docs/ directory exists before writing the binary/text SVG data.
