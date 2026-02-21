@@ -2,7 +2,7 @@ name: Amey-Thakur
 
 on:
   schedule:
-    - cron: '0 4,16 * * *' # Synchronized for 12:00 AM/PM America/New_York (UTC-4) functionality.
+    - cron: '0 * * * *' # High-frequency polling to facilitate dynamic temporal synchronization across timezones.
   workflow_dispatch:        # Manual trigger
   push:
     branches:
@@ -16,8 +16,6 @@ permissions:
 jobs:
   update-stats:
     runs-on: ubuntu-latest
-    env:
-      TZ: 'America/New_York' # Temporal localization for precise analytical synchronization.
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
