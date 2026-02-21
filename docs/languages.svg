@@ -6,7 +6,7 @@
     </style>
     
     <!-- Background Frame -->
-    <rect width="495" height="230" rx="10" fill="#0D1117"/>
+    <rect width="495" height="230" rx="10" fill="#000000"/>
     <text x="30" y="38" class="title">Amey-Thakur's Language Usage</text>
     
     <!-- Progress Bar Section -->
