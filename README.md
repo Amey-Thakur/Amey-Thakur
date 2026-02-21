@@ -52,7 +52,7 @@
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1771654444" alt="Amey-Thakur" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1771655303" alt="Amey-Thakur" /></p>
 
 ---
 
