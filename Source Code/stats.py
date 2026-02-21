@@ -272,8 +272,8 @@ def main():
 
         # 4. GLOBAL COMMIT RECONCILIATION:
         # Since the API search can be inconsistent, we use an 'Empirical Baseline' 
-        # based on verified historical contribution logs (16,794 total contributions).
-        baseline_commits = int(os.getenv('COMMIT_BASELINE', 16800))
+        # based on verified historical contribution logs (17,000+ total contributions).
+        baseline_commits = int(os.getenv('COMMIT_BASELINE', 17000))
         commit_data      = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
         raw_commits       = commit_data.get('total_count', 0) if commit_data else 0
         
