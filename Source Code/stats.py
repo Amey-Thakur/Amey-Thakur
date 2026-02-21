@@ -130,7 +130,7 @@ def create_stats_svg(stats, username):
     </style>
     
     <!-- Outer Container -->
-    <rect width="494" height="194" x="0.5" y="0.5" rx="10" fill="{bg}" stroke="#30363d"/>
+    <rect width="495" height="195" rx="10" fill="{bg}"/>
     <text x="25" y="32" class="title">{username}'s GitHub Stats</text>
     
     <!-- Quantitative Metrics Column -->
