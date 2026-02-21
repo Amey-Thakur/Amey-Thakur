@@ -274,8 +274,9 @@ def main():
         baseline_commits = int(os.getenv('COMMIT_BASELINE', 17000))
         commit_data      = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
         
-        # We assume raw_commits represents the growth since the baseline was established.
-        # This prevents the 'modulo reset' issue and ensures linear scaling.
+        # Calculates total commits by adding live API results to the established 
+        # baseline. Ensures linear growth metrics as post-baseline 
+        # contributions accumulate.
         raw_commits      = commit_data.get('total_count', 0) if commit_data else 0
         final_count      = baseline_commits + raw_commits
         
@@ -286,15 +287,16 @@ def main():
             stats["commits"] = str(final_count)
 
         # STEP 4: PERSISTENCE & DATA INTEGRITY GUARD
-        # We only overwrite the cache if the data passes a sanity check (non-zero stars).
-        # This prevents 'empty' successful API responses from corrupting the backup.
+        # Validation of API response volume before cache serialization. 
+        # Prevents overwriting local data with null or empty results from 
+        # successful but incomplete API returns.
         if stats.get('stars', 0) > 0:
             stats['last_updated'] = datetime.now(timezone.utc).isoformat()
             os.makedirs("docs", exist_ok=True)
             with open(CACHE_FILE, "w", encoding="utf-8") as f:
                 json.dump(stats, f)
         else:
-            print("Sanity Check Failed: API returned zero stars. Skipping cache update.")
+            print("Validation Failure: Insufficient metric volume. Cache update bypassed.")
 
         # Final SVG serialization.
         with open("docs/stats.svg", "w", encoding="utf-8") as f: 

@@ -223,9 +223,9 @@ def main():
                     lang_bytes[k] = lang_bytes.get(k, 0) + v
         
         # STEP 5: PERSISTENCE & INTEGRITY GUARD
-        # Prevents cache corruption by verifying that linguistic data is non-zero.
+        # Validation of linguistic byte volume ensures cache data integrity.
         if sum(lang_bytes.values()) > 0:
-            # Injecting temporal metadata for cache auditability.
+            # Aggregates temporal metadata for version tracking.
             cache_payload = {
                 "last_updated": datetime.now(timezone.utc).isoformat(),
                 "data": lang_bytes
@@ -234,7 +234,7 @@ def main():
             with open(CACHE_FILE, "w", encoding="utf-8") as f:
                 json.dump(cache_payload, f)
         else:
-            print("Sanity Check Failed: No language bytes detected. Aborting cache overwrite.")
+            print("Validation Failure: Null byte volume. Cache persistence bypassed.")
 
         # Final SVG synthesis.
         with open("docs/languages.svg", "w", encoding="utf-8") as f: 
