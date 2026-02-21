@@ -124,7 +124,7 @@ def create_stats_svg(stats, username):
     # SVG definition with embedded styles and dynamic progress ring.
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {accent}; }}
         .header {{ font: 700 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
         .stat   {{ font: 900 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
         .grade  {{ font: 900 34px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
@@ -278,7 +278,10 @@ def main():
         # Integration of live API activity with the verified baseline.
         final_count = max(raw_commits, baseline_commits + (raw_commits % 1000 if raw_commits > 0 else 0))
         formatted_c = final_count / 1000
-        stats["commits"] = f"{formatted_c:g}k+" if final_count >= 1000 else str(final_count)
+        if final_count >= 1000:
+            stats["commits"] = f"{formatted_c:.1f}k+".replace(".0k", "k")
+        else:
+            stats["commits"] = str(final_count)
 
         # STEP 4: PERSISTENCE
         # Updates the resilience cache before finalizing the visual output.
