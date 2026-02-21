@@ -4,6 +4,7 @@ Description: GitHub Statistics Visualization Script.
 Authors: Amey Thakur (https://github.com/Amey-Thakur)
          Mega Satish (https://github.com/msatmod)
 License: MIT License
+Release Date: July 5, 2021
 Version: 1.0.0
 
 Core script for retrieving GitHub user data and generating SVG stats
