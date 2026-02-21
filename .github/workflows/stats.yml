@@ -37,6 +37,6 @@ jobs:
           git config --local user.email "ameythakur20@gmail.com"
           git config --local user.name "Amey Thakur"
           git add docs/stats.svg README.md
-          git commit -m "Amey-Thakur: Stats Synthesis" -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>" --author="Amey Thakur <ameythakur20@gmail.com>" || echo "No changes to commit"
+          git commit -m "Amey-Thakur" -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>" --author="Amey Thakur <ameythakur20@gmail.com>" || echo "No changes to commit"
           git pull --rebase
           git push
