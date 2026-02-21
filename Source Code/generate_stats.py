@@ -1,14 +1,13 @@
 """
 File: generate_stats.py
-Description: GitHub Statistics Visualization Script.
+Description: A computational framework for the automated synthesis and visualization of GitHub repository metrics.
 Authors: Amey Thakur (https://github.com/Amey-Thakur)
          Mega Satish (https://github.com/msatmod)
 License: MIT License
 Release Date: July 5, 2021
-Version: 1.0.0
 
-Core script for retrieving GitHub user data and generating SVG stats
-for the Amey-Thakur profile README.
+This module facilitates the empirical retrieval of GitHub user interactions and 
+the subsequent generation of Scalable Vector Graphics (SVG) for documentation integration.
 """
 
 import os
@@ -18,10 +17,10 @@ import re
 from datetime import datetime
 
 # ==============================================================================
-# CONFIGURATION & CONSTANTS
+# CONFIGURATION AND GLOBAL PARAMETERS
 # ==============================================================================
 
-# Language colors for SVG themes
+# Taxonomy of programming languages and their designated color representations.
 LANG_COLORS = {
     "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B", "JavaScript": "#f1e05a",
     "CSS": "#563d7c", "TypeScript": "#3178c6", "Java": "#b07219", "C": "#555555", "C++": "#f34b7d",
@@ -49,7 +48,7 @@ LANG_COLORS = {
     "Wolfram": "#dd1100", "YAML": "#cb171e", "Zephir": "#118f9e", "Zimpl": "#d67711", "Rich Text Format": "#FFFFFF"
 }
 
-# SVG Icons for stats display
+# Geometric vector paths for iconography.
 ICONS = {
     "star": '<path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" fill="none" stroke="{color}" stroke-width="1.2"/>',
     "commit": '<path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z" fill="{color}"/><path d="M8 3.5a.75.75 0 01.75.75v3.5h2.5a.75.75 0 010 1.5h-3.25a.75.75 0 01-.75-.75v-4.25a.75.75 0 01.75-.75z" fill="{color}"/>',
@@ -58,23 +57,23 @@ ICONS = {
     "contrib": '<path d="M2 1.75C2 .784 2.784 0 3.75 0h8.5C13.216 0 14 .784 14 1.75v11.5A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75zM3.5 1.75v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25z" fill="{color}"/><path d="M5 3h6v1.5H5V3zm0 3h6v1.5H5V6z" fill="{color}"/>'
 }
 
-# Languages prioritized for specific visibility
+# Prioritized languages for enhanced visibility in the synthesized output.
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
 # ==============================================================================
-# API DATA RETRIEVAL
+# DATA ACQUISITION LAYER
 # ==============================================================================
 
 def fetch_data(url, token):
     """
-    Performs authenticated HTTP GET requests to the GitHub REST API.
+    Executes an authenticated HTTP GET request to the GitHub REST API.
     
     Args:
-        url (str): Target REST API endpoint.
-        token (str): GitHub Personal Access Token for authentication.
+        url (str): The target Representational State Transfer (REST) endpoint.
+        token (str): Personal Access Token for verified infrastructure access.
         
     Returns:
-        dict/list: Parsed JSON response or None if request fails.
+        Union[dict, list, None]: The deserialized JSON response or None upon failure.
     """
     req = urllib.request.Request(url)
     req.add_header('Accept', 'application/vnd.github.v3+json')
@@ -85,19 +84,18 @@ def fetch_data(url, token):
     except Exception: return None
 
 # ==============================================================================
-# STATS CALCULATION LOGIC
+# ANALYTICAL PROCESSING LOGIC
 # ==============================================================================
 
 def calculate_grade(stats):
     """
-    Scores the profile to determine a ranking grade based on stars, 
-    commits, PRs, issues, and contributions.
+    Evaluates profile performance metrics to assign a categoric rank.
     
     Args:
-        stats (dict): Aggregated user statistics.
+        stats (dict): An aggregation of user-specific performance indices.
         
     Returns:
-        tuple: (Grade string, Rank percentage int)
+        tuple[str, int]: A composite of the assigned grade and percentile rank.
     """
     stars = int(stats.get('stars', 0))
     # Handle both integer and '13.8k+' string formatted commit counts
@@ -119,12 +117,12 @@ def calculate_grade(stats):
     return "C", 30
 
 # ==============================================================================
-# SVG GENERATION
+# GRAPHICAL SYNTHESIS (SVG)
 # ==============================================================================
 
 def create_stats_svg(stats, username):
     """
-    Generates the GitHub stats SVG.
+    Synthesizes the GitHub performance statistics into an SVG vector format.
     """
     cyan, bg, white = "#00fbff", "#060A0C", "#FFFFFF"
     theme_color = cyan
@@ -176,7 +174,7 @@ def create_stats_svg(stats, username):
 
 def create_langs_svg(langs):
     """
-    Generates language usage SVG with normalization and visibility logic.
+    Synthesizes language distribution data into an SVG visualization with normalization.
     """
     bg, white = "#060A0C", "#FFFFFF"
     
@@ -264,12 +262,12 @@ def create_langs_svg(langs):
     return svg
 
 # ==============================================================================
-# UTILITIES
+# SYSTEM UTILITIES
 # ==============================================================================
 
 def update_readme(timestamp):
     """
-    Updates the README with new timestamps to bypass cache.
+    Updates the README markdown document with temporal parameters to mitigate caching effects.
     """
     readme_path = "README.md"
     if not os.path.exists(readme_path): return
@@ -286,7 +284,7 @@ def main():
     token = os.getenv('GITHUB_TOKEN')
     username = "Amey-Thakur"
     all_langs_density = {}
-    stats = {"stars": 0, "commits": "15k+", "prs": 0, "issues": 0, "contribs": 1}
+    stats = {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "contribs": 0}
     timestamp = int(datetime.now().timestamp())
     
     try:
@@ -314,38 +312,34 @@ def main():
         prs_data = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if prs_data: stats["prs"] = prs_data.get('total_count', 0)
         
-        # Get commit count from Search API
+        # Quantitative assessment of commit frequency via the Search API.
         search_commits = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
-        api_commits = search_commits.get('total_count', 0) if (search_commits and 'total_count' in search_commits) else 0
+        final_commits = search_commits.get('total_count', 0) if (search_commits and 'total_count' in search_commits) else 0
         
-        # Use a baseline to match historical contributions if API under-counts
-        verified_baseline = 16700
-        final_commits = max(verified_baseline, api_commits)
-        
-        # Format with one decimal place for precision (e.g., 16.7k+)
+        # Numerical representation formatting for enhanced readability.
         if final_commits >= 1000:
             stats["commits"] = f"{final_commits / 1000:.1f}k+"
         else:
             stats["commits"] = str(final_commits)
 
-        # Calculate language distribution across repos
+        # Computational analysis of programming language distribution across the repository portfolio.
         repo_count = len(all_repos)
         for r in all_repos:
             ld = fetch_data(r['languages_url'], token)
             if ld:
-                # Calculate local distribution for this repo
+                # Quantification of local linguistic density for the specific repository unit.
                 r_total = sum(ld.values())
                 if r_total > 0:
                     for k, v in ld.items():
                         density = (v / r_total)
                         all_langs_density[k] = all_langs_density.get(k, 0) + (density / repo_count)
             else:
-                # Fallback: Boost priority languages if they are in repo name but data missing (Rmd/Boilerplate)
+                # Heuristic fallback: Projection of prioritized languages based on repository nomenclature in the absence of explicit metadata.
                 for p_lang in PRIORITY_LANGS:
                     if p_lang.lower() in r['name'].lower():
                         all_langs_density[p_lang] = all_langs_density.get(p_lang, 0) + (0.1 / repo_count)
 
-        # Save SVGs to docs/
+        # Persistence of synthesized visualizations to the designated documentation directory.
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(all_langs_density))
@@ -353,7 +347,8 @@ def main():
         print("Success: Profile statistics updated.")
         
     except Exception as e:
-        fallback_langs = {"HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, "JavaScript": 5.0} # Fallback only
+        # Implementation of a contingency dataset for visualization continuity during execution anomalies.
+        fallback_langs = {"HTML": 35.5, "Python": 25.0, "Jupyter Notebook": 10.0, "R": 8.5, "JavaScript": 5.0} 
         os.makedirs("docs", exist_ok=True)
         with open("docs/stats.svg", "w", encoding="utf-8") as f: f.write(create_stats_svg(stats, username))
         with open("docs/languages.svg", "w", encoding="utf-8") as f: f.write(create_langs_svg(fallback_langs))
