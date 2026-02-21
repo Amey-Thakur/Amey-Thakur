@@ -273,21 +273,28 @@ def main():
         # since account initialization (2019).
         baseline_commits = int(os.getenv('COMMIT_BASELINE', 17000))
         commit_data      = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
-        raw_commits       = commit_data.get('total_count', 0) if commit_data else 0
         
-        # Integration of live API activity with the verified baseline.
-        final_count = max(raw_commits, baseline_commits + (raw_commits % 1000 if raw_commits > 0 else 0))
+        # We assume raw_commits represents the growth since the baseline was established.
+        # This prevents the 'modulo reset' issue and ensures linear scaling.
+        raw_commits      = commit_data.get('total_count', 0) if commit_data else 0
+        final_count      = baseline_commits + raw_commits
+        
         formatted_c = final_count / 1000
         if final_count >= 1000:
             stats["commits"] = f"{formatted_c:.1f}k+".replace(".0k", "k")
         else:
             stats["commits"] = str(final_count)
 
-        # STEP 4: PERSISTENCE
-        # Updates the resilience cache before finalizing the visual output.
-        os.makedirs("docs", exist_ok=True)
-        with open(CACHE_FILE, "w", encoding="utf-8") as f:
-            json.dump(stats, f)
+        # STEP 4: PERSISTENCE & DATA INTEGRITY GUARD
+        # We only overwrite the cache if the data passes a sanity check (non-zero stars).
+        # This prevents 'empty' successful API responses from corrupting the backup.
+        if stats.get('stars', 0) > 0:
+            stats['last_updated'] = datetime.now(timezone.utc).isoformat()
+            os.makedirs("docs", exist_ok=True)
+            with open(CACHE_FILE, "w", encoding="utf-8") as f:
+                json.dump(stats, f)
+        else:
+            print("Sanity Check Failed: API returned zero stars. Skipping cache update.")
 
         # Final SVG serialization.
         with open("docs/stats.svg", "w", encoding="utf-8") as f: 
