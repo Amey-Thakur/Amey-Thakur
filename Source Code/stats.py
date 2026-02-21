@@ -1,6 +1,11 @@
 """
 File: stats.py
 Description: A specialized analytical module for the empirical synthesis of GitHub performance metrics.
+Authors: Amey Thakur (https://github.com/Amey-Thakur)
+         Mega Satish (https://github.com/msatmod)
+License: MIT License
+Release Date: July 5, 2021
+
 PART OF THE AMEY-THAKUR COMPUTATIONAL FRAMEWORK.
 
 ALGORITHMIC TAXONOMY:
