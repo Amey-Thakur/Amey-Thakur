@@ -7,25 +7,24 @@ RELEASE DATE   : July 5, 2021
 LICENCE        : MIT License
 
 DESCRIPTION    : 
-I wrote this module to visualize my programming language distribution on GitHub. 
-It calculates my language usage based on the raw byte volume of code I've written 
-across all my repositories.
+Analytical engine for the quantification and visualization of programming 
+language distribution. Calculations are based on raw byte volume across the 
+entire repository portfolio to determine total work density per technology.
 
 TECH STACK     : 
-- Python 3     : Used for all data aggregation and math.
-- GitHub API   : I use this to get the exact language breakdown for each repo.
-- SVG (XML)    : The output format for the final language distribution bar.
+- Python 3     : Facilitates data aggregation and numerical normalization.
+- GitHub API   : Source for repository-specific linguistic metadata.
+- SVG (XML)    : Graphical format for high-fidelity profile integration.
 
 HOW IT WORKS   :
-1. AGGREGATION    : I scan all my original repositories, intentionally skipping 
-                    forks so the data only reflects my own work.
-2. QUANTIFICATION : I hit the /languages endpoint for every single project to 
-                    get the raw byte counts.
-3. SUMMATION      : I calculate the global sum of every byte I've committed.
-4. NORMALIZATION  : I convert those bytes into local percentages.
-5. RESILIENCE     : I maintain a backup (languages_cache.json). If the API is 
-                    ever throttled, I serve my last known work volume instead.
-6. RENDERING      : I pack the results into a clean, modern SVG bar chart.
+1. AGGREGATION    : Scans the repository portfolio, intentionally excluding 
+                    forks to ensure data represents original development.
+2. QUANTIFICATION : Polls the /languages endpoint for every repository to 
+                    retrieve precise byte counts.
+3. SUMMATION      : Performs a global summation of bytes for every technology.
+4. NORMALIZATION  : Converts byte volumes into relative percentages.
+5. RESILIENCE     : Utilizes a local cache (languages_cache.json) as a fail-safe.
+6. RENDERING      : Finalizes the distribution into a modern SVG bar chart.
 ================================================================================
 """
 
@@ -40,11 +39,11 @@ from datetime import datetime, timezone, timedelta
 # DESIGN SYSTEM & COLOR TOKENS
 # ==============================================================================
 
-# I save my last successful run data here as a fail-safe backup.
+# Fail-safe data store used to maintain profile aesthetics during API downtime.
 CACHE_FILE = "docs/languages_cache.json"
 
-# These are the standard brand colors for each language. I use these to make 
-# the graph intuitive for anyone looking at my profile.
+# Mapping of programming languages to standardized brand hex codes. 
+# Enhances visual recognition for developer-facing documentation.
 LANG_COLORS = {
     "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B", 
     "JavaScript": "#f1e05a", "CSS": "#563d7c", "TypeScript": "#3178c6", 
@@ -60,14 +59,14 @@ LANG_COLORS = {
 
 def fetch_data(url, token):
     """
-    My standard helper for talking to the GitHub REST API. 
-    It handles authentication and JSON parsing in one place.
+    Handles authenticated communication with the GitHub REST API.
+    Utilizes localized request headers for authorization and version control.
     """
     req = urllib.request.Request(url)
     req.add_header('Accept', 'application/vnd.github.v3+json')
     
-    # I use my token to get better rate limits. This is important when 
-    # I'm looping through all my repositories in one go.
+    # Token authentication significantly improves rate limits for 
+    # large-scale repository scanning.
     if token: 
         req.add_header('Authorization', f'token {token}')
         
@@ -75,7 +74,7 @@ def fetch_data(url, token):
         with urllib.request.urlopen(req) as response:
             return json.loads(response.read().decode())
     except Exception:
-        # If the API is unstable, I return None and let the main logic handle it.
+        # Returns None to trigger the Resilience Layer in the main loop.
         return None
 
 
@@ -85,25 +84,25 @@ def fetch_data(url, token):
 
 def create_langs_svg(langs, username):
     """
-    I use this function to build the final SVG image. I designed it to be 
-    spacious and easy to read on high-resolution displays as well as mobile.
+    Builds the SVG vector graphic representing language distribution. 
+    The layout is optimized for high-density displays using spacious margins.
     """
     bg, white = "#000000", "#F0F6FC"
     
-    # I sort the languages by byte count and pull the top 18 for the card.
+    # Sorts technologies by volume and isolates the top 18 for rendering.
     visible_langs = sorted([[k, v] for k, v in langs.items()], key=lambda x: x[1], reverse=True)[:18]
     total_raw     = sum(v for k, v in visible_langs) or 1
     
-    # I convert absolute bytes into relative percentages for the legend.
+    # Byte-to-percentage normalization for the accompanying legend.
     for item in visible_langs: 
         item[1] = (item[1] / total_raw) * 100
     
-    # Calculating a dynamic height so the card grows if I add more languages.
+    # Dynamic height calculation based on rows (3-column layout).
     cols   = 3
     rows   = (len(visible_langs) + 2) // 3
     height = max(170, 110 + (rows * 20))
     
-    # SVG skeleton with custom typography and layout settings.
+    # SVG definition with standard typography and geometry.
     svg = f'''<svg width="495" height="{height}" viewBox="0 0 495 {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         .title {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
@@ -111,24 +110,24 @@ def create_langs_svg(langs, username):
         .perc  {{ font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.6; }}
     </style>
     
-    <!-- Background Frame - borderless black to blend with profile -->
+    <!-- Background Frame - borderless black -->
     <rect width="495" height="{height}" rx="10" fill="{bg}"/>
     <text x="30" y="38" class="title">{username}'s Language Usage</text>
     
-    <!-- Distribution Bar - I mask it with rounded corners -->
+    <!-- Distribution Bar Visualization -->
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
         <rect width="435" height="14" rx="7" fill="{white}" fill-opacity="0.1"/>
         <g mask="url(#bar-mask)">'''
     
-    # Building the continuous bar by tracking the horizontal offset.
+    # Sequential rendering of rectangles to form a continuous bar chart.
     x_off = 0
     for name, perc in visible_langs:
         w = (perc / 100) * 435
         svg += f'<rect x="{x_off}" width="{w}" height="14" fill="{LANG_COLORS.get(name, "#888888")}"/>'
         x_off += w
     
-    # Drawing the legend dots and labels in a 3-column grid.
+    # Legend synthesis utilizing a modular grid system.
     svg += '</g></g><g transform="translate(30, 100)">'
     for i, (name, perc) in enumerate(visible_langs):
         x, y = (i % 3) * 150, (i // 3) * 20
@@ -148,8 +147,8 @@ def create_langs_svg(langs, username):
 
 def update_readme(timestamp):
     """
-    I use this to swap out the cache-busting timestamp in my README 
-    so visitors always see my most current data.
+    Injects a unique timestamp into README image sources to bypass the 
+    GitHub Camo proxy cache. Ensures visual updates are immediate.
     """
     readme_path = "README.md"
     if not os.path.exists(readme_path): return
@@ -157,7 +156,7 @@ def update_readme(timestamp):
     with open(readme_path, "r", encoding="utf-8") as f: 
         content = f.read()
         
-    # Standard regex replace to update the URL parameter.
+    # Standard substitution of the ?t=<timestamp> query string.
     content = re.sub(r'docs/languages\.svg(\?t=\d+)?', f'docs/languages.svg?t={timestamp}', content)
     
     with open(readme_path, "w", encoding="utf-8") as f: 
@@ -166,8 +165,8 @@ def update_readme(timestamp):
 
 def get_local_hour():
     """
-    I look at my last Git commit to figure out my timezone offset. 
-    It ensures the script respects my local clock.
+    Predicts the current local hour using the temporal offset of the 
+    most recent Git commit.
     """
     try:
         result = subprocess.run(['git', 'log', '-1', '--format=%ai'], capture_output=True, text=True, check=True)
@@ -193,14 +192,14 @@ def main():
     username   = "Amey-Thakur"
     lang_bytes = {}
     
-    # I only allow scheduled runs at specific hours locally.
+    # Scheduled runs are restricted to 12 AM/PM locally to optimize update frequency.
     local_hour = get_local_hour()
     if os.getenv('GITHUB_EVENT_NAME') == 'schedule' and local_hour not in [0, 12]:
-        print(f"Bypassing scheduled run for hour {local_hour}.")
+        print(f"Scheduled update bypassed for hour {local_hour}.")
         return
 
     try:
-        # Paginating through all my repositories.
+        # Paginated discovery of all account repositories.
         repos = []
         page  = 1
         while True:
@@ -211,10 +210,9 @@ def main():
             page += 1
             
         if not repos:
-            raise Exception("Discovery Failed")
+            raise Exception("No repository metadata retrieved.")
 
-        # I iterate through all my original repositories (no forks) 
-        # to get the code byte counts.
+        # Aggregation of raw byte counts from original work (excluding forks).
         for r in repos:
             if r.get('fork'): 
                 continue
@@ -225,23 +223,23 @@ def main():
                     lang_bytes[k] = lang_bytes.get(k, 0) + v
         
         if not lang_bytes:
-             raise Exception("No bytes found.")
+             raise Exception("No linguistic data found.")
 
-        # Saving my results to the backup cache first.
+        # Saves current state to the resilience cache before serialization.
         os.makedirs("docs", exist_ok=True)
         with open(CACHE_FILE, "w", encoding="utf-8") as f:
             json.dump(lang_bytes, f)
 
-        # Writing the final SVG for my profile.
+        # Final SVG synthesis.
         with open("docs/languages.svg", "w", encoding="utf-8") as f: 
             f.write(create_langs_svg(lang_bytes, username))
             
         update_readme(int(datetime.now().timestamp()))
-        print("Success! My language stats are updated.")
+        print("Linguistic distribution successfully updated.")
         
     except Exception as e:
-        # If anything breaks, I attempt to load my last saved data.
-        print(f"API Error: {e}. I'm recovering from my backup cache.")
+        # Recovery using the local Resilience Cache in the event of API throttling.
+        print(f"Update Failure: {e}. Transitioning to Resilience Cache...")
         if os.path.exists(CACHE_FILE):
              with open(CACHE_FILE, "r", encoding="utf-8") as f:
                  lang_bytes = json.load(f)
@@ -249,9 +247,9 @@ def main():
              os.makedirs("docs", exist_ok=True)
              with open("docs/languages.svg", "w", encoding="utf-8") as f:
                  f.write(create_langs_svg(lang_bytes, username))
-             print("Recovered from my local cache.")
+             print("Successfully recovered metrics from local cache.")
         else:
-             print("Serious Error: No live data and no cache backup exists.")
+             print("CRITICAL: Failed to retrieve live data or local backup.")
 
 if __name__ == "__main__": 
     main()
