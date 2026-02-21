@@ -7,27 +7,28 @@ RELEASE DATE   : July 5, 2021
 LICENCE        : MIT License
 
 DESCRIPTION    : 
-This module is designed to perform a comprehensive statistical analysis of a 
-GitHub user's profile. It aggregates quantitative markers—such as stars, commits, 
-pull requests, and issues—into a visually refined SVG dashboard.
+I developed this module to analyze my GitHub profile data. It pulls together 
+my stars, commits, PRs, and issues, then turns them into a high-quality SVG 
+dashboard that I use on my profile README.
 
 TECH STACK     : 
-- Python 3     : Core logic and data processing.
-- GitHub API   : Primary source for repository and interaction metadata.
-- SVG (XML)    : Vector-based graphical rendering for high-definition displays.
+- Python 3     : Handles all the logic, API calls, and data processing.
+- GitHub API   : My primary source for repo and interaction data.
+- SVG (XML)    : Used for rendering the actual visual dashboard.
 
 HOW IT WORKS   :
-1. AUTHENTICATION : Loads a GitHub Personal Access Token for verified API access.
-2. DISCOVERY      : Polls the user's repository list, paginating to ensure all 
-                    data (including private repos if token allows) is captured.
-3. INFERENCE      : Analyzes Pull Request history to determine "Contribution 
-                    Impact" by identifying unique repository contexts.
-4. CALCULATIONS   : Applies a weighted grading system to assign a performance 
-                    rank (A+, A, etc.) based on contribution volume.
-5. RESILIENCE     : Utilizes a caching layer (docs/stats_cache.json) to serve 
-                    historical data if the GitHub API is unavailable.
-6. VISUALIZATION  : Synthesizes this data into a responsive SVG with dynamic 
-                    progress rings and iconography.
+1. AUTHENTICATION : I pull my GITHUB_TOKEN so I can make verified API calls.
+2. DISCOVERY      : I loop through all my repos, making sure to handle pagination 
+                    so I don't miss any data.
+3. INFERENCE      : I check my PR history to see which unique projects I've 
+                    actually impacted.
+4. CALCULATIONS   : I apply a custom grading model (A+, A, etc.) that rewards 
+                    contributions and real work over just star counts.
+5. RESILIENCE     : I added a local cache (stats_cache.json) as a backup. If the 
+                    GitHub API is ever down, the card stays updated with the 
+                    last good data instead of breaking.
+6. VISUALIZATION  : Everything gets packed into a clean SVG with a custom 
+                    percentile ring.
 ================================================================================
 """
 
@@ -42,10 +43,11 @@ from datetime import datetime, timezone, timedelta
 # CONFIGURATION & ASSETS
 # ==============================================================================
 
+# Backup data store to prevent profile blackouts if the API fails.
 CACHE_FILE = "docs/stats_cache.json"
 
-# These vector paths represent the physical geometry of each icon used in the 
-# stats card. They are formatted with a {color} placeholder for theme consistency.
+# These are the raw SVG paths for my dashboard icons. 
+# I swap in a {color} tag so the icons match my theme.
 ICONS = {
     "star":    '<path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" fill="none" stroke="{color}" stroke-width="1.2"/>',
     "commit":  '<path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z" fill="{color}"/><path d="M8 3.5a.75.75 0 01.75.75v3.5h2.5a.75.75 0 010 1.5h-3.25a.75.75 0 01-.75-.75v-4.25a.75.75 0 01.75-.75z" fill="{color}"/>',
@@ -60,14 +62,14 @@ ICONS = {
 
 def fetch_data(url, token):
     """
-    Performs an authenticated GET request to the GitHub API. 
-    We use urllib instead of heavy external libraries to keep the action lightweight.
+    Standard function I use to talk to the GitHub API. 
+    I'm using urllib because it's built into Python and keeps the script fast.
     """
     req = urllib.request.Request(url)
     req.add_header('Accept', 'application/vnd.github.v3+json')
     
-    # Passing the GITHUB_TOKEN header allows the script to see private repositories 
-    # and significantly increases our API rate limits.
+    # I always use a token to get higher rate limits and to see 
+    # my private work stats properly.
     if token: 
         req.add_header('Authorization', f'token {token}')
         
@@ -75,7 +77,7 @@ def fetch_data(url, token):
         with urllib.request.urlopen(req) as response:
             return json.loads(response.read().decode())
     except Exception:
-        # Silently fail and return None to allow the resilience layer to trigger.
+        # If this fails, the main loop catches it and falls back to the cache.
         return None
 
 
@@ -85,14 +87,13 @@ def fetch_data(url, token):
 
 def calculate_grade(stats):
     """
-    Determines the user's performance tier using a weighted scoring algorithm. 
-    The logic prioritizes Pull Requests and Contributions over raw star counts 
-    to reward active development.
+    This is my grading formula. I decided to give higher weights to PRs 
+    and community contributions because they prove real engineering activity 
+    better than just collecting stars.
     """
     stars = int(stats.get('stars', 0))
     
-    # Commits are often returned as strings like "10k+" in the UI; 
-    # here we normalize them back to floats for calculation.
+    # Cleaning up the commit count so I can do math on it.
     commit_raw = str(stats.get('commits', '0'))
     commits = float(commit_raw.replace('k+', '').replace('k', '')) * 1000 if 'k' in commit_raw else float(commit_raw)
     
@@ -100,12 +101,11 @@ def calculate_grade(stats):
     issues   = int(stats.get('issues', 0))
     contribs = int(stats.get('contribs', 0))
     
-    # SCORING RATIO:
-    # stars (x10) | commits (x1.5) | PRs (x50) | Issues (x5) | Contribs (x100)
+    # MY SCORING MODEL:
+    # stars (x10) | commits (1.5) | PRs (x50) | Issues (x5) | Contribs (x100)
     score = (stars * 10) + (commits * 1.5) + (prs * 50) + (issues * 5) + (contribs * 100)
     
-    # Percentile thresholds for grade assignment. 
-    # Recalibrated to reflect high-impact contribution profiles.
+    # Thresholds I set based on high-impact profile activity.
     if score > 20000: return "A+", 98
     if score > 15000: return "A",  90
     if score > 10000: return "A-", 80
@@ -116,14 +116,13 @@ def calculate_grade(stats):
 
 def create_stats_svg(stats, username):
     """
-    Synthesizes the final dashboard using an XML/SVG template. 
-    We use standard Segoe UI/Ubuntu fonts for a native, clean interface aesthetic.
+    This builds the actual SVG card. I use a clean Segoe UI font and 
+    a custom circular rank meter for a professional developer look.
     """
     accent, bg, white = "#00D4FF", "#000000", "#F0F6FC"
     grade, rank = calculate_grade(stats)
     
-    # The SVG contains CSS styles for typography and a circular progress ring 
-    # that animates the user's percentile rank.
+    # SVG with localized styles and a dynamic progress ring.
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {accent}; }}
@@ -133,11 +132,11 @@ def create_stats_svg(stats, username):
         .rank   {{ font: italic 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.45; }}
     </style>
     
-    <!-- Outer Container -->
+    <!-- Main Background - Borderless Black -->
     <rect width="495" height="195" rx="10" fill="{bg}"/>
     <text x="30" y="38" class="title">{username}'s GitHub Stats</text>
     
-    <!-- Quantitative Metrics Column -->
+    <!-- My Stats Data -->
     <g transform="translate(30, 65)">
         <g transform="translate(0, 0)">
             <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['star'].format(color=accent)}</svg>
@@ -166,7 +165,7 @@ def create_stats_svg(stats, username):
         </g>
     </g>
     
-    <!-- Percentile Rank Visualization (Circular Progress) -->
+    <!-- Rank Ring Animation (Dasharray math for the percentile circle) -->
     <g transform="translate(400, 105)">
         <circle r="44" stroke="{accent}" stroke-width="4.5" fill="none" opacity="0.1"/>
         <circle r="44" stroke="{accent}" stroke-width="4.5" fill="none" 
@@ -186,9 +185,8 @@ def create_stats_svg(stats, username):
 
 def update_readme(timestamp):
     """
-    Applies a cache-busting timestamp to the image URLs in the README. 
-    GitHub's Camo proxy caches images heavily; this forced change ensures 
-    profile visitors see the latest data.
+    I update the README URLs with a timestamp to force GitHub to refresh 
+    the images instead of showing a cached version.
     """
     readme_path = "README.md"
     if not os.path.exists(readme_path): return
@@ -196,7 +194,7 @@ def update_readme(timestamp):
     with open(readme_path, "r", encoding="utf-8") as f: 
         content = f.read()
         
-    # Regex targets either existing timestamps (?t=...) or clean URLs.
+    # Swapping in the new ?t=<timestamp> query string.
     content = re.sub(r'docs/stats\.svg(\?t=\d+)?', f'docs/stats.svg?t={timestamp}', content)
     
     with open(readme_path, "w", encoding="utf-8") as f: 
@@ -205,12 +203,10 @@ def update_readme(timestamp):
 
 def get_local_hour():
     """
-    Infers the user's current local hour by extracting the timezone offset 
-    from the latest Git commit. This allows the script to remain timezone-aware 
-    without hardcoding a specific region.
+    I use my last Git commit to figure out my local timezone offset. 
+    This way the script runs exactly at midnight for me, wherever I am.
     """
     try:
-        # Fetching the ISO-8601 timestamp with offset of the last commit.
         result = subprocess.run(['git', 'log', '-1', '--format=%ai'], capture_output=True, text=True, check=True)
         match  = re.search(r'([+-])(\d{2})(\d{2})$', result.stdout.strip())
         
@@ -220,10 +216,8 @@ def get_local_hour():
         sign, h, m = match.groups()
         offset = (int(h) * 3600 + int(m) * 60) * (-1 if sign == '-' else 1)
         
-        # Localize current time to the inferred offset.
         return datetime.now(timezone(timedelta(seconds=offset))).hour
     except Exception:
-        # Fallback to UTC if the environment lacks a standard Git log.
         return datetime.now(timezone.utc).hour
 
 
@@ -232,20 +226,19 @@ def get_local_hour():
 # ==============================================================================
 
 def main():
-    # Load environment variables (standard for GitHub Actions runners)
     token    = os.getenv('GITHUB_TOKEN')
     username = "Amey-Thakur"
     stats    = {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "contribs": 0}
     
-    # 1. GATEKEEPER: Only run at 12 AM/PM if triggered by a schedule.
-    # Manual or Push triggers bypass this check for immediate verification.
+    # I only want this to run at 12 AM/PM when triggered on a schedule.
+    # If I run it manually or push a change, it bypasses this check.
     local_hour = get_local_hour()
     if os.getenv('GITHUB_EVENT_NAME') == 'schedule' and local_hour not in [0, 12]:
-        print(f"Skipping scheduled run: Hour is {local_hour}, not 0 or 12.")
+        print(f"Skipping: It's {local_hour} locally, not midnight or noon.")
         return
 
     try:
-        # 2. DISCOVERY: Iterate through all repositories to sum foundational metrics.
+        # STEP 1: Scan all my repos.
         all_repos = []
         page = 1
         while True:
@@ -256,14 +249,12 @@ def main():
             page += 1
             
         if not all_repos:
-            # If discovery fails, we attempt to load from the resilience cache.
-            raise Exception("API Connection Failed or No Repositories Found.")
+            raise Exception("API Discovery Failed")
 
         stats["stars"]  = sum(r.get('stargazers_count', 0) for r in all_repos)
         stats["issues"] = sum(r.get('open_issues_count', 0) for r in all_repos)
         
-        # 3. CONTRIBUTION ANALYSIS: Search for Pull Requests to find unique project involvement.
-        # We manually aggregate unique repo owners to determine the "Contributor" count.
+        # STEP 2: Figure out how many unique projects I've contributed to.
         pr_search = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if pr_search:
             stats["prs"] = pr_search.get('total_count', 0)
@@ -274,48 +265,45 @@ def main():
                 match = re.search(r'/repos/([^/]+)/', repo_url)
                 if match: unique_contexts.add(match.group(1))
             
-            # Exclude the user's own profile from the "other repositories contributed to" count.
+            # I exclude my own profile so this only counts *external* project impact.
             stats["contribs"] = max(1, len(unique_contexts) - (1 if username in unique_contexts else 0))
 
-        # 4. GLOBAL COMMIT RECONCILIATION:
-        # Since the API search can be inconsistent, we use an 'Empirical Baseline' 
-        # based on verified historical contribution logs (17,000+ total contributions).
+        # STEP 3: Handle the commit count baseline. 
+        # I set this to 17,000 to cover my legacy work from 2019 onwards.
         baseline_commits = int(os.getenv('COMMIT_BASELINE', 17000))
         commit_data      = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
         raw_commits       = commit_data.get('total_count', 0) if commit_data else 0
         
-        # We merge live API polling with the verified baseline to ensure data integrity.
+        # Adding live API data to my baseline.
         final_count = max(raw_commits, baseline_commits + (raw_commits % 1000 if raw_commits > 0 else 0))
         formatted_c = final_count / 1000
         stats["commits"] = f"{formatted_c:g}k+" if final_count >= 1000 else str(final_count)
 
-        # 5. PERSISTENCE & CACHING:
-        # We ensure the docs/ directory exists before writing the updated data.
+        # STEP 4: Save everything. I update the backup cache file first.
         os.makedirs("docs", exist_ok=True)
-        
-        # Save to the resilience cache for future fallback.
         with open(CACHE_FILE, "w", encoding="utf-8") as f:
             json.dump(stats, f)
 
+        # Write the final SVG.
         with open("docs/stats.svg", "w", encoding="utf-8") as f: 
             f.write(create_stats_svg(stats, username))
             
         update_readme(int(datetime.now().timestamp()))
-        print(f"Stats Synthesis Successful. Metric Baseline: {stats['commits']}")
+        print(f"Done! My commits are now at: {stats['commits']}")
         
     except Exception as e:
-        print(f"API DISCOVERY FAILED: {e}. Attempting to Load Resilience Cache...")
+        # If the API hits a rate limit, I fall back to my last saved cache.
+        print(f"API Error: {e}. I'm loading my backup data instead.")
         if os.path.exists(CACHE_FILE):
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
                 stats = json.load(f)
             
-            # Re-generate the SVG using cached data to prevent a profile blackout.
             os.makedirs("docs", exist_ok=True)
             with open("docs/stats.svg", "w", encoding="utf-8") as f:
                 f.write(create_stats_svg(stats, username))
-            print("Successfully recovered metrics from Resilience Cache.")
+            print("Successfully restored my stats from cache.")
         else:
-            print("CRITICAL FAILURE: No live data and no cache available.")
+            print("Serious Error: No live data and no cache found.")
 
 if __name__ == "__main__": 
     main()
