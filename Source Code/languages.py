@@ -115,7 +115,7 @@ def create_langs_svg(langs, username):
     </style>
     
     <!-- Background Frame -->
-    <rect width="494" height="{height-1}" x="0.5" y="0.5" rx="10" fill="{bg}" stroke="#30363d"/>
+    <rect width="495" height="{height}" rx="10" fill="{bg}"/>
     <text x="30" y="38" class="title">{username}'s Language Usage</text>
     
     <!-- Progress Bar Section -->
