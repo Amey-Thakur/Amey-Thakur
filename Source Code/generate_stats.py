@@ -14,7 +14,8 @@ import os
 import json
 import urllib.request
 import re
-from datetime import datetime
+import subprocess
+from datetime import datetime, timezone, timedelta
 
 # ==============================================================================
 # CONFIGURATION AND GLOBAL PARAMETERS
@@ -277,6 +278,36 @@ def update_readme(timestamp):
     content = re.sub(r'docs/stats\.svg(\?t=\d+)?', f'docs/stats.svg?t={timestamp}', content)
     with open(readme_path, "w", encoding="utf-8") as f: f.write(content)
 
+def get_local_hour():
+    """
+    Determines the current hour in the user's localized timezone by inferring 
+    the temporal offset from the most recent Git commit metadata.
+    
+    Returns:
+        int: The current hour (0-23) in the inferred local timezone.
+    """
+    try:
+        # Retrieval of the most recent commit's ISO 8601 timestamp with offset.
+        result = subprocess.run(
+            ['git', 'log', '-1', '--format=%ai'], 
+            capture_output=True, text=True, check=True
+        )
+        output = result.stdout.strip()
+        # Parsing the offset (e.g., "-0500" or "+0530") from the terminal output.
+        match = re.search(r'([+-])(\d{2})(\d{2})$', output)
+        if not match:
+            return datetime.now(timezone.utc).hour
+            
+        sign, hours, minutes = match.groups()
+        offset_seconds = (int(hours) * 3600 + int(minutes) * 60) * (-1 if sign == '-' else 1)
+        
+        # Calculation of the current time localized to the inferred offset.
+        local_tz = timezone(timedelta(seconds=offset_seconds))
+        return datetime.now(local_tz).hour
+    except Exception:
+        # Fallback to UTC in the event of execution environment anomalies.
+        return datetime.now(timezone.utc).hour
+
 def main():
     """
     Orchestrates Analytical Synthesis of user metrics and visualizations.
@@ -286,6 +317,15 @@ def main():
     all_langs_density = {}
     stats = {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "contribs": 0}
     timestamp = int(datetime.now().timestamp())
+    
+    # Conditional execution gate: Verify if the current temporal state aligns with 
+    # the target operational window (12:00 AM or 12:00 PM local time).
+    local_hour = get_local_hour()
+    is_scheduled = os.getenv('GITHUB_EVENT_NAME') == 'schedule'
+    
+    if is_scheduled and local_hour not in [0, 12]:
+        print(f"Skipping update: Current local hour ({local_hour}:00) is outside the target synchronization window.")
+        return
     
     try:
         all_repos = []
