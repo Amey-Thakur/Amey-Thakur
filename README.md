@@ -12,7 +12,7 @@
 
 </div>
 
-💭 **[Amey's Arc](https://amey-thakur.github.io/)** ⟶ Portfolio & Writing
+💭 **[Amey's Arc](https://amey-thakur.github.io/)** ⟶ Advancing Ideas & Projects
 
 🎓 **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** ⟶ Throughout Courses
 
