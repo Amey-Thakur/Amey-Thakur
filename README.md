@@ -70,8 +70,6 @@
 
 <div align="center">
 
-<img src="docs/ameys-arc.png" width="750" alt="From Circuits to Constellations: The Arc of Amey Thakur" />
-
 *"Every idea I open-source is a spark handed to someone I may never meet. That is the whole point."*
 
 *Namaskar.* 🙏🏻
