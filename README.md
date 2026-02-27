@@ -70,7 +70,7 @@
 
 <div align="center">
 
-<i>Every idea I open-source is a spark handed to someone I may never meet. That is the whole point.</i>
+<i>The purpose of creation is continuation, not possession.</i>
 
 <b>— Amey Thakur</b>
 
