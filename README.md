@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=35&center=true&vCenter=true&width=500&height=100&duration=4000&lines=Hi+there+👋🏻;+I'm+Amey+Thakur!;" />
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=35&center=true&vCenter=true&width=500&height=100&duration=4000&lines=Hi+there+👋;+I'm+Amey+Thakur!;" />
 </h1>
 
 <img align="right" width="400" src="docs/Programmer.gif" />
@@ -68,6 +68,26 @@
 
 ---
 
-<h3 align="center">Thank you for visiting.</h3>
+<div align="center">
 
-<h3 align="center">Have a great time!</h3>
+<img src="https://readme-typing-svg.herokuapp.com/?font=Lora&weight=600&size=28&center=true&vCenter=true&width=700&height=70&duration=5000&pause=1500&color=F5F5F5&lines=Some+thoughts+are+fully+formed.;Others+are+just+sparks.;All+are+here+to+explore,+share,+and+grow." alt="Amey's Arc" />
+
+<br>
+
+<img src="docs/ameys-arc.png" width="100%" alt="From Circuits to Constellations: The Arc of Amey Thakur, Computer Engineer and Research Scholar" />
+
+<br>
+
+> *"Every idea I open-source is a spark handed to someone I may never meet. That is the whole point."*
+
+<br>
+
+<p>
+This profile traces a single arc: from writing <a href="https://github.com/Amey-Thakur/8086-ASSEMBLY-LANGUAGE-PROGRAMS">161 assembly programs</a> by hand at the <a href="https://github.com/Amey-Thakur/COMPUTER-ENGINEERING">University of Mumbai</a>, to training <a href="https://github.com/Amey-Thakur/WHITE-BOX-CARTOONIZATION">GANs that reimagine photographs</a>, to building <a href="https://github.com/Amey-Thakur/DEEPFAKE-AUDIO">neural voice-cloning systems</a>, to studying <a href="https://github.com/Amey-Thakur/ZERO-SHOT-VIDEO-GENERATION">zero-shot video generation</a> and <a href="https://github.com/Amey-Thakur/ADAPTIVE-CRUISE-CONTROL">adaptive cruise control</a> at the <a href="https://github.com/Amey-Thakur/MENG-COMPUTER-ENGINEERING">University of Windsor</a>. Over 100 repositories, all open. Every one an invitation: take it, build on it, make it better.
+</p>
+
+<br>
+
+*Namaskar.*
+
+</div>
