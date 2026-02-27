@@ -70,8 +70,16 @@
 
 <div align="center">
 
-*"Every idea I open-source is a spark handed to someone I may never meet. That is the whole point."*
+<br>
 
-*Namaskar.* 🙏🏻
+<i>"Every idea I open-source is a spark handed to someone I may never meet.<br>That is the whole point."</i>
+
+<b>— Amey Thakur</b>
+
+<br>
+
+<i>Namaskar.</i> 🙏🏻
+
+<br>
 
 </div>
