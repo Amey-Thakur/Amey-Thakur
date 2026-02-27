@@ -273,12 +273,7 @@ def main():
         
         # Use direct API total count for reliable metrics
         final_count      = commit_data.get('total_count', 0) if commit_data else 0
-        
-        formatted_c = final_count / 1000
-        if final_count >= 1000:
-            stats["commits"] = f"{formatted_c:.1f}k".replace(".0k", "k")
-        else:
-            stats["commits"] = str(final_count)
+        stats["commits"] = str(final_count)
 
         # STEP 4: PERSISTENCE & DATA INTEGRITY GUARD
         # Validation of API response volume before cache serialization. 
