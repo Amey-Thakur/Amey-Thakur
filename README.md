@@ -74,6 +74,6 @@
 
 *"Every idea I open-source is a spark handed to someone I may never meet. That is the whole point."*
 
-*Namaskar.*
+*Namaskar.* 🙏🏻
 
 </div>
