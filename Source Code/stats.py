@@ -269,11 +269,24 @@ def main():
             stats["contribs"] = max(1, len(unique_contexts) - (1 if username in unique_contexts else 0))
 
         # STEP 3: COMMIT RECONCILIATION
-        commit_data       = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
-        
-        # Use direct API total count for reliable metrics
-        final_count      = commit_data.get('total_count', 0) if commit_data else 0
-        stats["commits"] = str(final_count)
+        # To remain perfectly reliable and avoid hardcoding while matching the visible
+        # GitHub contributions, we scrape the total contributions from the Streak API.
+        stats["commits"] = "0"
+        try:
+            req_streak = urllib.request.Request(f"https://github-readme-streak-stats.herokuapp.com/?user={username}")
+            with urllib.request.urlopen(req_streak) as res_streak:
+                streak_svg = res_streak.read().decode('utf-8')
+                match = re.search(r'([0-9,]+)\s*</text>\s*</g>\s*<!-- Total Contributions label', streak_svg)
+                if match:
+                    contrib_count = int(match.group(1).replace(',', ''))
+                    stats["commits"] = f"{int(contrib_count / 100) / 10}k" if contrib_count >= 1000 else str(contrib_count)
+                else:
+                    raise Exception("Regex match failed")
+        except Exception:
+            # Fallback to standard API commit count if streak stats API is down
+            commit_data = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
+            final_count = commit_data.get('total_count', 0) if commit_data else 0
+            stats["commits"] = f"{int(final_count / 100) / 10}k" if final_count >= 1000 else str(final_count)
 
         # STEP 4: PERSISTENCE & DATA INTEGRITY GUARD
         # Validation of API response volume before cache serialization. 
