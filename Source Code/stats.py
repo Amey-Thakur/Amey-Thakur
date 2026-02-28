@@ -269,8 +269,7 @@ def main():
             stats["contribs"] = max(1, len(unique_contexts) - (1 if username in unique_contexts else 0))
 
         # STEP 3: COMMIT RECONCILIATION
-        # To remain perfectly reliable and avoid hardcoding while matching the visible
-        # GitHub contributions, we scrape the total contributions from the Streak API.
+        # Extracts total contributions from the Streak API for profile consistency.
         stats["commits"] = "0"
         try:
             req_streak = urllib.request.Request(f"https://github-readme-streak-stats.herokuapp.com/?user={username}")
@@ -283,7 +282,7 @@ def main():
                 else:
                     raise Exception("Regex match failed")
         except Exception:
-            # Fallback to standard API commit count if streak stats API is down
+            # Fallback to standard API volume if primary metrics fail.
             commit_data = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
             final_count = commit_data.get('total_count', 0) if commit_data else 0
             stats["commits"] = f"{int(final_count / 100) / 10}k" if final_count >= 1000 else str(final_count)
