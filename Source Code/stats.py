@@ -202,12 +202,27 @@ def update_readme(timestamp):
 
 def get_local_hour():
     """
-    Enables precise temporal synchronization by calculating the current hour 
-    relative to a fixed UTC-5 offset. This ensures metric consistency 
-    independent of the runner's localized environment.
+    Enables precise temporal synchronization by inferring the local hour 
+    from the latest Git commit's timezone offset. This dynamic approach 
+    ensures alignment with the user's localized environment without 
+    relying on static hardcoding.
     """
-    offset = timezone(timedelta(hours=-5))
-    return datetime.now(offset).hour
+    try:
+        # Extract the ISO 8601 formatted date from the most recent commit.
+        result = subprocess.run(['git', 'log', '-1', '--format=%ai'], capture_output=True, text=True, check=True)
+        match  = re.search(r'([+-])(\d{2})(\d{2})$', result.stdout.strip())
+        
+        if not match: 
+            return datetime.now(timezone.utc).hour
+            
+        sign, h, m = match.groups()
+        offset_seconds = (int(h) * 3600 + int(m) * 60) * (-1 if sign == '-' else 1)
+        local_tz = timezone(timedelta(seconds=offset_seconds))
+        
+        return datetime.now(local_tz).hour
+    except Exception:
+        # Fallback to UTC if Git metadata is inaccessible.
+        return datetime.now(timezone.utc).hour
 
 
 # ==============================================================================
