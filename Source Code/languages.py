@@ -127,7 +127,7 @@ def create_langs_svg(langs, username):
 
     <!-- Background Frame Representation -->
     <rect width="495" height="{height}" rx="10" fill="{bg}"/>
-    <text x="30" y="38" class="title">{username}'s Most Used Languages</text>
+    <text x="50%" y="38" class="title" text-anchor="middle">{username}'s Most Used Languages</text>
     
     <!-- Distribution Bar Visualization -->
     <g transform="translate(30, 60)">
