@@ -7,9 +7,8 @@ RELEASE DATE   : July 5, 2021
 LICENCE        : MIT License
 
 DESCRIPTION    : 
-Statistical analysis module for the synthesis of GitHub performance metrics. 
-Aggregates quantitative markers (Stars, Commits, Pull Requests, Issues) into 
-a visually calibrated SVG dashboard for profile documentation.
+Statistical analysis module for GitHub performance metrics. Aggregates data 
+(Stars, Commits, Pull Requests, Issues) into a visually calibrated SVG dashboard.
 
 TECH STACK     : 
 - Python 3     : Core logic and data processing.
@@ -17,17 +16,12 @@ TECH STACK     :
 - SVG (XML)    : Vector-based graphical rendering for high-definition displays.
 
 HOW IT WORKS   :
-1. AUTHENTICATION : Loads a GITHUB_TOKEN for verified API access.
-2. DISCOVERY      : Polls the repository list with pagination to ensure 
-                    comprehensive data capture.
-3. INFERENCE      : Analyzes Pull Request history to identify unique 
-                    repository contexts.
-4. CALCULATIONS   : Applies a weighted grading system to assign a performance 
-                    rank based on contribution volume.
-5. RESILIENCE     : Utilizes a local cache (stats_cache.json) to serve fallback 
-                    data if the GitHub API is unavailable.
-6. VISUALIZATION  : Synthesizes data into a professional SVG with dynamic 
-                    progress rings and iconography.
+1. AUTHENTICATION : Loads GITHUB_TOKEN for verified API access.
+2. DISCOVERY      : Polls repository list with pagination for comprehensive capture.
+3. INFERENCE      : Analyzes Pull Request history to identify unique contexts.
+4. CALCULATIONS   : Applies weighted grading for performance rank assignment.
+5. RESILIENCE     : Utilizes local cache if GitHub API is unavailable.
+6. VISUALIZATION  : Synthesizes data into SVG with dynamic progress rings.
 ================================================================================
 """
 
@@ -42,11 +36,10 @@ from datetime import datetime, timezone, timedelta
 # CONFIGURATION & ASSETS
 # ==============================================================================
 
-# Backup data store used to prevent profile blackouts if the API is restricted.
+# Local storage for fallback data resilience.
 CACHE_FILE = "docs/stats_cache.json"
 
-# Vector paths for dashboard icons. {color} acts as a placeholder for 
-# theme-consistent rendering.
+# Vector paths for dashboard icons. {color} serves as a theme placeholder.
 ICONS = {
     "star":    '<path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" fill="none" stroke="{color}" stroke-width="1.2"/>',
     "commit":  '<path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z" fill="{color}"/><path d="M8 3.5a.75.75 0 01.75.75v3.5h2.5a.75.75 0 010 1.5h-3.25a.75.75 0 01-.75-.75v-4.25a.75.75 0 01.75-.75z" fill="{color}"/>',
@@ -61,14 +54,12 @@ ICONS = {
 
 def fetch_data(url, token):
     """
-    Executes an authenticated HTTP GET request to the GitHub API. 
-    Urllib is utilized to maintain a minimal dependency footprint.
+    Authenticated HTTP GET request to GitHub API using standard urllib.
     """
     req = urllib.request.Request(url)
     req.add_header('Accept', 'application/vnd.github.v3+json')
     
-    # Authenticated requests enable higher rate limits and access to 
-    # private repository metrics.
+    # Token authorization for higher rate limits and detailed metric access.
     if token: 
         req.add_header('Authorization', f'token {token}')
         
@@ -76,7 +67,7 @@ def fetch_data(url, token):
         with urllib.request.urlopen(req) as response:
             return json.loads(response.read().decode())
     except Exception:
-        # Fallback to Resilience Layer if network errors occur.
+        # Resilience fallback if network request fails.
         return None
 
 
@@ -86,13 +77,18 @@ def fetch_data(url, token):
 
 def calculate_grade(stats):
     """
-    Assigns a performance tier using a weighted scoring algorithm. 
-    The logic prioritizes Pull Requests and ecosystem contributions 
-    to reward active engineering over passive metrics.
+    Performance tier assignment using a weighted scoring algorithm. 
+    Prioritizes Pull Requests and ecosystem impact.
+    
+    SCORING PARAMETERS:
+    ----------------------------------------------------------------------------
+    Stars      (x10)  |  Commits   (x1.5)  |  PRs        (x50)
+    Issues     (x5)   |  Contribs  (x100)
+    ----------------------------------------------------------------------------
     """
     stars = int(stats.get('stars', 0))
     
-    # Normalizes commit strings (e.g., "10k+") for numerical synthesis.
+    # Numeric normalization of commit strings (e.g., "10k+").
     commit_raw = str(stats.get('commits', '0'))
     commits = float(commit_raw.replace('k+', '').replace('k', '')) * 1000 if 'k' in commit_raw else float(commit_raw)
     
@@ -100,11 +96,10 @@ def calculate_grade(stats):
     issues   = int(stats.get('issues', 0))
     contribs = int(stats.get('contribs', 0))
     
-    # SCORING PARAMETERS:
-    # stars (x10) | commits (1.5) | PRs (x50) | Issues (x5) | Contribs (x100)
+    # Weighted scoring calculation for performance evaluation.
     score = (stars * 10) + (commits * 1.5) + (prs * 50) + (issues * 5) + (contribs * 100)
     
-    # Performance thresholds calibrated for high-volume profiles.
+    # Thresholds for tier classification.
     if score > 20000: return "A+", 98
     if score > 15000: return "A",  90
     if score > 10000: return "A-", 80
@@ -115,13 +110,13 @@ def calculate_grade(stats):
 
 def create_stats_svg(stats, username):
     """
-    Constructs the SVG visual using standard typography and geometry. 
-    A borderless black aesthetic is used for seamless profile integration.
+    Renders SVG visualization with standard typography and geometry. 
+    Black borderless aesthetic for seamless profile integration.
     """
     accent, bg, white = "#00D4FF", "#000000", "#F0F6FC"
     grade, rank = calculate_grade(stats)
     
-    # SVG definition with embedded styles and dynamic progress ring.
+    # SVG structural definition with dynamic progress rendering.
     svg = f'''<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {accent}; }}
@@ -131,7 +126,7 @@ def create_stats_svg(stats, username):
         .rank   {{ font: italic 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.45; }}
     </style>
     
-    <!-- Background Frame -->
+    <!-- Background Frame Representation -->
     <rect width="495" height="195" rx="10" fill="{bg}"/>
     <text x="30" y="38" class="title" fill="{accent}">{username}'s GitHub Stats</text>
     
@@ -164,7 +159,7 @@ def create_stats_svg(stats, username):
         </g>
     </g>
     
-    <!-- Percentile Visualization (Dasharray calculation for progress ring) -->
+    <!-- Geometric Progress Visualization -->
     <g transform="translate(400, 105)">
         <circle r="44" stroke="{accent}" stroke-width="4.5" fill="none" opacity="0.1"/>
         <circle r="44" stroke="{accent}" stroke-width="4.5" fill="none" 
@@ -184,8 +179,8 @@ def create_stats_svg(stats, username):
 
 def update_readme(timestamp):
     """
-    Applies a cache-busting timestamp to the README image URLs. 
-    This bypasses the GitHub Camo proxy image cache.
+    Cache-busting parameter update for documentation image URLs. 
+    Ensures link freshness by bypassing proxy caching.
     """
     readme_path = "README.md"
     if not os.path.exists(readme_path): return
@@ -193,7 +188,7 @@ def update_readme(timestamp):
     with open(readme_path, "r", encoding="utf-8") as f: 
         content = f.read()
         
-    # Updates the ?t=<timestamp> query string via regex substitution.
+    # Regex substitution for query string freshness.
     content = re.sub(r'docs/stats\.svg(\?t=\d+)?', f'docs/stats.svg?t={timestamp}', content)
     
     with open(readme_path, "w", encoding="utf-8") as f: 
@@ -202,13 +197,11 @@ def update_readme(timestamp):
 
 def get_local_hour():
     """
-    Enables precise temporal synchronization by inferring the local hour 
-    from the latest Git commit's timezone offset. This dynamic approach 
-    ensures alignment with the user's localized environment without 
-    relying on static hardcoding.
+    Calculates current hour inferred from latest commit timezone offset.
+    Ensures temporal accuracy consistent with local operations.
     """
     try:
-        # Extract the ISO 8601 formatted date from the most recent commit.
+        # Inference of localized offset from Git metadata.
         result = subprocess.run(['git', 'log', '-1', '--format=%ai'], capture_output=True, text=True, check=True)
         match  = re.search(r'([+-])(\d{2})(\d{2})$', result.stdout.strip())
         
@@ -221,7 +214,7 @@ def get_local_hour():
         
         return datetime.now(local_tz).hour
     except Exception:
-        # Fallback to UTC if Git metadata is inaccessible.
+        # Fallback to UTC if metadata is inaccessible.
         return datetime.now(timezone.utc).hour
 
 
@@ -234,17 +227,15 @@ def main():
     username = "Amey-Thakur"
     stats    = {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "contribs": 0}
     
-    # The execution flow is restricted to the 12 AM and 12 PM intervals to 
-    # maintain a strict bi-daily update frequency. Manual triggers and 
-    # push events are exempt from this temporal restriction to facilitate 
-    # on-demand synchronization.
+    # Execution gate at 12 AM/PM for scheduled runs. 
+    # Manual triggers and push events bypass this temporal restriction.
     local_hour = get_local_hour()
     if os.getenv('GITHUB_EVENT_NAME') == 'schedule' and local_hour not in [0, 12]:
-        print(f"Scheduled update deferred for current hour: {local_hour}")
+        print(f"Update deferred for current hour: {local_hour}")
         return
 
     try:
-        # STEP 1: PORTFOLIO SCAN
+        # REPOSITORY DISCOVERY
         all_repos = []
         page = 1
         while True:
@@ -255,13 +246,13 @@ def main():
             page += 1
             
         if not all_repos:
-            raise Exception("No repository data retrieved.")
+            raise Exception("No metadata retrieved.")
 
         stats["stars"]  = sum(r.get('stargazers_count', 0) for r in all_repos)
         stats["issues"] = sum(r.get('open_issues_count', 0) for r in all_repos)
         
-        # STEP 2: IMPACT ANALYSIS
-        # Aggregates unique repository contexts from Pull Request activity.
+        # IMPACT ANALYSIS
+        # Aggregation of unique contexts from interaction history.
         pr_search = fetch_data(f"https://api.github.com/search/issues?q=author:{username}+type:pr", token)
         if pr_search:
             stats["prs"] = pr_search.get('total_count', 0)
@@ -272,11 +263,11 @@ def main():
                 match = re.search(r'/repos/([^/]+)/', repo_url)
                 if match: unique_contexts.add(match.group(1))
             
-            # Exclusion of own profile ensures distinct external project impact count.
+            # Distinct count of external project contributions.
             stats["contribs"] = max(1, len(unique_contexts) - (1 if username in unique_contexts else 0))
 
-        # STEP 3: COMMIT RECONCILIATION
-        # Extracts total contributions from the Streak API for profile consistency.
+        # CONTRIBUTION RECONCILIATION
+        # Retrieval of contribution volume from Streak API for consistency.
         stats["commits"] = "0"
         try:
             req_streak = urllib.request.Request(f"https://github-readme-streak-stats.herokuapp.com/?user={username}")
@@ -287,35 +278,31 @@ def main():
                     contrib_count = int(match.group(1).replace(',', ''))
                     stats["commits"] = f"{int(contrib_count / 100) / 10}k" if contrib_count >= 1000 else str(contrib_count)
                 else:
-                    raise Exception("Regex match failed")
+                    raise Exception("Metric retrieval incomplete")
         except Exception:
-            # Fallback to standard API volume if primary metrics fail.
+            # Fallback to standard API volume if primary source fails.
             commit_data = fetch_data(f"https://api.github.com/search/commits?q=author:{username}", token)
             final_count = commit_data.get('total_count', 0) if commit_data else 0
             stats["commits"] = f"{int(final_count / 100) / 10}k" if final_count >= 1000 else str(final_count)
 
-        # STEP 4: PERSISTENCE & DATA INTEGRITY GUARD
-        # Validation of API response volume before cache serialization. 
-        # Prevents overwriting local data with null or empty results from 
-        # successful but incomplete API returns.
+        # PERSISTENCE & VALIDATION
+        # Verification of volume ensures integrity before cache update.
         if stats.get('stars', 0) > 0:
             stats['last_updated'] = datetime.now(timezone.utc).isoformat()
             os.makedirs("docs", exist_ok=True)
             with open(CACHE_FILE, "w", encoding="utf-8") as f:
                 json.dump(stats, f)
-        else:
-            print("Validation Failure: Insufficient metric volume. Cache update bypassed.")
 
-        # Final SVG serialization.
+        # Serialization of visualized results.
         with open("docs/stats.svg", "w", encoding="utf-8") as f: 
             f.write(create_stats_svg(stats, username))
             
         update_readme(int(datetime.now().timestamp()))
-        print(f"Stats successfully synthesized. Commits: {stats['commits']}")
+        print(f"Metrics synthesized: {stats['commits']} Commits.")
         
     except Exception as e:
-        # Graceful recovery via the Resonance Cache if the API endpoint fails.
-        print(f"Synthesis Failure: {e}. Transitioning to Resilience Cache...")
+        # Restoration via local cache if live retrieval fails.
+        print(f"Processing deferred: {e}. Utilizing local storage...")
         if os.path.exists(CACHE_FILE):
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
                 stats = json.load(f)
@@ -323,9 +310,6 @@ def main():
             os.makedirs("docs", exist_ok=True)
             with open("docs/stats.svg", "w", encoding="utf-8") as f:
                 f.write(create_stats_svg(stats, username))
-            print("Successfully recovered metrics from local cache.")
-        else:
-            print("CRITICAL: Failed to retrieve live data or local backup.")
 
 if __name__ == "__main__": 
     main()
