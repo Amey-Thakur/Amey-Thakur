@@ -17,7 +17,7 @@ In accordance with the project's current development cycle, the version listed b
 In alignment with established professional standards for technical disclosure, security-related observations associated with the repository’s automated workflows or sensitive metadata handling are formally documented through scholarly channels.
 
 To document a security concern, communication is facilitated with the project curator:
-- **Lead Curator**: [Amey Thakur](https://github.com/Amey-Thakur)
+- **Developer**: [Amey Thakur](https://github.com/Amey-Thakur)
 - **Method**: Formal reports are submitted via the repository's [GitHub Issues](https://github.com/Amey-Thakur/Amey-Thakur/issues) interface to ensure transparency and a permanent record of the observation.
 
 Submissions should include:
