@@ -36,8 +36,14 @@ graph TD
 ### 1. Analytical Engine (stats.py)
 - **Metric Reconciliation**: Performs high-frequency polling to identify unique repository contexts and aggregate quantitative markers (Stars, Commits, PRs, etc.).
 - **Scoring Algorithm**: Implements a calibrated grading system using weighted parameters:
-    - **Stars**: x10 | **Commits**: x1.5 | **PRs**: x50
-    - **Issues**: x5 | **External Contributions**: x100
+
+| Metric | Weight |
+| :--- | :--- |
+| Stars | x10 |
+| Commits | x1.5 |
+| PRs | x50 |
+| Issues | x5 |
+| External Contributions | x100 |
 - **Temporal Gating**: Restricts periodic updates to **12 AM and 12 PM local time**, utilizing dynamic timezone inference from Git metadata.
 
 ### 2. Language Processor (languages.py)
