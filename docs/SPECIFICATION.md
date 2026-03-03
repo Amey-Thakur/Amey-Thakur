@@ -40,7 +40,7 @@ graph TD
 <div align="center">
 
 | Metric | Weight |
-| :--- | :---: |
+| :---: | :---: |
 | Stars | x10 |
 | Commits | x1.5 |
 | PRs | x50 |
