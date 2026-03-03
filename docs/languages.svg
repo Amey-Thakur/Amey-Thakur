@@ -7,7 +7,7 @@
 
     <!-- Background Frame Representation -->
     <rect width="495" height="230" rx="10" fill="#000000"/>
-    <text x="30" y="38" class="title">Amey-Thakur's Most Used Languages</text>
+    <text x="50%" y="38" class="title" text-anchor="middle">Amey-Thakur's Most Used Languages</text>
     
     <!-- Distribution Bar Visualization -->
     <g transform="translate(30, 60)">
