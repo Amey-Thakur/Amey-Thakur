@@ -75,4 +75,4 @@ graph TD
 
 ---
 
-*Technical Specification | Amey-Thakur Profile Identity | Version 1.1*
+*Technical Specification | Amey-Thakur Profile Identity | Version 1.0*
