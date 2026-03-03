@@ -7,7 +7,7 @@
         .rank   { font: italic 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: #F0F6FC; opacity: 0.45; }
     </style>
     
-    <!-- Background Frame -->
+    <!-- Background Frame Representation -->
     <rect width="495" height="195" rx="10" fill="#000000"/>
     <text x="30" y="38" class="title" fill="#00D4FF">Amey-Thakur's GitHub Stats</text>
     
@@ -40,7 +40,7 @@
         </g>
     </g>
     
-    <!-- Percentile Visualization (Dasharray calculation for progress ring) -->
+    <!-- Geometric Progress Visualization -->
     <g transform="translate(400, 105)">
         <circle r="44" stroke="#00D4FF" stroke-width="4.5" fill="none" opacity="0.1"/>
         <circle r="44" stroke="#00D4FF" stroke-width="4.5" fill="none" 
