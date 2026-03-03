@@ -81,10 +81,13 @@ def calculate_grade(stats):
     Prioritizes Pull Requests and ecosystem impact.
     
     SCORING PARAMETERS:
-    ----------------------------------------------------------------------------
-    Stars      (x10)  |  Commits   (x1.5)  |  PRs        (x50)
-    Issues     (x5)   |  Contribs  (x100)
-    ----------------------------------------------------------------------------
+    -----------------------
+    Stars     (x10)
+    Commits   (x1.5)
+    PRs       (x50)
+    Issues    (x5)
+    Contribs  (x100)
+    -----------------------
     """
     stars = int(stats.get('stars', 0))
     
