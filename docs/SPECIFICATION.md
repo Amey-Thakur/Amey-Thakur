@@ -48,6 +48,7 @@ graph TD
 | External Contributions | x100 |
 
 </div>
+
 - **Temporal Gating**: Restricts periodic updates to **12 AM and 12 PM local time**, utilizing dynamic timezone inference from Git metadata.
 
 ### 2. Language Processor (languages.py)
