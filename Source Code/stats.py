@@ -202,22 +202,12 @@ def update_readme(timestamp):
 
 def get_local_hour():
     """
-    Detects the local hour by parsing the timezone offset from the latest 
-    Git commit. Ensures temporal alignment without regional hardcoding.
+    Enables precise temporal synchronization by calculating the current hour 
+    relative to a fixed UTC-5 offset. This ensures metric consistency 
+    independent of the runner's localized environment.
     """
-    try:
-        result = subprocess.run(['git', 'log', '-1', '--format=%ai'], capture_output=True, text=True, check=True)
-        match  = re.search(r'([+-])(\d{2})(\d{2})$', result.stdout.strip())
-        
-        if not match: 
-            return datetime.now(timezone.utc).hour
-            
-        sign, h, m = match.groups()
-        offset = (int(h) * 3600 + int(m) * 60) * (-1 if sign == '-' else 1)
-        
-        return datetime.now(timezone(timedelta(seconds=offset))).hour
-    except Exception:
-        return datetime.now(timezone.utc).hour
+    offset = timezone(timedelta(hours=-5))
+    return datetime.now(offset).hour
 
 
 # ==============================================================================
@@ -229,11 +219,13 @@ def main():
     username = "Amey-Thakur"
     stats    = {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "contribs": 0}
     
-    # Execution is gated at 12 AM/PM for scheduled runs to optimize resource 
-    # usage. Manual or Push events bypass this gate.
+    # The execution flow is restricted to the 12 AM and 12 PM intervals to 
+    # maintain a strict bi-daily update frequency. Manual triggers and 
+    # push events are exempt from this temporal restriction to facilitate 
+    # on-demand synchronization.
     local_hour = get_local_hour()
     if os.getenv('GITHUB_EVENT_NAME') == 'schedule' and local_hour not in [0, 12]:
-        print(f"Scheduled run bypassed for local hour {local_hour}.")
+        print(f"Scheduled update deferred for current hour: {local_hour}")
         return
 
     try:
