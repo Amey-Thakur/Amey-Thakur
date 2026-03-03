@@ -37,7 +37,7 @@ import subprocess
 from datetime import datetime, timezone, timedelta
 
 # ==============================================================================
-# DESIGN SYSTEM & ANALYTICAL CONSTANTS
+# CONFIGURATION & ASSETS
 # ==============================================================================
 
 # Fail-safe data store used to maintain profile aesthetics during API downtime.
@@ -47,7 +47,7 @@ CACHE_FILE = "docs/languages_cache.json"
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
 # Standard brand hex codes for professional technology representation.
-# This map ensures unique visual identification for every programming environment.
+# This map ensures unique visual identification for every environment.
 LANG_COLORS = {
     "Python": "#3572A5", "HTML": "#e34c26", "Jupyter Notebook": "#DA5B0B", 
     "JavaScript": "#f1e05a", "CSS": "#563d7c", "TypeScript": "#3178c6", 
@@ -61,12 +61,12 @@ LANG_COLORS = {
 
 
 # ==============================================================================
-# NETWORK UTILITIES
+# DATA RETRIEVAL CORE
 # ==============================================================================
 
 def fetch_data(url, token):
     """
-    Handles authenticated communication with the GitHub REST API.
+    Authenticated HTTP GET request to GitHub API using standard urllib.
     """
     req = urllib.request.Request(url)
     req.add_header('Accept', 'application/vnd.github.v3+json')
@@ -77,16 +77,17 @@ def fetch_data(url, token):
         with urllib.request.urlopen(req) as response:
             return json.loads(response.read().decode())
     except Exception:
+        # Resilience fallback if network request fails.
         return None
 
 
 # ==============================================================================
-# GRAPHICAL SYNTHESIS ENGINE
+# ANALYTICAL LOGIC
 # ==============================================================================
 
 def create_langs_svg(langs, username):
     """
-    Constructs the SVG visual with legacy title styles and priority-weighted 
+    Renders SVG visual with legacy title styles and priority-weighted 
     layout logic.
     """
     bg, white = "#000000", "#F0F6FC"
@@ -118,9 +119,15 @@ def create_langs_svg(langs, username):
     height = max(170, 110 + (rows * 20))
     
     svg = f'''<svg width="495" height="{height}" viewBox="0 0 495 {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Background Frame -->
+    <style>
+        .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .header {{ font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .stat   {{ font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.6; }}
+    </style>
+
+    <!-- Background Frame Representation -->
     <rect width="495" height="{height}" rx="10" fill="{bg}"/>
-    <text x="30" y="38" font-family="'Segoe UI', Ubuntu, sans-serif" font-weight="600" font-size="22" fill="{white}" letter-spacing="-0.2px">{username}'s Most Used Languages</text>
+    <text x="30" y="38" class="title">{username}'s Most Used Languages</text>
     
     <!-- Distribution Bar Visualization -->
     <g transform="translate(30, 60)">
@@ -141,8 +148,8 @@ def create_langs_svg(langs, username):
         d_name = name[:13] + '..' if len(name) > 15 else name
         svg += f'''<g transform="translate({x}, {y})">
             <circle cx="5" cy="-7" r="5" fill="{LANG_COLORS.get(name, "#888888")}"/>
-            <text x="18" y="0" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="{white}">{d_name}</text>
-            <text x="140" y="0" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="400" fill="{white}" fill-opacity="0.6">{perc:.1f}%</text>
+            <text x="18" y="0" class="header">{d_name}</text>
+            <text x="140" y="0" text-anchor="end" class="stat">{perc:.1f}%</text>
         </g>'''
     
     svg += '</g></svg>'
@@ -150,7 +157,7 @@ def create_langs_svg(langs, username):
 
 
 # ==============================================================================
-# CORE SYSTEM UTILITIES
+# UTILITY FUNCTIONS
 # ==============================================================================
 
 def update_readme(timestamp):
@@ -166,9 +173,11 @@ def update_readme(timestamp):
 
 def get_local_hour():
     """
-    Detects local hour using the temporal offset of the most recent Git commit.
+    Detects current hour inferred from latest commit timezone offset.
+    Ensures temporal accuracy consistent with local operations.
     """
     try:
+        # Inference of localized offset from Git metadata.
         result = subprocess.run(['git', 'log', '-1', '--format=%ai'], capture_output=True, text=True, check=True)
         match  = re.search(r'([+-])(\d{2})(\d{2})$', result.stdout.strip())
         if not match: return datetime.now(timezone.utc).hour
@@ -179,7 +188,7 @@ def get_local_hour():
 
 
 # ==============================================================================
-# MAIN ANALYTICAL RUNTIME
+# MAIN EXECUTION FLOW
 # ==============================================================================
 
 def main():
@@ -187,12 +196,15 @@ def main():
     username   = "Amey-Thakur"
     all_langs_density = {}
     
+    # Execution gate at 12 AM/PM for scheduled runs. 
+    # Manual triggers and push events bypass this temporal restriction.
     local_hour = get_local_hour()
     if os.getenv('GITHUB_EVENT_NAME') == 'schedule' and local_hour not in [0, 12]:
-        print(f"Scheduled update bypassed for hour {local_hour}.")
+        print(f"Periodic update deferred for current hour: {local_hour}")
         return
 
     try:
+        # REPOSITORY DISCOVERY
         repos = []
         page  = 1
         while True:
@@ -204,23 +216,21 @@ def main():
             
         if not repos: raise Exception("No repository metadata retrieved.")
 
-        # Diversity-Weighted Language Averaging Engine.
-        # This calculates mean density per technology across the total portfolio.
-        repo_count = len(repos)
-        for r in repos:
-            if r.get('fork'):
-                repo_count -= 1
-                continue
-                
+        # LINGUISTIC QUANTIFICATION ENGINE
+        # Computes mean density per technology across the total portfolio volume.
+        active_repos = [r for r in repos if not r.get('fork')]
+        for r in active_repos:
             ld = fetch_data(r['languages_url'], token)
             if ld:
                 r_total = sum(ld.values())
                 if r_total > 0:
                     for k, v in ld.items():
+                        # Normalization relative to total portfolio size.
                         density = (v / r_total)
-                        all_langs_density[k] = all_langs_density.get(k, 0) + (density / len(repos)) # Normalize by total repos
+                        all_langs_density[k] = all_langs_density.get(k, 0) + (density / len(active_repos))
 
-        # STEP 5: PERSISTENCE & INTEGRITY GUARD
+        # PERSISTENCE & INTEGRITY GUARD
+        # Verification of density data ensures integrity before cache update.
         if sum(all_langs_density.values()) > 0:
             cache_payload = {
                 "last_updated": datetime.now(timezone.utc).isoformat(),
@@ -229,17 +239,17 @@ def main():
             os.makedirs("docs", exist_ok=True)
             with open(CACHE_FILE, "w", encoding="utf-8") as f:
                 json.dump(cache_payload, f)
-        else:
-            print("Validation Failure: Null density detected. Cache persistence bypassed.")
 
+        # Serialization of visualized results.
         with open("docs/languages.svg", "w", encoding="utf-8") as f: 
             f.write(create_langs_svg(all_langs_density, username))
             
         update_readme(int(datetime.now().timestamp()))
-        print("Linguistic distribution successfully updated.")
+        print("Linguistic distribution synthesized successfully.")
         
     except Exception as e:
-        print(f"Update Failure: {e}. Transitioning to Resilience Cache...")
+        # Restoration via the Resilience Layer if live transmission fails.
+        print(f"Transmission deferred: {e}. Utilizing local storage...")
         if os.path.exists(CACHE_FILE):
              with open(CACHE_FILE, "r", encoding="utf-8") as f:
                  cache_content = json.load(f)
@@ -250,7 +260,7 @@ def main():
                  f.write(create_langs_svg(all_langs_density, username))
              print("Successfully recovered metrics from local cache.")
         else:
-             print("CRITICAL: Failed to retrieve live data or local backup.")
+             print("Critical failure: Data sources inaccessible.")
 
 if __name__ == "__main__": 
     main()
