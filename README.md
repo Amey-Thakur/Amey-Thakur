@@ -48,7 +48,7 @@
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1772508724" alt="Amey-Thakur" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1772508881" alt="Amey-Thakur" /></p>
 
 ---
 
