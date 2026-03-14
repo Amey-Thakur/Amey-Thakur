@@ -13,42 +13,42 @@
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
         <rect width="435" height="14" rx="7" fill="#F0F6FC" fill-opacity="0.1"/>
-        <g mask="url(#bar-mask)"><rect x="0" width="110.62630453063844" height="14" fill="#3572A5"/><rect x="110.62630453063844" width="72.91067115069824" height="14" fill="#e34c26"/><rect x="183.53697568133668" width="53.07207867577372" height="14" fill="#DA5B0B"/><rect x="236.6090543571104" width="43.991029513085" height="14" fill="#f1e05a"/><rect x="280.6000838701954" width="27.498368610438536" height="14" fill="#563d7c"/><rect x="308.09845248063397" width="23.7927527273152" height="14" fill="#e16737"/><rect x="331.89120520794916" width="21.193688622776893" height="14" fill="#701516"/><rect x="353.08489383072606" width="19.3264068345627" height="14" fill="#b07219"/><rect x="372.41130066528876" width="12.990289195954176" height="14" fill="#555555"/><rect x="385.40158986124294" width="12.262267864943254" height="14" fill="#4F5D95"/><rect x="397.66385772618617" width="10.084571107617611" height="14" fill="#6E4C13"/><rect x="407.74842883380376" width="5.536718465208925" height="14" fill="#89e051"/><rect x="413.2851472990127" width="5.368256445385727" height="14" fill="#178600"/><rect x="418.6534037443984" width="5.368256445385727" height="14" fill="#a270ba"/><rect x="424.02166018978414" width="5.368256445385727" height="14" fill="#FFFFFF"/><rect x="429.38991663516987" width="3.605959716909739" height="14" fill="#3178c6"/><rect x="432.9958763520796" width="1.1375209859159834" height="14" fill="#4AF626"/><rect x="434.1333973379956" width="0.8666026620044047" height="14" fill="#DBCA00"/></g></g><g transform="translate(30, 100)"><g transform="translate(0, 0)">
+        <g mask="url(#bar-mask)"><rect x="0" width="107.96163446143396" height="14" fill="#3572A5"/><rect x="107.96163446143396" width="72.20689549707244" height="14" fill="#e34c26"/><rect x="180.16852995850638" width="57.03267522966861" height="14" fill="#DA5B0B"/><rect x="237.20120518817498" width="46.26759349708808" height="14" fill="#f1e05a"/><rect x="283.46879868526304" width="27.686347742124973" height="14" fill="#563d7c"/><rect x="311.155146427388" width="23.219653622853112" height="14" fill="#e16737"/><rect x="334.3748000502411" width="20.68319351070785" height="14" fill="#701516"/><rect x="355.05799356094894" width="18.86088917982567" height="14" fill="#b07219"/><rect x="373.9188827407746" width="12.677390424205166" height="14" fill="#555555"/><rect x="386.5962731649798" width="11.966905036916827" height="14" fill="#4F5D95"/><rect x="398.5631782018966" width="9.841662742331033" height="14" fill="#6E4C13"/><rect x="408.40484094422766" width="5.403354813241614" height="14" fill="#89e051"/><rect x="413.80819575746926" width="5.238950559823297" height="14" fill="#178600"/><rect x="419.0471463172926" width="5.238950559823297" height="14" fill="#a270ba"/><rect x="424.2860968771159" width="5.238950559823297" height="14" fill="#FFFFFF"/><rect x="429.5250474369392" width="3.5191025000012135" height="14" fill="#3178c6"/><rect x="433.0441499369404" width="1.110121371175867" height="14" fill="#4AF626"/><rect x="434.1542713081163" width="0.8457286918837045" height="14" fill="#DBCA00"/></g></g><g transform="translate(30, 100)"><g transform="translate(0, 0)">
             <circle cx="5" cy="-7" r="5" fill="#3572A5"/>
             <text x="18" y="0" class="header">Python</text>
-            <text x="140" y="0" text-anchor="end" class="stat">25.4%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">24.8%</text>
         </g><g transform="translate(150, 0)">
             <circle cx="5" cy="-7" r="5" fill="#e34c26"/>
             <text x="18" y="0" class="header">HTML</text>
-            <text x="140" y="0" text-anchor="end" class="stat">16.8%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">16.6%</text>
         </g><g transform="translate(300, 0)">
             <circle cx="5" cy="-7" r="5" fill="#DA5B0B"/>
             <text x="18" y="0" class="header">Jupyter Noteb..</text>
-            <text x="140" y="0" text-anchor="end" class="stat">12.2%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">13.1%</text>
         </g><g transform="translate(0, 20)">
             <circle cx="5" cy="-7" r="5" fill="#f1e05a"/>
             <text x="18" y="0" class="header">JavaScript</text>
-            <text x="140" y="0" text-anchor="end" class="stat">10.1%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">10.6%</text>
         </g><g transform="translate(150, 20)">
             <circle cx="5" cy="-7" r="5" fill="#563d7c"/>
             <text x="18" y="0" class="header">CSS</text>
-            <text x="140" y="0" text-anchor="end" class="stat">6.3%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">6.4%</text>
         </g><g transform="translate(300, 20)">
             <circle cx="5" cy="-7" r="5" fill="#e16737"/>
             <text x="18" y="0" class="header">MATLAB</text>
-            <text x="140" y="0" text-anchor="end" class="stat">5.5%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">5.3%</text>
         </g><g transform="translate(0, 40)">
             <circle cx="5" cy="-7" r="5" fill="#701516"/>
             <text x="18" y="0" class="header">Ruby</text>
-            <text x="140" y="0" text-anchor="end" class="stat">4.9%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">4.8%</text>
         </g><g transform="translate(150, 40)">
             <circle cx="5" cy="-7" r="5" fill="#b07219"/>
             <text x="18" y="0" class="header">Java</text>
-            <text x="140" y="0" text-anchor="end" class="stat">4.4%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">4.3%</text>
         </g><g transform="translate(300, 40)">
             <circle cx="5" cy="-7" r="5" fill="#555555"/>
             <text x="18" y="0" class="header">C</text>
-            <text x="140" y="0" text-anchor="end" class="stat">3.0%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">2.9%</text>
         </g><g transform="translate(0, 60)">
             <circle cx="5" cy="-7" r="5" fill="#4F5D95"/>
             <text x="18" y="0" class="header">PHP</text>
@@ -60,7 +60,7 @@
         </g><g transform="translate(300, 60)">
             <circle cx="5" cy="-7" r="5" fill="#89e051"/>
             <text x="18" y="0" class="header">Shell</text>
-            <text x="140" y="0" text-anchor="end" class="stat">1.3%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">1.2%</text>
         </g><g transform="translate(0, 80)">
             <circle cx="5" cy="-7" r="5" fill="#178600"/>
             <text x="18" y="0" class="header">C#</text>
