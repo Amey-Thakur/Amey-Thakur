@@ -75,7 +75,7 @@
 
 <b>— Amey Thakur</b>
 
-<i>Namaskar</i> 🙏🏻
+<i>Namaskar</i> <span title="Amey Thakur: Honoring the Curiosity that Led You to My Work">🙏🏻</span>
 
 </div>
 
