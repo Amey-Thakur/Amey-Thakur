@@ -49,21 +49,21 @@
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1773946815" alt="Amey-Thakur" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1773946815" alt="Amey-Thakur" title="Amey-Thakur's Most Used Languages" /></p>
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1773946805" alt="Amey-Thakur" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1773946805" alt="Amey-Thakur" title="Amey-Thakur's GitHub Productivity Stats" /></p>
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&theme=black-ice&hide_border=true&stroke=0000&background=060A0CD0" alt="Amey-Thakur" /></p>
+<p align="center">&nbsp;<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Amey-Thakur&theme=black-ice&hide_border=true&stroke=0000&background=060A0CD0" alt="Amey-Thakur" title="Amey-Thakur's GitHub Contribution Streak" /></p>
 
 ---
 
 <div align="center">
 
-![](https://github.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake-dark.svg)
+![](https://github.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake-dark.svg "Amey-Thakur's Contribution Graph")
 
 </div>
 
