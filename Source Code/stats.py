@@ -313,6 +313,8 @@ def main():
             os.makedirs("docs", exist_ok=True)
             with open("docs/stats.svg", "w", encoding="utf-8") as f:
                 f.write(create_stats_svg(stats, username))
+            update_readme(int(datetime.now().timestamp()))
+            print("Successfully recovered metrics from local cache.")
 
 if __name__ == "__main__": 
     main()
