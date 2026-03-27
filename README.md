@@ -49,11 +49,11 @@
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1773948960" alt="Amey-Thakur" title="Amey-Thakur's Most Used Languages" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1774653665" alt="Amey-Thakur" title="Amey-Thakur's Most Used Languages" /></p>
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1774184059" alt="Amey-Thakur" title="Amey-Thakur's GitHub Productivity Stats" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1774653666" alt="Amey-Thakur" title="Amey-Thakur's GitHub Productivity Stats" /></p>
 
 ---
 
@@ -63,7 +63,7 @@
 
 <div align="center">
 
-![](https://github.com/Amey-Thakur/Amey-Thakur/blob/output/github-contribution-grid-snake-dark.svg "Amey-Thakur's Contribution Graph")
+![](https://github.com/Amey-Thakur/Amey-Thakur/raw/output/github-contribution-grid-snake-dark.svg "Amey-Thakur's Contribution Graph")
 
 </div>
 

@@ -56,7 +56,8 @@ LANG_COLORS = {
     "MATLAB": "#e16737", "LaTeX": "#3D6117", "C#": "#178600", "PHP": "#4F5D95",
     "Ruby": "#701516", "Assembly": "#6E4C13", "AIDL": "#4AF626", "Lex": "#DBCA00",
     "Rich Text Format": "#FFFFFF", "Kotlin": "#A97BFF", "Dart": "#00B4AB",
-    "SQL": "#e38c00", "Swift": "#F05138", "Objective-C": "#438eff", "Lua": "#000080"
+    "SQL": "#e38c00", "Swift": "#F05138", "Objective-C": "#438eff", "Lua": "#000080",
+    "PowerShell": "#012456"
 }
 
 
@@ -258,6 +259,7 @@ def main():
              os.makedirs("docs", exist_ok=True)
              with open("docs/languages.svg", "w", encoding="utf-8") as f:
                  f.write(create_langs_svg(all_langs_density, username))
+             update_readme(int(datetime.now().timestamp()))
              print("Successfully recovered metrics from local cache.")
         else:
              print("Critical failure: Data sources inaccessible.")
