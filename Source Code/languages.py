@@ -197,28 +197,6 @@ def main():
     username   = "Amey-Thakur"
     all_langs_density = {}
     
-    # Execution gate at 12 AM/PM for scheduled runs. 
-    # Manual triggers and push events bypass this temporal restriction.
-    local_hour = get_local_hour()
-    if os.getenv('GITHUB_EVENT_NAME') == 'schedule':
-        if local_hour not in [0, 1, 2, 12, 13, 14]:
-            print(f"Periodic update deferred for current hour: {local_hour}")
-            return
-        
-        # Prevent multiple updates within the same time window using cache metadata
-        if os.path.exists(CACHE_FILE):
-            try:
-                with open(CACHE_FILE, "r", encoding="utf-8") as f:
-                    cache_content = json.load(f)
-                    last_updated_str = cache_content.get('last_updated')
-                    if last_updated_str:
-                        last_upd = datetime.fromisoformat(last_updated_str.replace('Z', '+00:00'))
-                        if (datetime.now(timezone.utc) - last_upd).total_seconds() < 10 * 3600:
-                            print("Periodic update deferred: already executed recently.")
-                            return
-            except Exception:
-                pass
-
     try:
         # REPOSITORY DISCOVERY
         repos = []
