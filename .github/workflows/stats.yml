@@ -2,7 +2,7 @@ name: Amey-Thakur Stats
 
 on:
   schedule:
-    - cron: '0 * * * *' # High-frequency polling to facilitate dynamic temporal synchronization across timezones.
+    - cron: '0 4,16 * * *'
   workflow_dispatch:        # Manual trigger
   push:
     branches:
