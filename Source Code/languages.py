@@ -148,7 +148,7 @@ def create_langs_svg(langs, username):
         x, y = (i % 3) * 150, (i // 3) * 20
         d_name = name[:13] + '..' if len(name) > 15 else name
         svg += f'''<g transform="translate({x}, {y})">
-            <circle cx="5" cy="-7" r="5" fill="{LANG_COLORS.get(name, "#888888")}"/>
+            <circle cx="5" cy="-4" r="5" fill="{LANG_COLORS.get(name, "#888888")}"/>
             <text x="18" y="0" class="header">{d_name}</text>
             <text x="140" y="0" text-anchor="end" class="stat">{perc:.1f}%</text>
         </g>'''
