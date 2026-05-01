@@ -53,7 +53,7 @@
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1777569834" alt="Amey-Thakur" title="Amey-Thakur's GitHub Productivity Stats" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/stats.svg?t=1777617520" alt="Amey-Thakur" title="Amey-Thakur's GitHub Productivity Stats" /></p>
 
 ---
 
