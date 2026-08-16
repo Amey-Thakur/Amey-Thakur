@@ -18,9 +18,10 @@
 # align_schedule.py records what time each run actually fired and rewrites the
 # cron once several runs agree it has drifted.
 #
-# This workflow stands alone. Its schedule is offset by 0 minutes from the
-# others so that no two jobs push to main at the same moment, and a failure
-# here cannot stop the others from publishing.
+# This workflow stands alone. It shares a schedule with the other card
+# workflow, which is safe because each writes its own files: the only path they
+# both touch is README.md, where they edit different lines and a rebase merges
+# them cleanly. A failure here cannot stop the other from publishing.
 #
 # Nothing exits early on the clock. A run an hour out of place is preferable to
 # one that declines to run.
@@ -35,7 +36,7 @@ name: Amey-Thakur Languages
 
 on:
   schedule:
-    # 00:00 local, expressed in UTC. Rewritten automatically on drift.
+    # 00:00 and 12:00 local, expressed in UTC. Rewritten automatically on drift.
     - cron: '0 4,16 * * *'
   workflow_dispatch:
   push:
