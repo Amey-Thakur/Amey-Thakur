@@ -1,9 +1,36 @@
+# ==============================================================================
+# File: action.yml
+# Author: Amey Thakur
+# Profile: https://github.com/Amey-Thakur
+# Repository: https://github.com/Amey-Thakur/Amey-Thakur
+# Release Date: December 16, 2025
+# Modified: August 16, 2026
+# License: MIT License
+# ==============================================================================
+#
+# DESCRIPTION:
+# Renders the contribution grid as an animated snake and publishes it to the
+# output branch, where the profile README reads it from.
+#
+# HOW IT WORKS:
+# The snake is built from the public contribution calendar, so it needs no
+# checkout of this repository. It is published to a branch of its own rather
+# than to main, which is why this workflow never competes with the two card
+# workflows for a push.
+#
+# TECH STACK:
+# - GitHub Actions (scheduling and delivery)
+# - Platane/snk (contribution snake renderer)
+#
+# ==============================================================================
+
 name: Amey-Thakur
 
 on:
-  # Automated trigger: Every 12 hours
   schedule:
-    - cron: "0 */12 * * *" 
+    # 00:30 local, expressed in UTC. Offset by thirty minutes from the card
+    # workflows so the three never run at the same instant.
+    - cron: '30 4,16 * * *' 
   
   # Manual trigger: Allows on-demand generation
   workflow_dispatch:
