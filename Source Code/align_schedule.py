@@ -47,9 +47,10 @@ from local_time import local_now, offset_hours
 # cron, which is exactly the coupling that keeping them separate avoids.
 WORKFLOW = Path(os.environ.get("WORKFLOW_FILE", ".github/workflows/languages.yml"))
 
-# One ledger shared by every workflow. The offset belongs to the author, not to
-# any single job, so agreement is reached faster when all runs contribute.
-LEDGER = Path("docs/schedule_state.json")
+# One ledger per workflow, named after the workflow that writes it. A shared
+# file meant two jobs creating the same path in the same second, which is an
+# add/add conflict that no rebase can resolve and which failed a run.
+LEDGER = Path("docs") / f"schedule_state_{WORKFLOW.stem}.json"
 
 # The local hours the cards are due.
 DUE_LOCAL_HOURS = (0, 12)
