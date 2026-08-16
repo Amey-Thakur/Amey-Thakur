@@ -82,6 +82,36 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python "Source Code/languages.py"
 
+      - name: Configure commit signing
+        env:
+          SIGNING_KEY: ${{ secrets.COMMIT_SIGNING_KEY }}
+        run: |
+          # Commits must be signed by the author's own key, not by GitHub.
+          #
+          # GitHub will sign a commit for free if it is created through the API
+          # rather than with git, but it then records github-actions[bot] as the
+          # author, and a bot's commits do not count towards the author's
+          # contribution graph. Since a daily contribution is the reason this
+          # workflow exists, that trade is not worth taking.
+          #
+          # So the author's own SSH signing key is used instead, supplied as a
+          # secret. Without it the run continues and simply produces unsigned
+          # commits, because a missing key should not cost a day's activity.
+          if [ -z "$SIGNING_KEY" ]; then
+            echo "::warning::COMMIT_SIGNING_KEY is not set. Commits will be unsigned."
+            exit 0
+          fi
+
+          mkdir -p ~/.ssh
+          echo "$SIGNING_KEY" > ~/.ssh/signing_key
+          chmod 600 ~/.ssh/signing_key
+          ssh-keygen -y -f ~/.ssh/signing_key > ~/.ssh/signing_key.pub
+
+          git config --local gpg.format ssh
+          git config --local user.signingkey ~/.ssh/signing_key.pub
+          git config --local commit.gpgsign true
+          echo "Signing configured."
+
       - name: Commit and push
         run: |
           git config --local user.email "ameythakur20@gmail.com"
@@ -98,7 +128,7 @@ jobs:
           # The generator rewrites the cache-busting query string on its README
           # image every run, so a commit exists even when the figures have not
           # moved.
-          git add docs/languages.svg docs/languages_cache.json README.md docs/schedule_state.json
+          git add docs/languages.svg docs/languages_cache.json README.md docs/schedule_state_languages.json
           git commit -m "Amey-Thakur"                      -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>"                      --author="Amey Thakur <ameythakur20@gmail.com>"             || { echo "Nothing to commit."; exit 0; }
 
           # Another workflow may have pushed in the interval. Rebase rather than
