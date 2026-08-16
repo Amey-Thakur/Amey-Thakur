@@ -1,9 +1,43 @@
+# ==============================================================================
+# File: languages.yml
+# Author: Amey Thakur
+# Profile: https://github.com/Amey-Thakur
+# Repository: https://github.com/Amey-Thakur/Amey-Thakur
+# Release Date: August 16, 2026
+# Modified: August 16, 2026
+# License: MIT License
+# ==============================================================================
+#
+# DESCRIPTION:
+# Regenerates the language distribution card and commits it.
+#
+# HOW IT WORKS:
+# GitHub schedules in UTC and cannot express a local time, so the cron below
+# holds the due local hours converted at the author's current offset. That
+# offset moves twice a year for daylight saving and again on relocation, so
+# align_schedule.py records what time each run actually fired and rewrites the
+# cron once several runs agree it has drifted.
+#
+# This workflow stands alone. Its schedule is offset by 0 minutes from the
+# others so that no two jobs push to main at the same moment, and a failure
+# here cannot stop the others from publishing.
+#
+# Nothing exits early on the clock. A run an hour out of place is preferable to
+# one that declines to run.
+#
+# TECH STACK:
+# - GitHub Actions (scheduling and delivery)
+# - Python 3 (card generation, timezone resolution)
+#
+# ==============================================================================
+
 name: Amey-Thakur Languages
 
 on:
   schedule:
+    # 00:00 local, expressed in UTC. Rewritten automatically on drift.
     - cron: '0 4,16 * * *'
-  workflow_dispatch:        # Manual trigger
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -11,30 +45,63 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  # Two runs of this workflow must never overlap: both push to main.
+  group: languages-card
+  cancel-in-progress: false
+
 jobs:
   update-languages:
+    name: Amey-Thakur Languages
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Ensure Git history is available for timezone inference.
+          # local_time falls back to reading offsets out of the commit history
+          # when the profile page is unreachable, which needs full history.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Generate Language Distribution Visualization
+      - name: Record the run and align the schedule
+        continue-on-error: true
+        env:
+          WORKFLOW_FILE: .github/workflows/languages.yml
+        run: |
+          python "Source Code/local_time.py"     | tee -a "$GITHUB_STEP_SUMMARY"
+          python "Source Code/align_schedule.py" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Generate language card
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python "Source Code/languages.py"
 
-      - name: Commit and Push Changes
+      - name: Commit and push
         run: |
           git config --local user.email "ameythakur20@gmail.com"
-          git config --local user.name "Amey Thakur"
-          git add docs/languages.svg docs/languages_cache.json README.md
-          git commit -m "Amey-Thakur" -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>" --author="Amey Thakur <ameythakur20@gmail.com>" || echo "No changes to commit"
+          git config --local user.name  "Amey Thakur"
+
+          # Runners are fixed to UTC. Stamping at the author's offset keeps the
+          # history readable in his own time, and leaves a non-UTC timestamp for
+          # local_time's fallback to find. Without it every recent commit reads
+          # +00:00 and that fallback resolves to UTC wherever he actually is.
+          LOCAL_DATE=$(python -c "import sys; sys.path.insert(0, 'Source Code'); import local_time as t; print(t.local_now().strftime('%Y-%m-%dT%H:%M:%S%z'))")
+          export GIT_AUTHOR_DATE="$LOCAL_DATE"
+          export GIT_COMMITTER_DATE="$LOCAL_DATE"
+
+          # The generator rewrites the cache-busting query string on its README
+          # image every run, so a commit exists even when the figures have not
+          # moved.
+          git add docs/languages.svg docs/languages_cache.json README.md docs/schedule_state.json
+          git commit -m "Amey-Thakur"                      -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>"                      --author="Amey Thakur <ameythakur20@gmail.com>"             || { echo "Nothing to commit."; exit 0; }
+
+          # Another workflow may have pushed in the interval. Rebase rather than
+          # fail, so a fifteen-minute overlap never costs a day's commit.
           git pull --rebase --autostash
           git push
