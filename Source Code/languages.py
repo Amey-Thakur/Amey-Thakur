@@ -53,6 +53,11 @@ CACHE_FILE = "docs/languages_cache.json"
 # Languages prioritized for specific analytical visibility within the dashboard.
 PRIORITY_LANGS = ["R", "Julia", "MATLAB", "LaTeX", "C++", "Python"]
 
+# GitHub reports document formats alongside programming languages. They are
+# not what a "most used languages" card is asking about, so they are dropped
+# before anything is weighted.
+EXCLUDED_LANGUAGES = {"Rich Text Format", "BibTeX Style"}
+
 # Standard brand hex codes for professional technology representation.
 # This map ensures unique visual identification for every environment.
 LANG_COLORS = {
@@ -203,18 +208,34 @@ def main():
             
         if not repos: raise Exception("No repository metadata retrieved.")
 
-        # LINGUISTIC QUANTIFICATION ENGINE
-        # Computes mean density per technology across the total portfolio volume.
+        # LANGUAGE WEIGHTING
+        # Every repository counts once, whatever its size.
+        #
+        # The alternative is to weight by bytes of code, which sounds more
+        # precise and is not: three repositories hold two thirds of all code on
+        # this account, so byte weighting hands them the entire card and buries
+        # everything else. Counting each repository once answers the question
+        # the card is actually asking, which is what this account works in,
+        # rather than where the most bytes happen to sit.
         active_repos = [r for r in repos if not r.get('fork')]
+
+        repo_langs = {}
         for r in active_repos:
-            ld = fetch_data(r['languages_url'], token)
-            if ld:
-                r_total = sum(ld.values())
-                if r_total > 0:
-                    for k, v in ld.items():
-                        # Normalization relative to total portfolio size.
-                        density = (v / r_total)
-                        all_langs_density[k] = all_langs_density.get(k, 0) + (density / len(active_repos))
+            langs = fetch_data(r['languages_url'], token)
+            if langs:
+                langs = {k: v for k, v in langs.items() if k not in EXCLUDED_LANGUAGES}
+                if sum(langs.values()) > 0:
+                    repo_langs[r['name']] = langs
+
+        if not repo_langs:
+            raise Exception("No language data retrieved.")
+
+        for langs in repo_langs.values():
+            total = sum(langs.values())
+            for name, count in langs.items():
+                # Each repository distributes a single unit across its own
+                # languages, so a large project cannot outvote a small one.
+                all_langs_density[name] = all_langs_density.get(name, 0) + (count / total) / len(repo_langs)
 
         # PERSISTENCE & INTEGRITY GUARD
         # Verification of density data ensures integrity before cache update.
