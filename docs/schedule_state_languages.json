@@ -1,0 +1,13 @@
+{
+  "note": "Written by align_schedule.py. One entry per workflow run.",
+  "current_offset_hours": -4.0,
+  "current_offset_note": "cron minute differs per workflow; see each file",
+  "runs": [
+    {
+      "fired_utc": "2026-08-16T04:39:10Z",
+      "local": "2026-08-16T00:39:10-0400",
+      "local_hour": 0,
+      "offset": -4.0
+    }
+  ]
+}
