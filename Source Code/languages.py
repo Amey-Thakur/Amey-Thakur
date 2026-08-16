@@ -30,11 +30,18 @@ HOW IT WORKS   :
 """
 
 import os
+import sys
 import json
 import urllib.request
 import re
 import subprocess
 from datetime import datetime, timezone, timedelta
+
+# The card is rebuilt on Amey's clock, not the runner's. `local_time`
+# resolves his offset from his GitHub profile, so daylight saving and any
+# change of country are followed without editing anything here.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from local_time import local_now
 
 # ==============================================================================
 # CONFIGURATION & ASSETS
@@ -172,20 +179,6 @@ def update_readme(timestamp):
     with open(readme_path, "w", encoding="utf-8") as f: f.write(content)
 
 
-def get_local_hour():
-    """
-    Detects current hour inferred from latest commit timezone offset.
-    Ensures temporal accuracy consistent with local operations.
-    """
-    try:
-        # Inference of localized offset from Git metadata.
-        result = subprocess.run(['git', 'log', '-1', '--format=%ai'], capture_output=True, text=True, check=True)
-        match  = re.search(r'([+-])(\d{2})(\d{2})$', result.stdout.strip())
-        if not match: return datetime.now(timezone.utc).hour
-        sign, h, m = match.groups()
-        offset = (int(h) * 3600 + int(m) * 60) * (-1 if sign == '-' else 1)
-        return datetime.now(timezone(timedelta(seconds=offset))).hour
-    except Exception: return datetime.now(timezone.utc).hour
 
 
 # ==============================================================================
@@ -238,7 +231,7 @@ def main():
         with open("docs/languages.svg", "w", encoding="utf-8") as f: 
             f.write(create_langs_svg(all_langs_density, username))
             
-        update_readme(int(datetime.now().timestamp()))
+        update_readme(int(local_now().timestamp()))
         print("Linguistic distribution synthesized successfully.")
         
     except Exception as e:
@@ -252,7 +245,7 @@ def main():
              os.makedirs("docs", exist_ok=True)
              with open("docs/languages.svg", "w", encoding="utf-8") as f:
                  f.write(create_langs_svg(all_langs_density, username))
-             update_readme(int(datetime.now().timestamp()))
+             update_readme(int(local_now().timestamp()))
              print("Successfully recovered metrics from local cache.")
         else:
              print("Critical failure: Data sources inaccessible.")
