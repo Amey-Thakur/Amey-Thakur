@@ -132,7 +132,18 @@ jobs:
           git add docs/languages.svg docs/languages_cache.json README.md docs/schedule_state_languages.json
           git commit -m "Amey-Thakur"                      -m "Co-authored-by: Mega Satish <mega.modha@gmail.com>"                      --author="Amey Thakur <ameythakur20@gmail.com>"             || { echo "Nothing to commit."; exit 0; }
 
-          # Another workflow may have pushed in the interval. Rebase rather than
-          # fail, so a fifteen-minute overlap never costs a day's commit.
-          git pull --rebase --autostash
-          git push
+          # The other card workflow shares this schedule and also pushes to
+          # main, and the two sit in different concurrency groups, so GitHub
+          # does not serialise them. Rebasing handles a push that has already
+          # landed; it cannot handle one that lands between the rebase and the
+          # push, which rejects the push. Retry the pair so that losing a race
+          # costs a few seconds rather than the day's commit.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash && git push; then
+              exit 0
+            fi
+            echo "push attempt $attempt was beaten to main; retrying."
+            sleep "$((attempt * 5))"
+          done
+          echo "::error::could not push after five attempts"
+          exit 1
