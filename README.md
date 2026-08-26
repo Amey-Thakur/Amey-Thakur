@@ -1,12 +1,12 @@
 <h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=35&center=true&vCenter=true&width=500&height=100&duration=4000&lines=Hi+there+👋🏻;+I'm+Amey+Thakur!;" title="Amey Thakur: AI/ML Engineer | Research Scholar | Open Source Contributor" />
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=35&center=true&vCenter=true&width=500&height=100&duration=4000&lines=Hi+there+👋🏻;+I'm+Amey+Thakur!;" title="Amey Thakur: AI/ML Engineer | Research Scholar | Kaggle Expert | Open Source Contributor" />
 </h1>
 
 <img align="right" width="400" src="docs/Programmer.gif" title="Amey Thakur: Advancing ideas through research, code, and engineering" />
 
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=20&center=true&vCenter=true&width=400&height=50&duration=3000&lines=Computer+Engineer;Research+Scholar;" title="Amey Thakur: Delivering Impact through Engineering and Research" />
+<img src="https://readme-typing-svg.herokuapp.com/?font=Roboto&size=20&center=true&vCenter=true&width=400&height=50&duration=3000&lines=Computer+Engineer;Research+Scholar;Kaggle+Expert;" title="Amey Thakur: Delivering Impact through Engineering and Research" />
 
 <img src="https://komarev.com/ghpvc/?username=Amey-Thakur&color=blue&style=flat&label=PROFILE+VIEWS" alt="Profile Views" title="Amey Thakur: Monitoring Global REACH and IMPACT" />
 
