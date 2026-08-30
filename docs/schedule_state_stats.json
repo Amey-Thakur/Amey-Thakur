@@ -4,12 +4,6 @@
   "current_offset_note": "cron minute differs per workflow; see each file",
   "runs": [
     {
-      "fired_utc": "2026-08-16T04:43:45Z",
-      "local": "2026-08-16T00:43:45-0400",
-      "local_hour": 0,
-      "offset": -4.0
-    },
-    {
       "fired_utc": "2026-08-16T16:31:43Z",
       "local": "2026-08-16T12:31:43-0400",
       "local_hour": 12,
@@ -241,6 +235,12 @@
       "fired_utc": "2026-08-30T00:36:31Z",
       "local": "2026-08-29T20:36:31-0400",
       "local_hour": 20,
+      "offset": -4.0
+    },
+    {
+      "fired_utc": "2026-08-30T09:49:35Z",
+      "local": "2026-08-30T05:49:35-0400",
+      "local_hour": 5,
       "offset": -4.0
     }
   ]
