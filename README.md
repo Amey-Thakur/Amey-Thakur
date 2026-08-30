@@ -14,7 +14,7 @@
 
 💭 **[Amey's Arc](https://amey-thakur.github.io/)** ⟶ Advancing Ideas & Projects
 
-🎓 **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** ⟶ Throughout Courses
+🎓 **[Computer Engineering](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)** & **[MEng Computer Engineering](https://github.com/Amey-Thakur/MENG-COMPUTER-ENGINEERING)** ⟶ Bachelor's & Master's Coursework
 
 📁 **[Projects](https://github.com/stars/Amey-Thakur/lists/projects)** ⟶ Curated Collection
 
@@ -22,7 +22,7 @@
 
 📝 **[Research Papers](https://scholar.google.ca/citations?user=0inooPgAAAAJ)** ⟶ Published Work
 
-⭐ **[GitHub Lists](https://github.com/Amey-Thakur?tab=stars)** ⟶ Starred Repositories
+🏆 **[Achievements](https://github.com/Amey-Thakur/ACHIEVEMENTS)** ⟶ Certifications & Awards
 
 ---
 
