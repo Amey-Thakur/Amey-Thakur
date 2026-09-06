@@ -55,7 +55,8 @@ ICONS = {
     "pr":      '<path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5a2.5 2.5 0 00-2.5-2.5zm-7.5 10a.75.75 0 100 1.5.75.75 0 000-1.5zM12 12.5a.75.75 0 100 1.5.75.75 0 000-1.5z" fill="none" stroke="{color}" stroke-width="1.2"/>',
     "issue":   '<path d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 118 0a8 8 0 010 16z" fill="{color}"/><path d="M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4h1.8l-.45 6h-.9L7.1 4z" fill="{color}"/>',
     "contrib": '<path d="M2 1.75C2 .784 2.784 0 3.75 0h8.5C13.216 0 14 .784 14 1.75v11.5A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75zM3.5 1.75v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25z" fill="{color}"/><path d="M5 3h6v1.5H5V3zm0 3h6v1.5H5V6z" fill="{color}"/>',
-    "views":   '<path fill-rule="evenodd" d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z" fill="{color}"/>'
+    "views":   '<path fill-rule="evenodd" d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z" fill="{color}"/>',
+    "user":    '<path fill-rule="evenodd" d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM0 13c0-2.5 3.5-4 8-4s8 1.5 8 4v1H0v-1z" fill="{color}"/>'
 }
 
 # ==============================================================================
@@ -129,69 +130,76 @@ def create_stats_svg(stats, username):
     accent, bg, white = "#00D4FF", "#000000", "#F0F6FC"
     grade, rank = calculate_grade(stats)
     
-    # Proportional ring calibration for 6-metric rectangular balance.
-    radius = 50
+    # Proportional ring calibration for 7-metric spacious horizontal layout.
+    width, height = 535, 235
+    radius = 54
     circumference = round(2 * 3.14159265 * radius, 2)
     dashoffset = round(circumference * (1 - rank / 100), 2)
+    ring_x, ring_y = 430, 124
     
     # SVG structural definition with dynamic progress rendering.
-    svg = f'''<svg width="495" height="230" viewBox="0 0 495 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+    svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {accent}; }}
-        .header {{ font: 700 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
-        .stat   {{ font: 900 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
-        .grade  {{ font: 900 40px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .header {{ font: 700 13.5px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .stat   {{ font: 900 13.5px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .grade  {{ font: 900 44px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
         .rank   {{ font: italic 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.45; }}
     </style>
     
     <!-- Background Frame Representation -->
-    <rect width="495" height="230" rx="10" fill="{bg}"/>
-    <text x="30" y="38" class="title" fill="{accent}">{username}'s GitHub Stats</text>
+    <rect width="{width}" height="{height}" rx="10" fill="{bg}"/>
+    <text x="32" y="38" class="title" fill="{accent}">{username}'s GitHub Stats</text>
     
     <!-- Quantitative Metrics Analysis -->
-    <g transform="translate(30, 66)">
+    <g transform="translate(32, 65)">
         <g transform="translate(0, 0)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['star'].format(color=accent)}</svg>
-            <text x="35" y="0" class="header">Total Stars:</text>
+            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['star'].format(color=accent)}</svg>
+            <text x="32" y="0" class="header">Total Stars:</text>
             <text x="245" y="0" class="stat">{stats.get('stars', '---')}</text>
         </g>
-        <g transform="translate(0, 26)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['commit'].format(color=accent)}</svg>
-            <text x="35" y="0" class="header">Total Commits:</text>
+        <g transform="translate(0, 22)">
+            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['commit'].format(color=accent)}</svg>
+            <text x="32" y="0" class="header">Total Commits:</text>
             <text x="245" y="0" class="stat">{stats.get('commits', '---')}</text>
         </g>
-        <g transform="translate(0, 52)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['pr'].format(color=accent)}</svg>
-            <text x="35" y="0" class="header">Total PRs:</text>
+        <g transform="translate(0, 44)">
+            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['pr'].format(color=accent)}</svg>
+            <text x="32" y="0" class="header">Total PRs:</text>
             <text x="245" y="0" class="stat">{stats.get('prs', '---')}</text>
         </g>
-        <g transform="translate(0, 78)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['issue'].format(color=accent)}</svg>
-            <text x="35" y="0" class="header">Total Issues:</text>
+        <g transform="translate(0, 66)">
+            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['issue'].format(color=accent)}</svg>
+            <text x="32" y="0" class="header">Total Issues:</text>
             <text x="245" y="0" class="stat">{stats.get('issues', '---')}</text>
         </g>
-        <g transform="translate(0, 104)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['contrib'].format(color=accent)}</svg>
-            <text x="35" y="0" class="header">Contributor to:</text>
+        <g transform="translate(0, 88)">
+            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['contrib'].format(color=accent)}</svg>
+            <text x="32" y="0" class="header">Contributor to:</text>
             <text x="245" y="0" class="stat">{stats.get('contribs', '---')}</text>
         </g>
-        <g transform="translate(0, 130)">
-            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['views'].format(color=accent)}</svg>
-            <text x="35" y="0" class="header">Repository Views (14d):</text>
+        <g transform="translate(0, 110)">
+            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['views'].format(color=accent)}</svg>
+            <text x="32" y="0" class="header">Repository Views (14d):</text>
             <text x="245" y="0" class="stat">{stats.get('views', '---')}</text>
+        </g>
+        <g transform="translate(0, 132)">
+            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['user'].format(color=accent)}</svg>
+            <text x="32" y="0" class="header">Unique Visitors (14d):</text>
+            <text x="245" y="0" class="stat">{stats.get('uniques', '---')}</text>
         </g>
     </g>
     
     <!-- Geometric Progress Visualization -->
-    <g transform="translate(395, 122)">
-        <circle r="{radius}" stroke="{accent}" stroke-width="5" fill="none" opacity="0.1"/>
-        <circle r="{radius}" stroke="{accent}" stroke-width="5" fill="none" 
+    <g transform="translate({ring_x}, {ring_y})">
+        <circle r="{radius}" stroke="{accent}" stroke-width="5.5" fill="none" opacity="0.1"/>
+        <circle r="{radius}" stroke="{accent}" stroke-width="5.5" fill="none" 
                 stroke-dasharray="{circumference}" stroke-dashoffset="{dashoffset}" 
                 stroke-linecap="round" transform="rotate(-90)"/>
         <text text-anchor="middle" dy="0.35em" class="grade">{grade}</text>
     </g>
     
-    <text x="395" y="202" text-anchor="middle" class="rank">Now or Never</text>
+    <text x="{ring_x}" y="208" text-anchor="middle" class="rank">Now or Never</text>
 </svg>'''
     return svg
 
@@ -227,14 +235,14 @@ def update_readme(timestamp):
 def main():
     token    = os.getenv('GITHUB_TOKEN')
     username = "Amey-Thakur"
-    stats    = {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "contribs": 0, "views": "0"}
+    stats    = {"stars": 0, "commits": 0, "prs": 0, "issues": 0, "contribs": 0, "views": "0", "uniques": "0"}
     
     try:
         # REPOSITORY DISCOVERY
         all_repos = []
         page = 1
         while True:
-            repos = fetch_data(f"https://api.github.com/users/{username}/repos?per_page=100&page={page}", token)
+            repos = fetch_data(f"https://api.github.com/users/{username}/repos?per_page=100&type=all&page={page}", token)
             if not repos: break
             all_repos.extend(repos)
             if len(repos) < 100: break
@@ -247,8 +255,9 @@ def main():
         stats["issues"] = sum(r.get('open_issues_count', 0) for r in all_repos)
 
         # TRAFFIC RECONCILIATION
-        # Aggregation of rolling 14-day page view volume across all repositories.
+        # Aggregation of rolling 14-day page view and unique visitor volume across all repositories.
         total_views = 0
+        total_uniques = 0
         for r in all_repos:
             repo_name = r.get('name')
             if not repo_name:
@@ -256,15 +265,19 @@ def main():
             traffic = fetch_data(f"https://api.github.com/repos/{username}/{repo_name}/traffic/views", token)
             if traffic and isinstance(traffic, dict):
                 total_views += traffic.get('count', 0)
+                total_uniques += traffic.get('uniques', 0)
 
         if total_views > 0:
-            stats["views"] = f"{int(total_views / 100) / 10}k" if total_views >= 1000 else str(total_views)
+            stats["views"] = f"{round(total_views / 1000, 1):.1f}k" if total_views >= 1000 else str(total_views)
+            stats["uniques"] = f"{round(total_uniques / 1000, 1):.1f}k" if total_uniques >= 1000 else str(total_uniques)
         elif os.path.exists(CACHE_FILE):
             try:
                 with open(CACHE_FILE, "r", encoding="utf-8") as f:
                     cached_data = json.load(f)
-                    if cached_data.get('views') and cached_data.get('views') != "0":
+                    if cached_data.get('views'):
                         stats["views"] = cached_data['views']
+                    if cached_data.get('uniques'):
+                        stats["uniques"] = cached_data['uniques']
             except Exception:
                 pass
         
@@ -315,7 +328,7 @@ def main():
             f.write(create_stats_svg(stats, username))
             
         update_readme(int(local_now().timestamp()))
-        print(f"Metrics synthesized: {stats['commits']} Commits, {stats['views']} Views.")
+        print(f"Metrics synthesized: {stats['commits']} Commits, {stats['views']} Views, {stats['uniques']} Uniques.")
         
     except Exception as e:
         # Restoration via local cache if live retrieval fails.
