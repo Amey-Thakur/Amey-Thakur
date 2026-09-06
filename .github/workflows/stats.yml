@@ -80,7 +80,7 @@ jobs:
 
       - name: Generate statistics card
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
         run: python "Source Code/stats.py"
 
       - name: Configure commit signing
