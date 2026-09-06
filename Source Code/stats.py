@@ -131,61 +131,61 @@ def create_stats_svg(stats, username):
     grade, rank = calculate_grade(stats)
     
     # Proportional ring calibration for 7-metric spacious horizontal layout.
-    width, height = 535, 235
-    radius = 54
+    width, height = 555, 278
+    radius = 62
     circumference = round(2 * 3.14159265 * radius, 2)
     dashoffset = round(circumference * (1 - rank / 100), 2)
-    ring_x, ring_y = 430, 124
+    ring_x, ring_y = 440, 144
     
     # SVG structural definition with dynamic progress rendering.
     svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         .title  {{ font: 600 22px 'Segoe UI', Ubuntu, Sans-Serif; fill: {accent}; }}
-        .header {{ font: 700 13.5px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
-        .stat   {{ font: 900 13.5px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
-        .grade  {{ font: 900 44px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .header {{ font: 700 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .stat   {{ font: 900 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
+        .grade  {{ font: 900 50px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; }}
         .rank   {{ font: italic 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: {white}; opacity: 0.45; }}
     </style>
     
     <!-- Background Frame Representation -->
     <rect width="{width}" height="{height}" rx="10" fill="{bg}"/>
-    <text x="32" y="38" class="title" fill="{accent}">{username}'s GitHub Stats</text>
+    <text x="35" y="42" class="title" fill="{accent}">{username}'s GitHub Stats</text>
     
     <!-- Quantitative Metrics Analysis -->
-    <g transform="translate(32, 65)">
+    <g transform="translate(35, 76)">
         <g transform="translate(0, 0)">
-            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['star'].format(color=accent)}</svg>
-            <text x="32" y="0" class="header">Total Stars:</text>
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['star'].format(color=accent)}</svg>
+            <text x="35" y="0" class="header">Total Stars:</text>
             <text x="245" y="0" class="stat">{stats.get('stars', '---')}</text>
         </g>
-        <g transform="translate(0, 22)">
-            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['commit'].format(color=accent)}</svg>
-            <text x="32" y="0" class="header">Total Commits:</text>
+        <g transform="translate(0, 28)">
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['commit'].format(color=accent)}</svg>
+            <text x="35" y="0" class="header">Total Commits:</text>
             <text x="245" y="0" class="stat">{stats.get('commits', '---')}</text>
         </g>
-        <g transform="translate(0, 44)">
-            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['pr'].format(color=accent)}</svg>
-            <text x="32" y="0" class="header">Total PRs:</text>
+        <g transform="translate(0, 56)">
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['pr'].format(color=accent)}</svg>
+            <text x="35" y="0" class="header">Total PRs:</text>
             <text x="245" y="0" class="stat">{stats.get('prs', '---')}</text>
         </g>
-        <g transform="translate(0, 66)">
-            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['issue'].format(color=accent)}</svg>
-            <text x="32" y="0" class="header">Total Issues:</text>
+        <g transform="translate(0, 84)">
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['issue'].format(color=accent)}</svg>
+            <text x="35" y="0" class="header">Total Issues:</text>
             <text x="245" y="0" class="stat">{stats.get('issues', '---')}</text>
         </g>
-        <g transform="translate(0, 88)">
-            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['contrib'].format(color=accent)}</svg>
-            <text x="32" y="0" class="header">Contributor to:</text>
+        <g transform="translate(0, 112)">
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['contrib'].format(color=accent)}</svg>
+            <text x="35" y="0" class="header">Contributor to:</text>
             <text x="245" y="0" class="stat">{stats.get('contribs', '---')}</text>
         </g>
-        <g transform="translate(0, 110)">
-            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['views'].format(color=accent)}</svg>
-            <text x="32" y="0" class="header">Repository Views (14d):</text>
+        <g transform="translate(0, 140)">
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['views'].format(color=accent)}</svg>
+            <text x="35" y="0" class="header">Repository Views (14d):</text>
             <text x="245" y="0" class="stat">{stats.get('views', '---')}</text>
         </g>
-        <g transform="translate(0, 132)">
-            <svg x="0" y="-13" width="16" height="16" viewBox="0 0 16 16">{ICONS['user'].format(color=accent)}</svg>
-            <text x="32" y="0" class="header">Unique Visitors (14d):</text>
+        <g transform="translate(0, 168)">
+            <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16">{ICONS['user'].format(color=accent)}</svg>
+            <text x="35" y="0" class="header">Unique Visitors (14d):</text>
             <text x="245" y="0" class="stat">{stats.get('uniques', '---')}</text>
         </g>
     </g>
@@ -199,7 +199,7 @@ def create_stats_svg(stats, username):
         <text text-anchor="middle" dy="0.35em" class="grade">{grade}</text>
     </g>
     
-    <text x="{ring_x}" y="208" text-anchor="middle" class="rank">Now or Never</text>
+    <text x="{ring_x}" y="244" text-anchor="middle" class="rank">Now or Never</text>
 </svg>'''
     return svg
 
