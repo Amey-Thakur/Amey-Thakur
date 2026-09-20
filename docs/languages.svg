@@ -13,10 +13,10 @@
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
         <rect width="435" height="14" rx="7" fill="#F0F6FC" fill-opacity="0.1"/>
-        <g mask="url(#bar-mask)"><rect x="0" width="118.90662039155856" height="14" fill="#3572A5"/><rect x="118.90662039155856" width="63.89421752662127" height="14" fill="#e34c26"/><rect x="182.80083791817984" width="54.98432384349021" height="14" fill="#DA5B0B"/><rect x="237.78516176167005" width="49.89924779992504" height="14" fill="#f1e05a"/><rect x="287.6844095615951" width="26.219622976818723" height="14" fill="#563d7c"/><rect x="313.9040325384138" width="20.452382240440862" height="14" fill="#e16737"/><rect x="334.3564147788546" width="18.280224405370454" height="14" fill="#701516"/><rect x="352.6366391842251" width="16.614068956861686" height="14" fill="#b07219"/><rect x="369.25070814108676" width="12.805879685585909" height="14" fill="#555555"/><rect x="382.0565878266727" width="10.541336815457042" height="14" fill="#4F5D95"/><rect x="392.5979246421297" width="8.968666741556962" height="14" fill="#3178c6"/><rect x="401.56659138368667" width="8.426841430821295" height="14" fill="#6E4C13"/><rect x="409.99343281450797" width="7.468378152942157" height="14" fill="#89e051"/><rect x="417.4618109674501" width="4.614855908044624" height="14" fill="#178600"/><rect x="422.0766668754947" width="4.614855908044624" height="14" fill="#a270ba"/><rect x="426.6915227835393" width="2.905925674576649" height="14" fill="#888888"/><rect x="429.59744845811593" width="2.7162982401934914" height="14" fill="#dea584"/><rect x="432.31374669830944" width="2.6862533016904693" height="14" fill="#012456"/></g></g><g transform="translate(30, 100)"><g transform="translate(0, 0)">
+        <g mask="url(#bar-mask)"><rect x="0" width="118.38551437830549" height="14" fill="#3572A5"/><rect x="118.38551437830549" width="63.999552415338215" height="14" fill="#e34c26"/><rect x="182.38506679364372" width="55.07497003742501" height="14" fill="#DA5B0B"/><rect x="237.46003683106872" width="49.98151082649508" height="14" fill="#f1e05a"/><rect x="287.4415476575638" width="26.26284818835391" height="14" fill="#563d7c"/><rect x="313.7043958459177" width="20.486099679838194" height="14" fill="#e16737"/><rect x="334.1904955257559" width="18.31036086337869" height="14" fill="#701516"/><rect x="352.5008563891346" width="16.641458620159113" height="14" fill="#b07219"/><rect x="369.1423150092937" width="12.826991234702882" height="14" fill="#555555"/><rect x="381.9693062439966" width="10.558715078833087" height="14" fill="#4F5D95"/><rect x="392.52802132282966" width="8.983452328574561" height="14" fill="#3178c6"/><rect x="401.51147365140423" width="8.44073377411482" height="14" fill="#6E4C13"/><rect x="409.9522074255191" width="7.480690390451105" height="14" fill="#89e051"/><rect x="417.4328978159702" width="4.622463878723912" height="14" fill="#178600"/><rect x="422.0553616946941" width="4.622463878723912" height="14" fill="#a270ba"/><rect x="426.67782557341803" width="2.910716332783297" height="14" fill="#888888"/><rect x="429.5885419062013" width="2.720776281930737" height="14" fill="#dea584"/><rect x="432.30931818813207" width="2.6906818118679543" height="14" fill="#012456"/></g></g><g transform="translate(30, 100)"><g transform="translate(0, 0)">
             <circle cx="5" cy="-4" r="5" fill="#3572A5"/>
             <text x="18" y="0" class="header">Python</text>
-            <text x="140" y="0" text-anchor="end" class="stat">27.3%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">27.2%</text>
         </g><g transform="translate(150, 0)">
             <circle cx="5" cy="-4" r="5" fill="#e34c26"/>
             <text x="18" y="0" class="header">HTML</text>
@@ -24,7 +24,7 @@
         </g><g transform="translate(300, 0)">
             <circle cx="5" cy="-4" r="5" fill="#DA5B0B"/>
             <text x="18" y="0" class="header">Jupyter Noteb..</text>
-            <text x="140" y="0" text-anchor="end" class="stat">12.6%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">12.7%</text>
         </g><g transform="translate(0, 20)">
             <circle cx="5" cy="-4" r="5" fill="#f1e05a"/>
             <text x="18" y="0" class="header">JavaScript</text>
