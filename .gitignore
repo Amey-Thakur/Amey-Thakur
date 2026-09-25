@@ -17,3 +17,7 @@ dist/
 # Temporary files
 *.tmp
 *.log
+
+# Python bytecode from running the card generators locally.
+__pycache__/
+*.pyc
