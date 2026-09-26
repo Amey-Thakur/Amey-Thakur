@@ -110,21 +110,11 @@ def local_now():
     return datetime.now(local_zone())
 
 
-def is_scheduled_hour(hours=(0, 12)):
-    """Is it one of the hours the cards are meant to be rebuilt?
-
-    The workflow is scheduled hourly and asks this question each time, rather
-    than being pinned to a UTC hour. A fixed cron drifts by an hour twice a year
-    at the daylight saving boundary, and breaks entirely on a change of country.
-    """
-    return local_now().hour in hours
-
-
 if __name__ == "__main__":
-    # Running the module directly prints what the workflow gate needs, which
-    # also makes it easy to check by hand.
+    # Running the module directly prints the offset the schedule is aligned
+    # against, which is what the workflow records and what makes it easy to
+    # check by hand.
     now = local_now()
     print(f"offset  : {offset_hours():+.2f} hours from UTC")
     print(f"local   : {now:%Y-%m-%d %H:%M:%S %z}")
     print(f"utc     : {datetime.now(timezone.utc):%Y-%m-%d %H:%M:%S}")
-    print(f"due now : {is_scheduled_hour()}")

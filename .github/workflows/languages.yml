@@ -38,10 +38,10 @@ on:
   schedule:
     # 00:00 and 12:00 local, expressed in UTC. Rewritten automatically on drift.
     - cron: '0 4,16 * * *'
+  # No push trigger. Two of these workflows commit to main themselves, so a
+  # single push here started all three and left extra commits behind. The
+  # schedule above and a manual run are the only ways in.
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 permissions:
   contents: write

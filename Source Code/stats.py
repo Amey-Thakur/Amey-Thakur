@@ -17,7 +17,7 @@ TECH STACK     :
 - SVG (XML)    : Vector-based graphical rendering for high-definition displays.
 
 HOW IT WORKS   :
-1. AUTHENTICATION : Loads GITHUB_TOKEN / ACCESS_TOKEN for verified API access.
+1. AUTHENTICATION : Loads GITHUB_TOKEN for verified API access.
 2. DISCOVERY      : Polls repository list with pagination for comprehensive capture.
 3. INFERENCE      : Analyzes Pull Request history to identify unique contexts.
 4. CALCULATIONS   : Applies weighted grading for performance rank assignment.
@@ -253,8 +253,9 @@ def main():
                 match = re.search(r'/repos/([^/]+)/', repo_url)
                 if match: unique_contexts.add(match.group(1))
             
-            # Distinct count of external project contributions.
-            stats["contribs"] = max(1, len(unique_contexts) - (1 if username in unique_contexts else 0))
+            # Distinct count of external project contributions. Not floored:
+            # a floor of one would report a contribution that does not exist.
+            stats["contribs"] = len(unique_contexts) - (1 if username in unique_contexts else 0)
 
         # CONTRIBUTION RECONCILIATION
         # Retrieval of contribution volume from Streak API for consistency.
