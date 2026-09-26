@@ -239,7 +239,24 @@ def main():
             raise Exception("No metadata retrieved.")
 
         stats["stars"]  = sum(r.get('stargazers_count', 0) for r in all_repos)
-        stats["issues"] = sum(r.get('open_issues_count', 0) for r in all_repos)
+
+        # ISSUE VOLUME
+        # Every issue ever opened on these repositories, pull requests excluded.
+        # The repository field this replaced, open_issues_count, counts only
+        # open items and counts pull requests among them, so it reported
+        # neither a total nor issues.
+        issue_search = fetch_data(
+            f"https://api.github.com/search/issues?q=is:issue+user:{username}", token)
+        if issue_search and "total_count" in issue_search:
+            stats["issues"] = issue_search["total_count"]
+        elif os.path.exists(CACHE_FILE):
+            # Search is rate limited separately from the rest of the API. A
+            # refusal must not write a zero over a figure that was correct.
+            try:
+                with open(CACHE_FILE, "r", encoding="utf-8") as f:
+                    stats["issues"] = json.load(f).get("issues", 0)
+            except Exception:
+                pass
 
         # IMPACT ANALYSIS
         # Aggregation of unique contexts from interaction history.
