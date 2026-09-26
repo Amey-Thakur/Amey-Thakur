@@ -36,7 +36,7 @@
         <g transform="translate(0, 112)">
             <svg x="0" y="-14" width="18" height="18" viewBox="0 0 16 16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h8.5C13.216 0 14 .784 14 1.75v11.5A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75zM3.5 1.75v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25z" fill="#00D4FF"/><path d="M5 3h6v1.5H5V3zm0 3h6v1.5H5V6z" fill="#00D4FF"/></svg>
             <text x="35" y="0" class="header">Contributor to:</text>
-            <text x="245" y="0" class="stat">9</text>
+            <text x="245" y="0" class="stat">11</text>
         </g>
     </g>
     

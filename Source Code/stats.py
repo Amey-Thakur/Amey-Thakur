@@ -271,12 +271,21 @@ def main():
         pr_search = fetch_data(SEARCH, token)
         if pr_search:
             stats["prs"] = pr_search.get('total_count', 0)
-            # Owners of the repositories these pull requests went to, and
-            # nothing else. This set used to be seeded from the account's own
-            # repository list, which is fetched with type=all and so includes
-            # repositories the account merely has access to. Those owners were
-            # counted as contributions without a pull request ever being sent.
+            # Two kinds of contribution, deliberately counted together.
+            #
+            # The search below finds every owner a pull request was sent to.
+            # It cannot see work done by pushing directly to somebody else's
+            # repository as a collaborator, which is how the joint paper repo
+            # and the portfolio repos are worked on. Those show up in the
+            # account's own repository list, which is fetched with type=all and
+            # therefore includes repositories it is a collaborator on rather
+            # than owns, so that list seeds the set here.
+            #
+            # Every such repository is public, so the workflow's default token
+            # sees the same owners a personal token does and the figure does
+            # not change between a local run and CI.
             unique_contexts = set()
+            for r in all_repos: unique_contexts.add(r.get('owner', {}).get('login'))
 
             reachable = min(stats["prs"], 1000)
             page = 1
