@@ -13,10 +13,10 @@
     <g transform="translate(30, 60)">
         <mask id="bar-mask"><rect width="435" height="14" rx="7" fill="white"/></mask>
         <rect width="435" height="14" rx="7" fill="#F0F6FC" fill-opacity="0.1"/>
-        <g mask="url(#bar-mask)"><rect x="0" width="117.71494559426091" height="14" fill="#3572A5"/><rect x="117.71494559426091" width="64.02480073168225" height="14" fill="#e34c26"/><rect x="181.73974632594314" width="55.094233124203384" height="14" fill="#DA5B0B"/><rect x="236.83397945014653" width="49.99865218513218" height="14" fill="#f1e05a"/><rect x="286.8326316352787" width="26.297555907437168" height="14" fill="#563d7c"/><rect x="313.1301875427159" width="20.493264922336092" height="14" fill="#e16737"/><rect x="333.62345246505197" width="18.31661980821819" height="14" fill="#701516"/><rect x="351.9400722732702" width="16.64727915644449" height="14" fill="#b07219"/><rect x="368.58735142971466" width="12.827554314017512" height="14" fill="#555555"/><rect x="381.41490574373216" width="10.562408107530034" height="14" fill="#4F5D95"/><rect x="391.9773138512622" width="8.964161266625998" height="14" fill="#3178c6"/><rect x="400.94147511788816" width="8.443686015161042" height="14" fill="#6E4C13"/><rect x="409.3851611330492" width="7.483285909656586" height="14" fill="#89e051"/><rect x="416.8684470427058" width="4.624080637167271" height="14" fill="#178600"/><rect x="421.49252767987304" width="4.624080637167271" height="14" fill="#a270ba"/><rect x="426.1166083170403" width="3.2569466975268933" height="14" fill="#888888"/><rect x="429.37355501456716" width="2.9047170815657983" height="14" fill="#888888"/><rect x="432.278272096133" width="2.72172790386694" height="14" fill="#dea584"/></g></g><g transform="translate(30, 100)"><g transform="translate(0, 0)">
+        <g mask="url(#bar-mask)"><rect x="0" width="117.32509914569502" height="14" fill="#3572A5"/><rect x="117.32509914569502" width="64.02480073168225" height="14" fill="#e34c26"/><rect x="181.34989987737725" width="55.094233124203384" height="14" fill="#DA5B0B"/><rect x="236.44413300158064" width="49.99865218513218" height="14" fill="#f1e05a"/><rect x="286.4427851867128" width="26.297555907437168" height="14" fill="#563d7c"/><rect x="312.74034109415" width="20.493264922336092" height="14" fill="#e16737"/><rect x="333.2336060164861" width="18.31661980821819" height="14" fill="#701516"/><rect x="351.5502258247043" width="16.64727915644449" height="14" fill="#b07219"/><rect x="368.19750498114877" width="12.827554314017512" height="14" fill="#555555"/><rect x="381.0250592951663" width="10.562408107530034" height="14" fill="#4F5D95"/><rect x="391.5874674026963" width="8.964161266625998" height="14" fill="#3178c6"/><rect x="400.55162866932227" width="8.443686015161042" height="14" fill="#6E4C13"/><rect x="408.99531468448333" width="7.483285909656586" height="14" fill="#89e051"/><rect x="416.4786005941399" width="4.624080637167271" height="14" fill="#178600"/><rect x="421.10268123130714" width="4.624080637167271" height="14" fill="#a270ba"/><rect x="425.7267618684744" width="3.6467931460927585" height="14" fill="#888888"/><rect x="429.37355501456716" width="2.9047170815657983" height="14" fill="#888888"/><rect x="432.278272096133" width="2.72172790386694" height="14" fill="#dea584"/></g></g><g transform="translate(30, 100)"><g transform="translate(0, 0)">
             <circle cx="5" cy="-4" r="5" fill="#3572A5"/>
             <text x="18" y="0" class="header">Python</text>
-            <text x="140" y="0" text-anchor="end" class="stat">27.1%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">27.0%</text>
         </g><g transform="translate(150, 0)">
             <circle cx="5" cy="-4" r="5" fill="#e34c26"/>
             <text x="18" y="0" class="header">HTML</text>
@@ -76,7 +76,7 @@
         </g><g transform="translate(0, 100)">
             <circle cx="5" cy="-4" r="5" fill="#888888"/>
             <text x="18" y="0" class="header">Lean</text>
-            <text x="140" y="0" text-anchor="end" class="stat">0.7%</text>
+            <text x="140" y="0" text-anchor="end" class="stat">0.8%</text>
         </g><g transform="translate(150, 100)">
             <circle cx="5" cy="-4" r="5" fill="#888888"/>
             <text x="18" y="0" class="header">TeX</text>
