@@ -51,7 +51,7 @@
 
 ---
 
-<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1790763790" alt="Amey-Thakur" title="Amey-Thakur's Most Used Languages" /></p>
+<p align="center">&nbsp;<img align="center" src="docs/languages.svg?t=1790800844" alt="Amey-Thakur" title="Amey-Thakur's Most Used Languages" /></p>
 
 ---
 
